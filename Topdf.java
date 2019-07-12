@@ -4,9 +4,14 @@ import java.io.*;
 import org.xml.sax.SAXException;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+// L'ArrayList ne gère pas les mot coupés. Et on ne s'est pas occupé non plus de l'index 0 de ces ArrayList.
 
 public class Topdf {
 
+    static String nomina_sacra = "";
 
     public static void main(String[] args) throws ParserConfigurationException, SAXException, DocumentException, IOException {
 
@@ -24,25 +29,25 @@ public class Topdf {
         int numero_de_mot = 0;
         String manuscrit = "";
         final boolean FINAL = true; // On récupère le manuscrit tel qu'on peut le lire aujourd'hui, c'est-à-dire avec toutes les corrections de scribe. Si ça avait été false, on aurait pris le texte du manuscrit avant toute correction.
-        boolean DernierMotPris = true;
-        boolean ProchainMotAPrendre = true;
-        String StockageDEspace = "";
+        ArrayList<ArrayList<ArrayList<String>>> texte = new ArrayList<ArrayList<ArrayList<String>>>();
+        ArrayList<ArrayList<String>> page1 = new ArrayList<ArrayList<String>>();
+        ArrayList<String> ligne1 = new ArrayList<String>();
+        page1.add(ligne1);
+        texte.add(page1);
         for (int temp = 0; temp < nList.getLength(); temp++)
         {
             Node node = nList.item(temp);
 
-            // Vérifier si le prochain mot est à prendre ou à laisser. Cela est utile pour ne pas afficher les valeurs du texte avant que celui-ci soit corrigé par un scribe, voir FINAL pour plus de détails.
-            if(temp < nList.getLength() - 1) {
-                Node tmp = nList.item(temp + 1);
-                ProchainMotAPrendre = ! isTheWordToIgnore(tmp, FINAL);
-            }
-
             // Pour les corrections scribales
             boolean PrendreLeMot = ! isTheWordToIgnore(node, FINAL);
-
+            
+            // Pour les nomina sacra
+            Node index = node;
+            nominasacra(index, manuscrit);
 
             if (node.getNodeType() == Node.ELEMENT_NODE)
             { // Je n'ai pas trouvé de cas où ça ne rentrer pas dans cette boucle.
+                
                 Element eElement = (Element) node;
 
                 int prochain_numero_de_mot = numero_de_mot + 1;
@@ -59,7 +64,10 @@ public class Topdf {
                     if(PrendreLeMot) {
                         manuscrit += " ";
                     }
-                    if(PrendreLeMot) manuscrit += eElement.getTextContent();
+                    if(PrendreLeMot) {
+                        manuscrit += eElement.getTextContent();
+                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(eElement.getTextContent());
+                    }
                     numero_de_mot++;
                 }
 
@@ -71,7 +79,7 @@ public class Topdf {
                             Node partie = parties.item(tmp);
                             if (PrendreLeMot && partie.getNodeType() == Node.ELEMENT_NODE) // Quand on arrive sur <lb/>
                             {
-                                if(partie.getNodeName() == "lb") manuscrit += "\n"; // Pourquoi avais-je ajouté "&& DernierMotPris" ? Il me semble que j'avais vite écris.
+                                if(partie.getNodeName() == "lb") manuscrit += "\n";
                                 Element ePartie = (Element) partie;
                                 manuscrit += ePartie.getTextContent();
                             }
@@ -83,7 +91,11 @@ public class Topdf {
                         if(PrendreLeMot) {
                             manuscrit += "\n";
                         }
-                        if(PrendreLeMot) manuscrit += eElement.getTextContent();
+                        if(PrendreLeMot) {
+                            manuscrit += eElement.getTextContent();
+                            texte.get(texte.size()-1).add(new ArrayList<String>());
+                            texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(eElement.getTextContent());
+                        }
                     }
                     numero_de_ligne++;
                     numero_de_mot = 1;
@@ -99,7 +111,7 @@ public class Topdf {
                             Node partie = parties.item(tmp);
                             if (PrendreLeMot && partie.getNodeType() == Node.ELEMENT_NODE) // Quand on arrive sur <lb/>
                             {
-                                if(partie.getNodeName() == "pb") manuscrit += "\n\n"; // Pourquoi avais-je ajouté "&& DernierMotPris" ? Il me semble que j'avais vite écris.
+                                if(partie.getNodeName() == "pb") manuscrit += "\n\n";
                                 Element ePartie = (Element) partie;
                                 manuscrit += ePartie.getTextContent();
                             }
@@ -111,7 +123,12 @@ public class Topdf {
                         if( page !=0 && PrendreLeMot) {
                             manuscrit += "\n\n";
                         }
-                        if(PrendreLeMot) manuscrit += eElement.getTextContent();
+                        if(PrendreLeMot) {
+                            manuscrit += eElement.getTextContent();
+                            texte.add(new ArrayList<ArrayList<String>>());
+                            texte.get(texte.size()-1).add(new ArrayList<String>());
+                            texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(eElement.getTextContent());
+                        }
                     }
                     page++;
                     numero_de_ligne = 1;
@@ -119,11 +136,26 @@ public class Topdf {
                 }
 
             }
-            if (PrendreLeMot) DernierMotPris = true;
-            else DernierMotPris = false;
         }
         CreerPDF pdf = new CreerPDF(manuscrit, "032");
         pdf.generer();
+    }
+
+    static void nominasacra (Node index, String manuscrit) {
+        if(index.hasChildNodes()) {
+            NodeList test = index.getChildNodes();
+            for (int i = 0; i < test.getLength(); i++){
+                if(test.item(i).hasChildNodes()) {
+                    NodeList bb = test.item(i).getChildNodes();
+                    for (int j = 0; j < bb.getLength(); j++){
+                        nominasacra(bb.item(j), manuscrit);
+                    }
+                }
+                if(test.item(i).getNodeName() == "abbr" && ( (Element) test.item(i) ).getAttribute("type").equals("nominasacra")){
+                    test.item(i).setTextContent("\\" + "textoverline{" + ((Element)test).getTextContent() + "}");
+                }
+            }
+        }
     }
 
     static boolean isTheWordToIgnore(Node given, boolean finalMode) {
