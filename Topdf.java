@@ -7,7 +7,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// A faire : 1. S'occuper du bug au niveau de l'index. 2. Ajouter tout le texte sur l'index 0 de l'ArrayList.
+/*
+ Voici comment accèder à l'ArrayList texte :
+ Pour avoir :
+ - la p-ième page du manuscrit: texte.get(p).get(0).get(0);
+ - la l-ième ligne de la p-ième page du manuscrit: texte.get(p).get(l).get(0);
+ - le n-ième mot de la p-ième page du manuscrit: texte.get(p).get(0).get(n);
+ - le n-ième mot de la l-ième ligne de la p-ième page du manuscrit: texte.get(p).get(l).get(n);
+ - le n-ième mot du manuscrit: texte.get(0).get(0).get(n);
+ - le n-ième mot de la l-ième ligne du manuscrit: texte.get(0).get(l).get(n);
+ - la l-ième ligne du manuscrit: texte.get(0).get(l).get(0);
+ - tout le manuscrit: texte.get(0).get(0).get(0);
+ 
+ Pour la prochaine fois :
+ 1. Associer à chaque mot son numéro.
+ 
+Information concernant le fonctionnement du programme :
+ 1. Les mots sont classées par espace ou retour à la ligne.
+ 2. Sur la 1ère boucle for, ce n'est pas sur un mot que l'on tombe en premier, mais sur une page : la première !
+    Pourquoi ? Car nous avons déclaré les numéros de page, de ligne et de mot à 0 et non à de "réels" valeurs. Notre premier numéro pour un mot ou une ligne est donc pour nous 010001. Tandis que celui d'une page, nous est 110101. C'est pour ça que l'on est dirigé sur une page et non un mot ou une ligne.
+    Ainsi, en premier, nous ajoutons la première page du manuscrit à l'ArrayList texte !
+    --> On ajoute la page avant d'ajouter son premier mot.
+    Ainsi, on peut, sur les prochaines itérations, faire : texte.size()-1 sans ajouter sur l'index 0 de texte mais bien sur le bon index, la bonne page!
+ */
 
 public class Topdf {
 
@@ -81,6 +103,7 @@ public class Topdf {
                         manuscrit += "\n";
                         manuscrit += eElement.getTextContent();
                         classe_et_prepare_une_ligne(texte);
+                        texte.get(texte.size()-1).add(new ArrayList<String>());
                         texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(eElement.getTextContent());
                     }
                     numero_de_ligne++;
@@ -97,7 +120,9 @@ public class Topdf {
                     else if(PrendreLeMot) {
                         if( page !=0 ) manuscrit += "\n\n";
                         manuscrit += eElement.getTextContent();
-                        classe_et_prepare_une_page(texte);
+                        if( page !=0 ) classe_et_prepare_une_page(texte);
+                        texte.add(new ArrayList<ArrayList<String>>());
+                        texte.get(texte.size()-1).add(new ArrayList<String>());
                         texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(eElement.getTextContent());
                     }
                     page++;
@@ -105,12 +130,25 @@ public class Topdf {
                     numero_de_mot = 1;
                     
                 }
-
             }
         }
+        classe_et_prepare_une_page(texte);
         
-        // texte.add(0, /* tout le texte */);
-        // manuscrit += texte.get(1).get(0).get(0);
+        for (int a = 1, i = 1; a < texte.size(); a++) {
+            for (int c = 1; c < texte.get(a).get(0).size(); c++) {  // Pour: texte.get(0).get(0).get(n); cela affiche le n-ième mot du manuscrit.
+                texte.get(0).get(0).add(texte.get(a).get(0).get(c));
+            }
+            for (int b = 1; b < texte.get(a).size(); b++, i++) {
+                ArrayList<String> ligne = new ArrayList<String>();
+                for (int c = 0; c < texte.get(a).get(b).size(); c++) {
+                    ligne.add(texte.get(a).get(b).get(c)); // Pour: texte.get(0).get(l).get(n); cela affiche le n-ième mot de la l-ième ligne du manuscrit. Et si n = 0 alors cela donne la l-ième ligne du manuscrit.
+                }
+                texte.get(0).add(ligne);
+            }
+        }
+        texte.get(0).get(0).add(0, manuscrit); // Pour: texte.get(0).get(0).get(0); cela affiche tout le manuscrit.
+        
+        manuscrit += "\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1);
         CreerPDF pdf = new CreerPDF(manuscrit, "032");
         pdf.generer();
     }
@@ -154,10 +192,13 @@ public class Topdf {
                 if (partie.getNodeName() == "pb") {
                     manuscript += "\n\n";
                     classe_et_prepare_une_page(texte); // Seulement utile pour l'array texte
+                    texte.add(new ArrayList<ArrayList<String>>());
+                    texte.get(texte.size()-1).add(new ArrayList<String>());
                 }
                 else if (partie.getNodeName() == "lb") {
                     manuscript += "\n";
                     classe_et_prepare_une_ligne(texte); // Seulement utile pour l'array texte
+                    texte.get(texte.size()-1).add(new ArrayList<String>());
                 }
             }
         }
@@ -172,22 +213,19 @@ public class Topdf {
         toute_la_ligne = toute_la_ligne.substring(0, toute_la_ligne.length());
         toute_la_ligne += "\n";
         texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(0, toute_la_ligne);
-        texte.get(texte.size()-1).add(new ArrayList<String>());
     }
     
     static void classe_et_prepare_une_page (ArrayList<ArrayList<ArrayList<String>>> texte) {
+        classe_et_prepare_une_ligne(texte); // Cette instruction est pour ajouter la dernière ligne de la page que l'on vient de terminer.
         ArrayList<String> tmp = new ArrayList<String>();
         String toute_la_page = "\n";
-        for (int i = 0; i < texte.get(texte.size()-1).size()-1; i++) { // Pourquoi on a size()-1 à la fin ?
+        for (int i = 0; i < texte.get(texte.size()-1).size(); i++) {
             toute_la_page += texte.get(texte.size()-1).get(i).get(0);
-            for (int j = 1; j < texte.get(texte.size()-1).get(i).size()-1; j++) {
+            for (int j = 1; j < texte.get(texte.size()-1).get(i).size(); j++) {
                 tmp.add(texte.get(texte.size()-1).get(i).get(j));
             }
         }
         tmp.add(0, toute_la_page);
         texte.get(texte.size()-1).add(0, tmp);
-        texte.add(new ArrayList<ArrayList<String>>());
-        texte.get(texte.size()-1).add(new ArrayList<String>());
     }
-
 }
