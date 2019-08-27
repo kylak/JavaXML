@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.2.26)  19 JUL 2019 15:27
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.2.26)  27 AUG 2019 03:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,11 +719,34 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [335] [336] [337] [338] [339] [340] [341] [342] [343] [344] [345] [346]
 [347] [348] [349] [350] [351] [352] [353] [354] [355] [356] [357] [358]
 [359] [360] [361] [362] [363] [364] [365] [366] [367] [368] [369] [370]
-[371] [372] [373] (./test.aux) ) 
+[371] [372]
+Missing character: There is no N in font KoineGreek/AAT!
+Missing character: There is no : in font KoineGreek/AAT!
+Missing character: There is no 3 in font KoineGreek/AAT!
+Missing character: There is no 7 in font KoineGreek/AAT!
+Missing character: There is no 2 in font KoineGreek/AAT!
+Missing character: There is no N in font KoineGreek/AAT!
+Missing character: There is no ( in font KoineGreek/AAT!
+Missing character: There is no 4 in font KoineGreek/AAT!
+Missing character: There is no é in font KoineGreek/AAT!
+Missing character: There is no v in font KoineGreek/AAT!
+Missing character: There is no ) in font KoineGreek/AAT!
+Missing character: There is no : in font KoineGreek/AAT!
+Missing character: There is no 1 in font KoineGreek/AAT!
+Missing character: There is no 1 in font KoineGreek/AAT!
+Missing character: There is no 1 in font KoineGreek/AAT!
+Missing character: There is no 1 in font KoineGreek/AAT!
+Missing character: There is no 6 in font KoineGreek/AAT!
+
+Overfull \hbox (148.06613pt too wide) in paragraph at lines 15959--15977
+ [] 
+ []
+
+[373] (./test.aux) ) 
 Here is how much of TeX's memory you used:
  16075 strings out of 493591
  309171 string characters out of 6143546
- 338631 words of memory out of 5000000
+ 335631 words of memory out of 5000000
  19357 multiletter control sequences out of 15000+600000
  19419 words of font info for 39 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
