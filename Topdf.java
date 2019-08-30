@@ -20,7 +20,8 @@ import java.util.Arrays;
  8- tout le manuscrit: texte.get(0).get(0).get(0).valeur;
  
  Pour la prochaine fois :
- 1. Associer à chaque mot son numéro en faisant une fonction qui passe de <w> en <w>. Cela nous permettra de récupérer les "milestones". Ensuite ajouter les numéros en même temps qu'on ajoute les valeurs.
+ 0. Résoudre Mt 2:17 et Mt 17:25.
+ 1. Associer à chaque mot son numéro en récupérant les "milestones". Ajouter les numéros en même temps qu'on ajoute les valeurs.
  
 Information concernant le fonctionnement du programme :
  1. Les mots sont classées par espace ou retour à la ligne.
@@ -36,6 +37,14 @@ public class Topdf {
     static class mot {
         String valeur;
         int numero;
+        /*
+         On pourra ajouter d'autres caractèristiques du mot, comme par exemple :
+         - son numéro Strong
+         - si c'est un verbe, un nom, un pronom, un adjectif, etc…
+         - sa conjugaison
+         // ajouter sa position dans le manuscrit grâce à l'ArrayList texte ?
+         Nous pourrons ainsi avoir un code couleur selon certaines de ses propriétés.
+        */
         
         public mot(String m) {
             valeur = m;
@@ -55,12 +64,9 @@ public class Topdf {
         Document document = builder.parse(new File("GA20032.xml"));
         document.getDocumentElement().normalize();
         Element root = document.getDocumentElement();
-
-        // On récupère tous les mots.
-        NodeList nList = document.getElementsByTagName("w");
-        /* NodeList point_de_depart = document.getElementsByTagName("ab");
+        
+        NodeList point_de_depart = document.getElementsByTagName("ab");
         NodeList balises = point_de_depart.item(0).getChildNodes();
-        System.out.println(((Element)balises.item(13)).getAttribute("n")); */
         
         int page = 0;
         int numero_de_ligne = 0;
@@ -72,19 +78,109 @@ public class Topdf {
         ArrayList<mot> ligne1 = new ArrayList<mot>();
         page1.add(ligne1);
         texte.add(page1);
-        for (int temp = 0; temp < nList.getLength(); temp++)
+        boolean in_app = false; // Pour les <rdg> dans les <app>.
+        boolean second_rdg = false;
+        int dernier_indice_du_mot_en_rdg = 0;
+        
+        for (int temp = 0; temp < balises.getLength(); temp++)
         {
-            Node node = nList.item(temp);
-
-            // Pour les corrections scribales
-            boolean PrendreLeMot = ! isTheWordToIgnore(node, FINAL);
             
-            // Pour les nomina sacra
-            Node index = node;
-            nominasacra(index, manuscrit);
-
-            if (node.getNodeType() == Node.ELEMENT_NODE)
-            { // Je n'ai pas trouvé de cas où ça ne rentrait pas dans cette boucle.
+            Node node = balises.item(temp);
+            if(in_app) {
+                temp--;
+                node = balises.item(temp); // Pour les <w> dans les <app>. Nous restons dans <app>.
+            }
+            
+            if (node.getNodeType() == Node.ELEMENT_NODE && ( ((Element)node).getTagName() == "w" || ((Element)node).getTagName() == "app"))
+            {
+                
+                if ( (node.getNodeType() == Node.ELEMENT_NODE && ((Element)node).getTagName() == "app")) {
+                    in_app = true; // Vaudra false au dernier <w> du dernier <rdg> (le 2ème donc).
+                    NodeList balises_dans_app = node.getChildNodes(); // On récupère les balises filles de <app> comme <rdg> par exemple.
+                    int the_rdg_index_we_will_use_now = 0;
+                    int rdg1, rdg2; rdg1 = rdg2 = 0;
+                    for (int i = 0, indice_rdg = 0; i < balises_dans_app.getLength(); i++) { // On passe en revue les balises filles de <app> une par une.
+                        if( (balises_dans_app.item(i).getNodeType() == Node.ELEMENT_NODE) && ( ((Element)balises_dans_app.item(i)).getTagName() == "rdg" ) ) {
+                            indice_rdg++;
+                            if(indice_rdg == 1) rdg1 = i;       // Si on vient d'entrer pour la première fois dans cette balise <app>.
+                            else if (indice_rdg == 2) rdg2 = i;
+                        }
+                    }
+                    if(second_rdg) the_rdg_index_we_will_use_now = rdg2;
+                    else the_rdg_index_we_will_use_now = rdg1;
+                    
+                    NodeList liste_de_mot_dans_le_rdg;
+                    if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
+                        liste_de_mot_dans_le_rdg = (NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now);
+                        
+                        // On passe toute les balises qui ne sont pas <w> comme par exemple <lb> si présente.
+                        while( // Cette condition est sûrement simplifiable.
+                              dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength()
+                              && (
+                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) == null
+                                  ||
+                                  (
+                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
+                                      &&
+                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() != Node.ELEMENT_NODE
+                                   )
+                                  ||
+                                  (
+                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
+                                      &&
+                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
+                                      &&
+                                      ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() != "w"
+                                   )
+                                  )
+                              )
+                        {
+                            dernier_indice_du_mot_en_rdg++;
+                        }
+                        if (dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength() && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null &&  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
+                            node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
+                            dernier_indice_du_mot_en_rdg++;
+                            if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
+                                dernier_indice_du_mot_en_rdg = 0;
+                                if (!second_rdg) {
+                                    second_rdg = true;
+                                }
+                                else {
+                                    in_app = false;
+                                    second_rdg = false;
+                                }
+                            }
+                        }
+                        else if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // Si nous sommes arrivé à la fin sans avoir trouvé de <w>.
+                            dernier_indice_du_mot_en_rdg = 0;
+                            if (!second_rdg) { // Si ce <rdg> n'est pas le dernier de <app>
+                                // On sort du <rdg> et on va au premier <w> du second <rdg>.
+                                second_rdg = true;
+                            }
+                            else if (second_rdg) { // Sinon
+                                // On sort de <app> et on va au <w> suivant.
+                                // System.out.println("Test");
+                                second_rdg = false;
+                                in_app = false;
+                            }
+                            continue;
+                        }
+                    }
+                    else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
+                        // Le code ci-dessous est expliqué ci-dessus.
+                        dernier_indice_du_mot_en_rdg = 0;
+                        if (!second_rdg) second_rdg = true;
+                        else if (second_rdg) { second_rdg = false; in_app = false; }
+                        continue;
+                    }
+                }
+                
+                // Pour les corrections scribales
+                boolean PrendreLeMot = ! isTheWordToIgnore(node, FINAL);
+                
+                // Pour les nomina sacra
+                Node index = node;
+                nominasacra(index, manuscrit);
                 
                 Element eElement = (Element) node;
 
@@ -105,7 +201,6 @@ public class Topdf {
                     }
                     if(PrendreLeMot) {
                         manuscrit += eElement.getTextContent();
-                        // AJOUTER NUMÉRO ICI.
                         texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent())); // On ajoute le mot sur la dernière ligne qu'on ait de la dernière page "écrite".
                     }
                     numero_de_mot++;
@@ -167,7 +262,7 @@ public class Topdf {
         }
         texte.get(0).get(0).add(0, new mot(manuscrit)); // Pour: texte.get(0).get(0).get(0); cela affiche tout le manuscrit.
         
-        manuscrit += "\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1);
+        System.out.println("\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1));
         CreerPDF pdf = new CreerPDF(manuscrit, "032");
         pdf.generer();
     }
