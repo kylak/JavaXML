@@ -4,4 +4,3 @@ page 124 à la ligne 9, "λεγι αυτη ο ισ πιστευε μοι γυν�
 38 caractères sans les espaces.
 
 Par défaut, ne pas compter les espaces (et l'indiquer) car je n'ai pas trouvé un espace dans le manuscrit.
-
