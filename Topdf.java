@@ -19,9 +19,10 @@ import java.util.Arrays;
  7- la l-ième ligne du manuscrit: texte.get(0).get(l).get(0).valeur;
  8- tout le manuscrit: texte.get(0).get(0).get(0).valeur;
  
+ Pour avoir accès à d'autres propriétés d'un mot voir la classe mot.java .
+ 
  Pour la prochaine fois :
- 0. Résoudre Mt 2:17 et Mt 17:25.
- 1. Associer à chaque mot son numéro en récupérant les "milestones". Ajouter les numéros en même temps qu'on ajoute les valeurs.
+ 1. Résoudre Mt 2:17 et Mt 17:25.
  
 Information concernant le fonctionnement du programme :
  1. Les mots sont classées par espace ou retour à la ligne.
@@ -34,29 +35,7 @@ Information concernant le fonctionnement du programme :
 
 public class Topdf {
     
-    static class mot {
-        String valeur;
-        int numero;
-        /*
-         On pourra ajouter d'autres caractèristiques du mot, comme par exemple :
-         - son numéro Strong
-         - si c'est un verbe, un nom, un pronom, un adjectif, etc…
-         - sa conjugaison
-         // ajouter sa position dans le manuscrit grâce à l'ArrayList texte ?
-         Nous pourrons ainsi avoir un code couleur selon certaines de ses propriétés.
-        */
-        
-        public mot(String m) {
-            valeur = m;
-        }
-        
-        public mot(String m, int n) {
-            valeur = m;
-            numero = n;
-        }
-    }
     
-
     public static void main(String[] args) throws ParserConfigurationException, SAXException, DocumentException, IOException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -78,9 +57,15 @@ public class Topdf {
         ArrayList<mot> ligne1 = new ArrayList<mot>();
         page1.add(ligne1);
         texte.add(page1);
-        boolean in_app = false; // Pour les <rdg> dans les <app>.
+        
+        // Pour les <w> dans les <app>.
+        boolean in_app = false;
         boolean second_rdg = false;
         int dernier_indice_du_mot_en_rdg = 0;
+        
+        // Pour les numéros de mot.
+        String milestone = "000000";
+        String pos_in_milestone = "00";
         
         for (int temp = 0; temp < balises.getLength(); temp++)
         {
@@ -89,6 +74,13 @@ public class Topdf {
             if(in_app) {
                 temp--;
                 node = balises.item(temp); // Pour les <w> dans les <app>. Nous restons dans <app>.
+            }
+            
+            if (node.getNodeType() == Node.ELEMENT_NODE && ((Element)node).getTagName() == "milestone") { // Pour gérer les numéros de verset.
+                
+                // On met à jour le numéro du milestone et sa position.
+                milestone = ((Element)node).getAttribute("n");
+                pos_in_milestone = "01";
             }
             
             if (node.getNodeType() == Node.ELEMENT_NODE && ( ((Element)node).getTagName() == "w" || ((Element)node).getTagName() == "app"))
@@ -182,6 +174,9 @@ public class Topdf {
                 Node index = node;
                 nominasacra(index, manuscrit);
                 
+                // Générer "le numéro du mot".
+                String numeroDuMot = milestone + pos_in_milestone;
+                
                 Element eElement = (Element) node;
 
                 int prochain_numero_de_mot = numero_de_mot + 1;
@@ -201,7 +196,7 @@ public class Topdf {
                     }
                     if(PrendreLeMot) {
                         manuscrit += eElement.getTextContent();
-                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent())); // On ajoute le mot sur la dernière ligne qu'on ait de la dernière page "écrite".
+                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent(), numeroDuMot)); // On ajoute le mot sur la dernière ligne qu'on ait de la dernière page "écrite".
                     }
                     numero_de_mot++;
                     
@@ -211,14 +206,14 @@ public class Topdf {
                 else if(eElement.getAttribute("n").equals(prochaine_ligne)) {
                     
                     if(eElement.getElementsByTagName("lb").getLength() == 1 ) {
-                         manuscrit = mot_coupe(eElement, PrendreLeMot, manuscrit, texte);
+                         manuscrit = mot_coupe(eElement, PrendreLeMot, manuscrit, texte, numeroDuMot);
                     }
                     else if(PrendreLeMot) {
                         manuscrit += "\n";
                         manuscrit += eElement.getTextContent();
                         classe_et_prepare_une_ligne(texte);
                         texte.get(texte.size()-1).add(new ArrayList<mot>());
-                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent()));
+                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent(), numeroDuMot));
                     }
                     numero_de_ligne++;
                     numero_de_mot = 1;
@@ -229,7 +224,7 @@ public class Topdf {
                 else if(eElement.getAttribute("n").equals(prochaine_page)) {
                     
                     if(eElement.getElementsByTagName("pb").getLength() == 1 ) {
-                        manuscrit = mot_coupe(eElement, PrendreLeMot, manuscrit, texte);
+                        manuscrit = mot_coupe(eElement, PrendreLeMot, manuscrit, texte, numeroDuMot);
                     }
                     else if(PrendreLeMot) {
                         if( page !=0 ) manuscrit += "\n\n";
@@ -237,20 +232,24 @@ public class Topdf {
                         if( page !=0 ) classe_et_prepare_une_page(texte);
                         texte.add(new ArrayList<ArrayList<mot>>());
                         texte.get(texte.size()-1).add(new ArrayList<mot>());
-                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent()));
+                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent(), numeroDuMot));
                     }
                     page++;
                     numero_de_ligne = 1;
                     numero_de_mot = 1;
                     
                 }
+                
+                // On incrémente la position du milestone.
+                int tmp = Integer.parseInt(pos_in_milestone);
+                pos_in_milestone = String.format("%02d", (tmp+1));
             }
         }
         classe_et_prepare_une_page(texte);
         
         for (int a = 1, i = 1; a < texte.size(); a++) {
             for (int c = 1; c < texte.get(a).get(0).size(); c++) {  // Pour: texte.get(0).get(0).get(n); cela affiche le n-ième mot du manuscrit.
-                texte.get(0).get(0).add(new mot(texte.get(a).get(0).get(c).valeur));
+                texte.get(0).get(0).add(new mot(texte.get(a).get(0).get(c).valeur, texte.get(a).get(0).get(c).numero));
             }
             for (int b = 1; b < texte.get(a).size(); b++, i++) {
                 ArrayList<mot> ligne = new ArrayList<mot>();
@@ -260,10 +259,10 @@ public class Topdf {
                 texte.get(0).add(ligne);
             }
         }
-        texte.get(0).get(0).add(0, new mot(manuscrit)); // Pour: texte.get(0).get(0).get(0); cela affiche tout le manuscrit.
+        texte.get(0).get(0).add(0, new mot(manuscrit, texte.get(1).get(0).get(1).numero)); // Pour: texte.get(0).get(0).get(0); cela affiche tout le manuscrit.
         
-        System.out.println("\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1));
-        CreerPDF pdf = new CreerPDF(manuscrit, "032");
+        System.out.println("Informations:\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1));
+        CreerPDF pdf = new CreerPDF(texte, "032");
         pdf.generer();
     }
 
@@ -288,19 +287,19 @@ public class Topdf {
         return (given.getParentNode().getNodeName() == "rdg" && ( (Element) given.getParentNode() ).getAttribute("type").equals("orig") && ( (Element) given.getParentNode().getPreviousSibling() ).getAttribute("type").equals("corr") && finalMode);
     }
     
-    static String mot_coupe (Element eElement, boolean PrendreLeMot, String manuscript, ArrayList<ArrayList<ArrayList<mot>>> texte) {
+    static String mot_coupe (Element eElement, boolean PrendreLeMot, String manuscript, ArrayList<ArrayList<ArrayList<mot>>> texte, String numeroDuMot) {
         NodeList parties = eElement.getChildNodes();
         if(PrendreLeMot) manuscript += " ";
         for (int a = 0; a < parties.getLength(); a++) {
             Node partie = parties.item(a);
             manuscript += partie.getTextContent(); // Pour les parties qui sont entre balises par exemple : <unclear> (voir le α de ιακωβ à la ligne 2 de la page 1).
-            if( a == 0 ) texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(partie.getTextContent()));
+            if( a == 0 ) texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(partie.getTextContent(), numeroDuMot));
             else if (texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size()-1 >= 0) {
                 texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).set(
-                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size()-1, new mot( texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).get(texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size()-1).valeur + partie.getTextContent())
+                        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size()-1, new mot( texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).get(texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size()-1).valeur + partie.getTextContent(), numeroDuMot)
                 );
             }
-            else texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(partie.getTextContent()));
+            else texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(partie.getTextContent(), numeroDuMot));
             if (PrendreLeMot && partie.getNodeType() == Node.ELEMENT_NODE) // Quand on arrive à l'intersection d'une nouvelle ligne (<lb/>) ou page (<pb/>) ("ELEMENT_NODE").
             {
                 if (partie.getNodeName() == "pb") {
@@ -324,9 +323,8 @@ public class Topdf {
         for (int j = 0; j <  texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).size(); j++) {
             toute_la_ligne += texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).get(j).valeur + " ";
         }
-        toute_la_ligne = toute_la_ligne.substring(0, toute_la_ligne.length());
-        toute_la_ligne += "\n";
-        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(0, new mot(toute_la_ligne));
+        toute_la_ligne = toute_la_ligne.substring(0, toute_la_ligne.length()-1);
+        texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(0, new mot(toute_la_ligne, texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).get(0).numero));
     }
     
     static void classe_et_prepare_une_page (ArrayList<ArrayList<ArrayList<mot>>> texte) {
@@ -336,10 +334,10 @@ public class Topdf {
         for (int i = 0; i < texte.get(texte.size()-1).size(); i++) {
             toute_la_page += texte.get(texte.size()-1).get(i).get(0);
             for (int j = 1; j < texte.get(texte.size()-1).get(i).size(); j++) {
-                tmp.add(new mot(texte.get(texte.size()-1).get(i).get(j).valeur));
+                tmp.add(new mot(texte.get(texte.size()-1).get(i).get(j).valeur, texte.get(texte.size()-1).get(i).get(j).numero));
             }
         }
-        tmp.add(0, new mot(toute_la_page));
+        tmp.add(0, new mot(toute_la_page, texte.get(texte.size()-1).get(0).get(0).numero));
         texte.get(texte.size()-1).add(0, tmp);
     }
 }
