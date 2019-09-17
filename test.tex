@@ -7,10 +7,11 @@
  \usepackage{lmodern}
  \usepackage{array}
  \usepackage{verbatim}
- \title{{\myfont GA 032}}
+ \title{{\myfont ``GA 032''}}
  \usepackage{layout}
  \usepackage[nomarginpar, margin=0.7in]{geometry}
  \pagestyle{plain}
+
  \usepackage{polyglossia}
  \setmainlanguage{french}
  \setotherlanguage{greek}
@@ -20,16 +21,38 @@
 \def\textoverline#1{\savebox\TBox{#1}%
 \makebox[0pt][l]{#1}\rule[1.1\ht\TBox]{\wd\TBox}{0.7pt}}
  % amélioration : ajouter un "padding" sur le tabular + agrandir le tabular et son contenu.
+
+\usepackage{pageslts}
+\usepackage{fancyhdr}
 \makeatletter
 \newcommand{\nospace}[1]{\nofrench@punctuation\texttt{#1}\french@punctuation}
 \makeatother
 \let\oldtabular\tabular\renewcommand{\tabular}{\large\selectfont\oldtabular} %fontsize{17pt}{20.5pt}
-\usepackage[table]{xcolor}
+
+\usepackage[hidelinks]{hyperref}
+
+\newcounter{gospelbook}
+\setcounter{gospelbook}{1}
+\newcommand{\mygospelbook}[1]
+{\setcounter{gospelchapter}{1}\phantomsection\addcontentsline{toc}{part}{#1}#1}
+
+
+\newcommand{\agospelbook}[1]{\addtocontents{toc}{\protect\newpage}\mygospelbook{#1}}
+
+\newcounter{gospelchapter}
+\newcommand{\mygospelchapter}{\phantomsection\addcontentsline{toc}{section}{\thegospelchapter}\LARGE\bfseries\thegospelchapter\refstepcounter{gospelchapter}}
+
+
 \begin{document}
+\renewcommand{\contentsname}{Sommaire}
 \font\myfont=cmr12 at 21pt 
 %\layout
- \maketitle
+ \maketitle % affiche le nom du manuscrit.
+\pagenumbering{roman}
 \thispagestyle{empty}\clearpage\setcounter{page}{1}
+\newpage
+\foreignlanguage{greek}{\tableofcontents}
+\clearpage\pagenumbering{arabic}\setcounter{page}{1}
 \clearpage
 \newpage
  {
@@ -38,11 +61,11 @@
 \begin{center}
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
-\multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
+\multicolumn{7}{c}{\mygospelbook{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{1}\par} &  & \foreignlanguage{greek}{βιβλοϲ γενεϲεωϲ \textoverline{ιυ} \textoverline{χυ} υιου δαυειδ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{βιβλοϲ γενεϲεωϲ \textoverline{ιυ} \textoverline{χυ} υιου δαυειδ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{υιου αβρααμ αβρααμ εγεννηϲεν τον} & 3 & \textbf{2} &  \\
 &  & 4 & \foreignlanguage{greek}{ιϲαακ ιϲαακ δε εγεννηϲεν τον ια} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{κωβ ιακωβ δε εγεννηϲεν τον ιουδαν} & 14 &  &  \\
@@ -161,7 +184,7 @@
 &  & 4 & \foreignlanguage{greek}{την εωϲ ου ετεκεν τον υιον αυτηϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{τον πρωτοτοκον και εκαλεϲεν το} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{ονομα αυτου \textoverline{ιν}} & 18 &  &  \\
-& {\LARGE\textbf{2}\par} &  & \foreignlanguage{greek}{του δε \textoverline{ιυ} γεννηθεντοϲ εν βηθλεεμ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{του δε \textoverline{ιυ} γεννηθεντοϲ εν βηθλεεμ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{τηϲ ιουδαιαϲ εν ημεραιϲ ηρωδου του} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{βαϲιλεωϲ ιδου μαγοι απο ανατο} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{λων παρεγενοντο ειϲ ιερουϲαλημ} & 20 &  &  \\
@@ -303,7 +326,7 @@
 &  & 6 & \foreignlanguage{greek}{γομενην ναζαρετ οπωϲ πληρω} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{θη το ρηθεν δια των προφητων} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{οτι ναζωρεοϲ κληθηϲεται} & 17 &  &  \\
-& {\LARGE\textbf{3}\par} &  & \foreignlanguage{greek}{εν δε ταιϲ ημεραιϲ εκειναιϲ παραγει} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν δε ταιϲ ημεραιϲ εκειναιϲ παραγει} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{νεται ιωαννηϲ ο βαπτιϲτηϲ κηρυϲ} & 10 &  &  \\
 &  & 10 & \foreignlanguage{greek}{ϲων εν τη ερημω τηϲ ιουδαιαϲ και} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{λεγων μετανοειται ηγγεικε̅} & 4 &  &  \\
@@ -403,7 +426,7 @@
 & \textbf{17} &  & \foreignlanguage{greek}{και ιδου φωνη εκ του ουρανου λεγου} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ϲα ουτοϲ εϲτιν ο υιοϲ μου ο αγαπη} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{τοϲ εν ω ηυδοκηϲα} & 17 &  &  \\
-& {\LARGE\textbf{4}\par} &  & \foreignlanguage{greek}{τοτε ο \textoverline{ιϲ} ανηχθη ειϲ την ερημον υπο} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τοτε ο \textoverline{ιϲ} ανηχθη ειϲ την ερημον υπο} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{του \textoverline{πνϲ} πιραϲθηναι υπο του διαβολου} & 14 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και νηϲτευϲαϲ ημεραϲ τεϲϲαρακοντα} & 4 &  &  \\
 &  & 5 & \foreignlanguage{greek}{και νυκταϲ τεϲϲαρακοντα υϲτερον} & 8 &  &  \\
@@ -531,7 +554,7 @@
 &  & 6 & \foreignlanguage{greek}{απο τηϲ γαλιλαιαϲ και δεκαπολεωϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{και ιεροϲολυμων και ιουδαιαϲ και} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{περαν του ιορδανου} & 18 &  &  \\
-& {\LARGE\textbf{5}\par} &  & \foreignlanguage{greek}{ιδων δε τουϲ οχλουϲ ανεβη ειϲ το οροϲ} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ιδων δε τουϲ οχλουϲ ανεβη ειϲ το οροϲ} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{και καθειϲαντοϲ αυτου προϲηλθον} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{αυτω οι μαθηται αυτου και ανοιξαϲ} & 2 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{το ϲτομα αυτου εδιδαϲκεν αυτουϲ λεγω̅} & 8 &  &  \\
@@ -764,7 +787,7 @@
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
 &  & 8 & \foreignlanguage{greek}{υμων ο ουρανιοιϲ τελιοϲ εϲτιν} & 12 &  &  \\
-& {\LARGE\textbf{6}\par} &  & \foreignlanguage{greek}{προϲεχετε την ελεημοϲυνην υμων} & 4 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{προϲεχετε την ελεημοϲυνην υμων} & 4 &  &  \\
 &  & 5 & \foreignlanguage{greek}{μη ποιειν εμπροϲθεν των ανθρωπω̅} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{προϲ το θεαθηναι αυτοιϲ ει δε μη γε} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{μιϲθον ουκ εχεται παρα τω \textoverline{πρι} υμων} & 24 &  &  \\
@@ -956,7 +979,7 @@
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
 &  & 12 & \foreignlanguage{greek}{αρκετον τη ημερα η κακεια αυτηϲ} & 17 &  &  \\
-& {\LARGE\textbf{7}\par} &  & \foreignlanguage{greek}{μη κρινεται ινα μη κριθηται εν ω γαρ} & 3 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{μη κρινεται ινα μη κριθηται εν ω γαρ} & 3 &  &  \\
 &  & 4 & \foreignlanguage{greek}{κριματι κρινεται κριθηϲεϲθαι και} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{εν ω μετρω μετριται μετρηθηϲεται} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{υμιν} & 13 &  &  \\
@@ -1106,7 +1129,7 @@
 &  & 13 & \foreignlanguage{greek}{επι τη διδαχη αυτου ην γαρ διδαϲκω̅} & 3 & \textbf{29} &  \\
 &  & 4 & \foreignlanguage{greek}{αυτουϲ ωϲ εξουϲιαν εχων και ουχ ωϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{οι γραμματειϲ αυτων ϗ οι φαριϲαιοι} & 16 &  &  \\
-& {\LARGE\textbf{8}\par} &  & \foreignlanguage{greek}{καταβαντοϲ δε αυτου απο του ορουϲ η} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{καταβαντοϲ δε αυτου απο του ορουϲ η} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{κολουθηϲαν αυτω οχλοι πολλοι} & 10 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και ιδου λεπροϲ ελθων προϲεκυνει αυ} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{τω λεγων \textoverline{κε} εαν θεληϲ δυναϲαι με} & 12 &  &  \\
@@ -1267,7 +1290,7 @@
 &  & 8 & \foreignlanguage{greek}{ϲυναντηϲιν τω \textoverline{ιυ} και ιδοντεϲ αυ} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{τον παρεκαλεϲαν ινα μεταβη α} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{πο των οριων αυτων} & 20 &  &  \\
-& {\LARGE\textbf{9}\par} &  & \foreignlanguage{greek}{και ενβαϲ ειϲ το πλοιον διεπεραϲεν} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και ενβαϲ ειϲ το πλοιον διεπεραϲεν} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{και ηλθεν ειϲ την ιουδαιαν πολιν} & 12 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και ιδου προϲεφερον αυτω παραλυ} & 5 &  &  \\
 &  & 5 & \foreignlanguage{greek}{τικον επι κλεινηϲ βεβλημενον} & 8 &  &  \\
@@ -1463,7 +1486,7 @@
 &  & 8 & \foreignlanguage{greek}{θεριϲμοϲ πολυϲ οι δε εργατε ολειγοι} & 13 &  &  \\
 & \textbf{38} &  & \foreignlanguage{greek}{δεηθηται ουν του \textoverline{κυ} του θεριϲμου} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{οπωϲ εκβαλη εργαταϲ ειϲ τον θεριϲμο̅} & 12 &  &  \\
-&  & 13 & \foreignlanguage{greek}{αυτου και προϲκαλεϲαμενοϲ} & 2 & {\LARGE\textbf{10}\par} &  \\
+&  & 13 & \foreignlanguage{greek}{αυτου και προϲκαλεϲαμενοϲ} & 2 & \mygospelchapter &  \\
 &  & 3 & \foreignlanguage{greek}{τουϲ δωδεκα μαθηταϲ αυτου εδω} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{κεν αυτοιϲ εξουϲιαν πνευματων} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{ακαθαρτων ωϲτε εκβαλλιν αυτα} & 14 &  &  \\
@@ -1690,7 +1713,7 @@
 &  & 9 & \foreignlanguage{greek}{ριον ψυχρου μονον ειϲ ονομα μαθη} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{του αμην λεγω υμιν ου μη απολε} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{ϲη τον μιϲθον αυτου} & 23 &  &  \\
-& {\LARGE\textbf{11}\par} &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} διαταϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} διαταϲ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ϲων τοιϲ δωδεκα μαθηταιϲ αυτου} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{μετεβη εκειθεν του διδαϲκειν και} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{κηρυϲϲιν εν ταιϲ πολεϲιν αυτων} & 21 &  &  \\
@@ -1839,7 +1862,7 @@
 &  & 19 & \foreignlanguage{greek}{ϲεται αναπαυϲιν ταιϲ ψυχαιϲ υμων} & 23 &  &  \\
 & \textbf{30} &  & \foreignlanguage{greek}{ο γαρ ζυγοϲ μου χρηϲτοϲ και το φορ} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{τιον μου ελαφρον εϲτιν} & 11 &  &  \\
-& {\LARGE\textbf{12}\par} &  & \foreignlanguage{greek}{εν εκεινω τω καιρω επορευθη ο \textoverline{ιϲ} ε̅} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν εκεινω τω καιρω επορευθη ο \textoverline{ιϲ} ε̅} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{τοιϲ ϲαββαϲιν δια των ϲποριμων} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{οι δε μαθηται αυτου επιναϲαν και ηρ} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{ξαντο τιλλιν τουϲ ϲταχυαϲ και ε} & 25 &  &  \\
@@ -2113,7 +2136,7 @@
 & \textbf{50} &  & \foreignlanguage{greek}{οϲτιϲ γαρ αν ποιηϲη το θελημα του} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{\textoverline{πρϲ} μου του εν ουρανοιϲ αυτοϲ μου} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{αδελφοϲ και αδελφη κα \textoverline{μηρ} εϲτι̅} & 20 &  &  \\
-& {\LARGE\textbf{13}\par} &  & \foreignlanguage{greek}{εν δε τη ημερα εκεινη εξελθων ο \textoverline{ιϲ}} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν δε τη ημερα εκεινη εξελθων ο \textoverline{ιϲ}} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{απο τηϲ οικειαϲ εκαθητο παρα την} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{θαλαϲϲαν και ϲυνηχθηϲαν προϲ αυ} & 4 & \textbf{2} &  \\
 &  & 4 & \foreignlanguage{greek}{τον οχλοι πολλοι ωϲτε αυτον ειϲ} & 9 &  &  \\
@@ -2424,7 +2447,7 @@
 &  & 19 & \foreignlanguage{greek}{αυτου και εν τη οικεια αυτου} & 24 &  &  \\
 & \textbf{58} &  & \foreignlanguage{greek}{και ουκ εποιηϲεν εκει δυναμειϲ πολ} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{λαϲ δια την απιϲτιαν αυτων} & 10 &  &  \\
-& {\LARGE\textbf{14}\par} &  & \foreignlanguage{greek}{εν εκεινω τω καιρω ηκουϲεν ηρωδηϲ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν εκεινω τω καιρω ηκουϲεν ηρωδηϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ο τετραρχηϲ την ακοην \textoverline{ιυ} και ειπε̅} & 2 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{τοιϲ παιϲιν αυτου ουτοϲ εϲτιν ιωαννηϲ} & 8 &  &  \\
 [0.2em]
@@ -2603,7 +2626,7 @@
 &  & 3 & \foreignlanguage{greek}{αυτον ινα μονον αψωνται του} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{κραϲπεδου του ιματιου αυτου και ο} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ϲοι ηψαντο διελωθηϲαν} & 15 &  &  \\
-& {\LARGE\textbf{15}\par} &  & \foreignlanguage{greek}{τοτε προϲερχονται τω \textoverline{ιυ} οι απο ιερο} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τοτε προϲερχονται τω \textoverline{ιυ} οι απο ιερο} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ϲολυμων γραμματιϲ και φαριϲαιοι} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{λεγοντεϲ δια τι οι μαθηται ϲου} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{παραβαινουϲιν την παραδοϲιν τω̅} & 9 &  &  \\
@@ -2791,7 +2814,7 @@
 &  & 8 & \foreignlanguage{greek}{γυναικων και παιδιων} & 10 &  &  \\
 & \textbf{39} &  & \foreignlanguage{greek}{και απολυϲαϲ τουϲ οχλουϲ ανεβη ειϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{το πλοιον και ηλθεν ειϲ τα ορια μα} & 14 &  &  \\
-&  & 14 & \foreignlanguage{greek}{γδαλαν και προϲελθοντεϲ οι φα} & 4 & {\LARGE\textbf{16}\par} &  \\
+&  & 14 & \foreignlanguage{greek}{γδαλαν και προϲελθοντεϲ οι φα} & 4 & \mygospelchapter &  \\
 &  & 4 & \foreignlanguage{greek}{ριϲαιοι και ϲαδδουκεοι πειραζοντεϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{επηρωτηϲαν αυτον ϲημιον εκ του} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ουρανου επιδειξαι αυτοιϲ} & 15 &  &  \\
@@ -2938,7 +2961,7 @@
 &  & 7 & \foreignlanguage{greek}{τεϲ οιτινεϲ ου μη γευϲωνται θανατου} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{εωϲ αν ιδωϲιν τον υιον του \textoverline{ανου} ερ} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{χομενον εν τη βαϲιλεια αυτου} & 24 &  &  \\
-& {\LARGE\textbf{17}\par} &  & \foreignlanguage{greek}{και μεθ ημεραϲ εξ παραλαμβανει ο \textoverline{ιϲ}} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και μεθ ημεραϲ εξ παραλαμβανει ο \textoverline{ιϲ}} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{τον πετρον και ιακωβον και ιωαν} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{νην τον αδελφον αυτου και ανα} & 18 &  &  \\
 &  & 18 & \foreignlanguage{greek}{φερει αυτουϲ ειϲ οροϲ υψηλον κατ ιδι} & 24 &  &  \\
@@ -3083,7 +3106,7 @@
 &  & 14 & \foreignlanguage{greek}{τον ιχθυν αρον και ανοιξαϲ το ϲτο} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{μα αυτου ευρηϲειϲ ϲτατηρα εκεινο̅} & 24 &  &  \\
 &  & 25 & \foreignlanguage{greek}{λαβων δοϲ αυτοιϲ αντι εμου και ϲου} & 31 &  &  \\
-& {\LARGE\textbf{18}\par} &  & \foreignlanguage{greek}{εν εκεινη τη ωρα προϲηλθον οι μαθη} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν εκεινη τη ωρα προϲηλθον οι μαθη} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ται τω \textoverline{ιυ} λεγοντεϲ τιϲ αρα μιζων ε} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{ϲτιν εν τη βαϲιλεια των ουρανων} & 19 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και προϲκαλεϲαμενοϲ ο \textoverline{ιϲ} παιδιον} & 5 &  &  \\
@@ -3278,7 +3301,7 @@
 &  & 12 & \foreignlanguage{greek}{αφηται εκαϲτοϲ τω αδελφω αυτου} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{απο των καρδιων υμων τα παρα} & 22 &  &  \\
 &  & 22 & \foreignlanguage{greek}{πτωματα αυτων} & 23 &  &  \\
-& {\LARGE\textbf{19}\par} &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} τουϲ λο} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} τουϲ λο} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{γουϲ τουτουϲ μετηρεν απο τηϲ γαλι} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{λαιαϲ και ηλθεν ειϲ τα ορια τηϲ ιου} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{δαιαϲ περαν του ιορδανου και ηκο} & 2 & \textbf{2} &  \\
@@ -3432,7 +3455,7 @@
 &  & 27 & \foreignlanguage{greek}{ζωην αιωνιον κληρονομηϲει} & 29 &  &  \\
 & \textbf{30} &  & \foreignlanguage{greek}{πολλοι δε εϲονται πρωτοι εϲχατοι} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{και εϲχατοι εϲονται πρωτοι} & 9 &  &  \\
-& {\LARGE\textbf{20}\par} &  & \foreignlanguage{greek}{οιμοια γαρ εϲτιν η βαϲιλεια των ουρα} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{οιμοια γαρ εϲτιν η βαϲιλεια των ουρα} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{νων \textoverline{ανω} οικοδεϲποτη οϲτιϲ εξηλθε̅} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{αμα πρωει μιϲθωϲαϲθαι εργαταϲ ειϲ το̅} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{αμπελωνα αυτου ϲυμφωνηϲαϲ δε} & 2 & \textbf{2} &  \\
@@ -3609,7 +3632,7 @@
 &  & 5 & \foreignlanguage{greek}{ηψατο των οφθαλμων αυτων και ευθε} & 10 &  &  \\
 &  & 10 & \foreignlanguage{greek}{ωϲ ανεβλεψαν αυτων οι οφθαλμοι και η} & 16 &  &  \\
 &  & 16 & \foreignlanguage{greek}{κολουθηϲαν αυτω} & 17 &  &  \\
-& {\LARGE\textbf{21}\par} &  & \foreignlanguage{greek}{και οτε ηγγιϲαν ειϲ ιεροϲολυμα και ηλθε̅} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και οτε ηγγιϲαν ειϲ ιεροϲολυμα και ηλθε̅} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ειϲ βηθϲφαγη προϲ το οροϲ των ελεων} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{τοτε ο \textoverline{ιϲ} απεϲτιλεν δυο μαθηταϲ λεγω̅} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{αυτοιϲ πορευθηται ειϲ την κωμην} & 6 &  &  \\
@@ -3857,7 +3880,7 @@
 &  & 12 & \foreignlanguage{greek}{οτι περι αυτων λεγει και ζητουν} & 2 & \textbf{46} &  \\
 &  & 2 & \foreignlanguage{greek}{τεϲ αυτον κρατηϲαι εφοβηθηϲαν τουϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{οχλουϲ επειδη ωϲ προφητην αυτον ειχο̅} & 12 &  &  \\
-& {\LARGE\textbf{22}\par} &  & \foreignlanguage{greek}{και αποκριθειϲ ο \textoverline{ιϲ} ειπεν αυτοιϲ εν πα} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και αποκριθειϲ ο \textoverline{ιϲ} ειπεν αυτοιϲ εν πα} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ραβολαιϲ λεγων ομοιωθη η βαϲιλεια} & 3 & \textbf{2} &  \\
 &  & 4 & \foreignlanguage{greek}{των ουρανων \textoverline{ανω} βαϲιλει οϲτιϲ ε} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{ποιηϲεν γαμουϲ τω υιω αυτου και απε} & 2 & \textbf{3} &  \\
@@ -4043,7 +4066,7 @@
 &  & 4 & \foreignlanguage{greek}{αυτω αποκριθηναι λογον ουδε ετολ} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{μηϲεν τιϲ απ εκεινηϲ τηϲ ωραϲ επερω} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{τηϲαι αυτον ουκετι} & 16 &  &  \\
-& {\LARGE\textbf{23}\par} &  & \foreignlanguage{greek}{τοτε \textoverline{ιϲ} ελαληϲεν τοιϲ οχλοιϲ και τοιϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τοτε \textoverline{ιϲ} ελαληϲεν τοιϲ οχλοιϲ και τοιϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{μαθηταιϲ αυτου λεγων επι τηϲ μω} & 4 & \textbf{2} &  \\
 &  & 4 & \foreignlanguage{greek}{υϲεωϲ καθεδραϲ εκαθειϲαν οι γραμμα} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{τιϲ και οι φαριϲαιοι παντα ουν οϲα εαν} & 4 & \textbf{3} &  \\
@@ -4240,7 +4263,7 @@
 &  & 5 & \foreignlanguage{greek}{οικοϲ υμων ερημοϲ λεγω γαρ υμιν} & 3 & \textbf{39} &  \\
 &  & 4 & \foreignlanguage{greek}{ου μη με ιδηται απ αρτι εωϲ αν ειπηται} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ευλογημενοϲ ο ερχομενοϲ εν ονοματι \textoverline{κυ}} & 18 &  &  \\
-& {\LARGE\textbf{24}\par} &  & \foreignlanguage{greek}{και εξελθων ο \textoverline{ιϲ} επορευετο απο του ιερου} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εξελθων ο \textoverline{ιϲ} επορευετο απο του ιερου} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{και προϲηλθον οι μαθηται αυτου επι} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{δειξαι αυτω ταϲ οικοδομαϲ του ιερου} & 19 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{ο δε \textoverline{ιϲ} ειπεν αυτοιϲ ου βλεπεται παν} & 8 &  &  \\
@@ -4471,7 +4494,7 @@
 & \textbf{51} &  & \foreignlanguage{greek}{και διχοτομηϲει αυτον και το μεροϲ αυ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{του μετα των υποκριτων θηϲει εκει εϲτε} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{ο κλαυθμοϲ και ο βρυγμοϲ των οδοντων} & 20 &  &  \\
-& {\LARGE\textbf{25}\par} &  & \foreignlanguage{greek}{τοτε ωμοιωθη η βαϲιλεια των ουρανων} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τοτε ωμοιωθη η βαϲιλεια των ουρανων} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{δεκα παρθενοιϲ αιτινεϲ λαβουϲαι ταϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{λαμπαδαϲ αυτων εξηλθον ειϲ απαντη} & 16 &  &  \\
 &  & 16 & \foreignlanguage{greek}{ϲιν του νυμφιου πεντε δε ηϲαν εξ αυ} & 5 & \textbf{2} &  \\
@@ -4673,7 +4696,7 @@
 &  & 13 & \foreignlanguage{greek}{των των ελαχιϲτων ουδε εμοι εποιηϲατε} & 18 &  &  \\
 & \textbf{46} &  & \foreignlanguage{greek}{και απελευϲονται ουτοι ει κολαϲιν αι} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{ωνιον οι δε δικαιοι ειϲ ζωην αιωνιον} & 12 &  &  \\
-& {\LARGE\textbf{26}\par} &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} πανταϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο οτε ετελεϲεν ο \textoverline{ιϲ} πανταϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{τουϲ λογουϲ τουϲ ειπεν τοιϲ μαθηταιϲ} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{αυτου οιδατε οτι μετα ημεραϲ δυο} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{το παϲχα γεινεται και ο υιοϲ του \textoverline{ανου}} & 13 &  &  \\
@@ -5016,7 +5039,7 @@
 &  & 9 & \foreignlanguage{greek}{ειρηκοτοϲ αυτω οτι πριν αλεκτορα φωνη} & 14 &  &  \\
 &  & 14 & \foreignlanguage{greek}{ϲε τριϲ απαρνηϲη με και εξελθων εξω} & 20 &  &  \\
 &  & 21 & \foreignlanguage{greek}{εκλαυϲεν πικρωϲ} & 22 &  &  \\
-& {\LARGE\textbf{27}\par} &  & \foreignlanguage{greek}{πρωειαϲ δε γενομενηϲ ϲυμβουλιον ελα} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{πρωειαϲ δε γενομενηϲ ϲυμβουλιον ελα} & 5 &  &  \\
 &  & 5 & \foreignlanguage{greek}{βον παντεϲ οι αρχιερειϲ και οι πρεϲβυτε} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{ροι του λαου κατα του \textoverline{ιυ} ωϲτε θανατωϲαι} & 18 &  &  \\
 &  & 19 & \foreignlanguage{greek}{αυτον και δηϲαντεϲ αυτον απηγαγον} & 4 & \textbf{2} &  \\
@@ -5298,7 +5321,7 @@
 &  & 11 & \foreignlanguage{greek}{οιδατε οι δε πορευθεντεϲ ηϲφαλι} & 4 & \textbf{66} &  \\
 &  & 4 & \foreignlanguage{greek}{ϲαντο τον ταφον ϲφραγιϲαντεϲ τον} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{λιθον μετα τηϲ κουϲτωδιαϲ} & 12 &  &  \\
-& {\LARGE\textbf{28}\par} &  & \foreignlanguage{greek}{οψε δε ϲαββατων τη επιφωϲκουϲη ειϲ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{οψε δε ϲαββατων τη επιφωϲκουϲη ειϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{μιαν ϲαββατων ηλθεν μαρια η μαγδα} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ληνη και η αλλη μαρια θεωρουϲαι τον} & 18 &  &  \\
 &  & 19 & \foreignlanguage{greek}{ταφον και ιδου ϲιϲμοϲ εγενετο μεγαϲ} & 5 & \textbf{2} &  \\
@@ -5408,11 +5431,11 @@
 \begin{center}
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
-\multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
+\multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{1}\par} &  & \foreignlanguage{greek}{εν αρχη ην ο λογοϲ και ο λογοϲ ην προϲ τον \textoverline{θν}} & 12 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν αρχη ην ο λογοϲ και ο λογοϲ ην προϲ τον \textoverline{θν}} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{και ο \textoverline{θϲ} ην ο λογοϲ ουτοϲ ην εν αρχη προϲ} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{τον \textoverline{θν} παντα δι αυτου εγενετο και χω} & 6 & \textbf{3} &  \\
 &  & 6 & \foreignlanguage{greek}{ριϲ αυτου εγενετο ουδε εν ο γεγονεν εν} & 1 & \textbf{4} &  \\
@@ -5624,7 +5647,7 @@
 &  & 8 & \foreignlanguage{greek}{οψεϲθαι τον \textoverline{ουρον} ανεωγοτα και} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{τουϲ αγγελουϲ του \textoverline{θυ} αναβενονταϲ} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{και καταβενονταϲ επι τον \textoverline{υν} του} & 23 &  &  \\
-&  & 24 & \foreignlanguage{greek}{\textoverline{ανου} και τη ημερα τη γ γαμοϲ} & 6 & {\LARGE\textbf{2}\par} &  \\
+&  & 24 & \foreignlanguage{greek}{\textoverline{ανου} και τη ημερα τη γ γαμοϲ} & 6 & \mygospelchapter &  \\
 &  & 7 & \foreignlanguage{greek}{εγινετο εν κανα τηϲ γαλιλεαϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{και ην η \textoverline{μηρ} του \textoverline{ιυ} εκι εκληθη δε} & 2 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{και ο \textoverline{ιϲ} εκι και οι μαθηται αυτου ειϲ} & 11 &  &  \\
@@ -5749,7 +5772,7 @@
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
 &  & 14 & \foreignlanguage{greek}{εγιγνωϲκεν τι ην εν τω \textoverline{ανω}} & 19 &  &  \\
-& {\LARGE\textbf{3}\par} &  & \foreignlanguage{greek}{ην δε \textoverline{ανοϲ} εκ των φαριϲεων νικοδη} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ην δε \textoverline{ανοϲ} εκ των φαριϲεων νικοδη} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{μοϲ ονομα αυτω αρχων των ιου} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{δεων ουτοϲ ηλθεν προϲ αυτον νυκτοϲ} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{και ειπεν αυτω ραββι οιδαμεν οτι} & 11 &  &  \\
@@ -5907,7 +5930,7 @@
 &  & 2 & \foreignlanguage{greek}{τευων ειϲ τον \textoverline{υν} εχι ζωην αιωνιον} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{ο δε απιθων τω \textoverline{υω} ουχ οψετε ζωην} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{αλλ η οργη του \textoverline{θυ} μενι επ αυτον} & 24 &  &  \\
-& {\LARGE\textbf{4}\par} &  & \foreignlanguage{greek}{ωϲ ουν εγνω ο \textoverline{κϲ} οτι ηκουϲαν οι φα} & 9 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ωϲ ουν εγνω ο \textoverline{κϲ} οτι ηκουϲαν οι φα} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{ριϲεοι οτι \textoverline{ιϲ} πλιοναϲ μαθηταϲ ποιει} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{και βαπτιζι ιωαννηϲ καιτοιγε} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{\textoverline{ιϲ} αυτοϲ ουκ εβαπτιζεν αλλ οι} & 7 &  &  \\
@@ -6138,7 +6161,7 @@
 &  & 8 & \foreignlanguage{greek}{τη ωρα εν η ειπεν αυτω ο \textoverline{ιϲ} οτι ο \textoverline{υϲ} ϲου ζη} & 20 &  &  \\
 &  & 21 & \foreignlanguage{greek}{και επιϲτευϲεν αυτοϲ και η οικια αυτου ολη} & 28 &  &  \\
 & \textbf{54} &  & \foreignlanguage{greek}{τουτο δε παλιν β εποιηϲεν ϲημιον ο \textoverline{ιϲ} ελθω̅} & 9 &  &  \\
-&  & 10 & \foreignlanguage{greek}{εκ τηϲ ιουδεαϲ ειϲ την γαλιλεαν μετα} & 1 & {\LARGE\textbf{5}\par} &  \\
+&  & 10 & \foreignlanguage{greek}{εκ τηϲ ιουδεαϲ ειϲ την γαλιλεαν μετα} & 1 & \mygospelchapter &  \\
 &  & 2 & \foreignlanguage{greek}{ταυτα ην εορτη των ιουδεων και ανεβη} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{ο \textoverline{ιϲ} ειϲ ιεροϲολυμα εϲτιν δε εν τοιϲ ιεροϲολυ} & 5 & \textbf{2} &  \\
 &  & 5 & \foreignlanguage{greek}{μοιϲ επι τη προβατικη κολυμβηθρα τη ε} & 11 &  &  \\
@@ -6146,7 +6169,7 @@
 & \textbf{3} &  & \foreignlanguage{greek}{εν ταυταιϲ κατεκιτο πληθοϲ των αϲθενουντω̅} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{τυφλων χωλων ξηρων εκδεχομενοι την του} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{υδατοϲ κινηϲιν} & 14 &  &  \\
-& \textbf{5} & 10 & \foreignlanguage{greek}{εχων εν τη αϲθενια αυτου τουτον ειδω̅} & 2 & \textbf{6} &  \\
+& \textbf{5} &  & \foreignlanguage{greek}{εχων εν τη αϲθενια αυτου τουτον ειδω̅} & 2 &  &  \\
 &  & 3 & \foreignlanguage{greek}{ο \textoverline{ιϲ} κατακιμενον και γνουϲ οτι πολυν ηδη} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{χρονον εχι λεγι αυτω θελιϲ υγιηϲ γενεϲ} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{θαι απεκριθη αυτω ο αϲθενω̅} & 4 & \textbf{7} &  \\
@@ -6345,7 +6368,7 @@
 & \textbf{47} &  & \foreignlanguage{greek}{ει δε τοιϲ εκεινου γραμμαϲιν ου πι} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ϲτευεται πωϲ τοιϲ εμοιϲ ρημαϲιν} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{πιϲτευϲηται} & 12 &  &  \\
-& {\LARGE\textbf{6}\par} &  & \foreignlanguage{greek}{μετα ταυτα απηλθεν ο \textoverline{ιϲ} περαν τηϲ θα} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{μετα ταυτα απηλθεν ο \textoverline{ιϲ} περαν τηϲ θα} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{λαϲϲηϲ τηϲ γαλιλαιαϲ τηϲ τιβερια} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{δοϲ ηκολουθει δε αυτω οχλοϲ πολυϲ} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{θεωρουντεϲ τα ϲημια α εποιει επι τω̅} & 12 &  &  \\
@@ -6680,7 +6703,7 @@
 &  & 2 & \foreignlanguage{greek}{δε τον ιουδαν ϲιμωνοϲ ιϲκαριωτου} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ουτοϲ γαρ εμελλεν παραδιδοναι αυ} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{τον ειϲ ων εκ των δωδεκα} & 16 &  &  \\
-& {\LARGE\textbf{7}\par} &  & \foreignlanguage{greek}{και μετα ταυτα περιεπατει ο \textoverline{ιϲ} εν τη} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και μετα ταυτα περιεπατει ο \textoverline{ιϲ} εν τη} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{γαλιλαια ου γαρ ειχεν εξουϲιαν εν} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{τη ιουδαια περιπατειν οτι εζητου̅} & 19 &  &  \\
 &  & 20 & \foreignlanguage{greek}{αυτον οι ιουδαιοι αποκτιναι} & 23 &  &  \\
@@ -6918,7 +6941,7 @@
 &  & 4 & \foreignlanguage{greek}{αυτω μη και ϲυ εκ τηϲ γαλιλαιαϲ ει} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ερευνηϲον ταϲ γραφαϲ και ειδε οτι προ} & 18 &  &  \\
 &  & 18 & \foreignlanguage{greek}{φητηϲ εκ τηϲ γαλιλαιαϲ ουκ εγειρεται} & 23 &  &  \\
-& {\LARGE\textbf{8}\par} &  & \foreignlanguage{greek}{παλιν ουν αυτοιϲ ελαληϲεν ο \textoverline{ιϲ} λεγων} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{παλιν ουν αυτοιϲ ελαληϲεν ο \textoverline{ιϲ} λεγων} & 7 &  &  \\
 &  & 10 & \foreignlanguage{greek}{εγω ειμει το φωϲ του κοϲμου ο ακολου} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{θων εμοι ου μη περιπατηϲη εν τη ϲκο} & 24 &  &  \\
 &  & 24 & \foreignlanguage{greek}{τια αλλ εξει το φωϲ τηϲ ζωηϲ} & 30 &  &  \\
@@ -7149,7 +7172,7 @@
 &  & 7 & \foreignlanguage{greek}{λεγω υμιν πριν αβρααμ γενεϲθαι εγω} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ειμει ηραν ουν λιθουϲ ινα βαλωϲιν} & 5 & \textbf{59} &  \\
 &  & 6 & \foreignlanguage{greek}{επ αυτον \textoverline{ιϲ} εκρυβη και εξηλθεν εκ του} & 13 &  &  \\
-& {\LARGE\textbf{9}\par} &  & \foreignlanguage{greek}{ιερου και παραγων ειδεν \textoverline{ανον}} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ιερου και παραγων ειδεν \textoverline{ανον}} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{τυφλον εκ γενετηϲ και ηρωτηϲαν αυ} & 3 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{τον οι μαθηται αυτου λεγοντεϲ ραβ} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{βει τιϲ ημαρτεν ουτοϲ η οι γονειϲ αυτου} & 15 &  &  \\
@@ -7336,7 +7359,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-&  & 20 & \foreignlanguage{greek}{μενουϲιν αμην αμην λεγω υμιν} & 4 & {\LARGE\textbf{10}\par} &  \\
+&  & 20 & \foreignlanguage{greek}{μενουϲιν αμην αμην λεγω υμιν} & 4 & \mygospelchapter &  \\
 &  & 5 & \foreignlanguage{greek}{ο μη ειϲερχομενοϲ δια τηϲ θυραϲ ειϲ τη̅} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{αυλην των προβατων αλλα αναβαι} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{νων αλλαχοθεν εκεινοϲ κλεπτηϲ εϲτι̅} & 21 &  &  \\
@@ -7457,7 +7480,7 @@
 & \textbf{29} &  & \foreignlanguage{greek}{ο \textoverline{πηρ} μου ο δεδωκεν μοι παντων μει} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ζων εϲτιν και ουδειϲ δυναται αρπα} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ζειν εκ τηϲ χειροϲ του \textoverline{πρϲ} μου} & 19 &  &  \\
-& \textbf{30} & 1 & \foreignlanguage{greek}{εγω και ο \textoverline{πηρ} εβαϲτα} & 1 & \textbf{31} &  \\
+& \textbf{30} &  & \foreignlanguage{greek}{εγω και ο \textoverline{πηρ} εβαϲτα} & 1 &  &  \\
 &  & 1 & \foreignlanguage{greek}{ϲαν παλιν λιθουϲ ινα λιθαϲωϲιν αυτο̅} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{απεκριθη αυτοιϲ ο \textoverline{ιϲ} πολλα εργα εδειξα} & 6 & \textbf{32} &  \\
 &  & 7 & \foreignlanguage{greek}{υμιν εκ του \textoverline{πρϲ} μου δια ποιον ουν ερ} & 15 &  &  \\
@@ -7505,7 +7528,7 @@
 &  & 11 & \foreignlanguage{greek}{εποιηϲεν ϲημιον ουδε εν παντα δε} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{οϲα ειπεν περι τουτου αληθη ην πολ} & 1 & \textbf{42} &  \\
 &  & 1 & \foreignlanguage{greek}{λοι ουν επιϲτευϲαν ειϲ αυτον εκει} & 6 &  &  \\
-& {\LARGE\textbf{11}\par} &  & \foreignlanguage{greek}{ην δε τιϲ αϲθενων λαζαροϲ απο βηθανιαϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ην δε τιϲ αϲθενων λαζαροϲ απο βηθανιαϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{εκ τηϲ κωμηϲ μαριαϲ και μαρθαϲ τηϲ} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{αδελφηϲ αυτηϲ ην δε μαρια η αλι} & 5 & \textbf{2} &  \\
 &  & 5 & \foreignlanguage{greek}{ψαϲα τον \textoverline{κν} μυρω και εκμαξαϲα τουϲ} & 11 &  &  \\
@@ -7768,7 +7791,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{12}\par} &  & \foreignlanguage{greek}{ο ουν \textoverline{ιϲ} προ εξ ημερων του παϲχα ηλθε̅} & 9 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ο ουν \textoverline{ιϲ} προ εξ ημερων του παϲχα ηλθε̅} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{ειϲ βηθανιαν οπου ην λαζαροϲ ον ηγει} & 16 &  &  \\
 &  & 16 & \foreignlanguage{greek}{ρεν εκ νεκρων ο \textoverline{ιϲ} εποιηϲαν ουν αυτω} & 3 & \textbf{2} &  \\
 &  & 4 & \foreignlanguage{greek}{διπνον εκει και η μαρθα διηκονει} & 9 &  &  \\
@@ -8008,7 +8031,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{13}\par} &  & \foreignlanguage{greek}{προ δε τηϲ εορτηϲ του παϲχα ειδωϲ ο \textoverline{ιϲ}} & 9 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{προ δε τηϲ εορτηϲ του παϲχα ειδωϲ ο \textoverline{ιϲ}} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{οτι ηλθεν αυτου η ωρα ινα μεταβη εκ} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{του κοϲμου τουτου προϲ τον \textoverline{πρα} αγα} & 24 &  &  \\
 &  & 24 & \foreignlanguage{greek}{πηϲαϲ τουϲ ιδιουϲ τουϲ εν τω κοϲμω} & 30 &  &  \\
@@ -8172,7 +8195,7 @@
 &  & 8 & \foreignlanguage{greek}{εμου θηϲειϲ αμην αμην λεγω ϲοι} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{ου μη αλεκτωρ φωνηϲη εωϲ ου ϲυ με} & 21 &  &  \\
 &  & 22 & \foreignlanguage{greek}{απαρνηϲη τριϲ} & 23 &  &  \\
-& {\LARGE\textbf{14}\par} &  & \foreignlanguage{greek}{μη ταραϲϲεϲθω υμων η καρδια πιϲτευ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{μη ταραϲϲεϲθω υμων η καρδια πιϲτευ} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{εται ειϲ τον \textoverline{θν} και ειϲ εμε πιϲτευεται} & 13 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{εν τη οικεια του \textoverline{πρϲ} μου μοναι πολ} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{λαι ειϲιν ει δε μη ειπον υμιν οτι} & 15 &  &  \\
@@ -8296,7 +8319,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{16}\par} &  & \foreignlanguage{greek}{εαν δε πορευθω πεμψω αυτον προϲ υμαϲ} & 7 &  &  \\
+& \refstepcounter{gospelchapter} \mygospelchapter &  & \foreignlanguage{greek}{εαν δε πορευθω πεμψω αυτον προϲ υμαϲ} & 7 &  &  \\
 & \textbf{8} &  & \foreignlanguage{greek}{και ελθων εκεινοϲ ελεγξει τον κοϲμον} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{περι αμαρτιαϲ και περι δικαιοϲυνηϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{και περι κριϲεωϲ περι αμαρτιαϲ μεν} & 3 & \textbf{9} &  \\
@@ -8411,7 +8434,7 @@
 &  & 7 & \foreignlanguage{greek}{ρηνην εχηται εν τω κοϲμω θλιψιν} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{εχεται αλλα θαρϲειται εγω νενι} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{κηκα τον κοϲμον} & 19 &  &  \\
-& {\LARGE\textbf{17}\par} &  & \foreignlanguage{greek}{ταυτα λελαληκεν ο \textoverline{ιϲ} και επαραϲ τουϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ταυτα λελαληκεν ο \textoverline{ιϲ} και επαραϲ τουϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{οφθαλμουϲ αυτου ειϲ τον ουρανον} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{ειπεν \textoverline{περ} εληλυθεν η ωρα δοξα} & 18 &  &  \\
 &  & 18 & \foreignlanguage{greek}{ϲον ϲου τον υιον ινα ο υιοϲ δοξαϲη ϲε} & 26 &  &  \\
@@ -8546,7 +8569,7 @@
 &  & 4 & \foreignlanguage{greek}{το ονομα ϲου και γνωριϲω ινα η αγα} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{πη ην ηγαπηϲαϲ με εν αυτοιϲ η και ε} & 19 &  &  \\
 &  & 19 & \foreignlanguage{greek}{γω εν αυτοιϲ} & 21 &  &  \\
-& {\LARGE\textbf{18}\par} &  & \foreignlanguage{greek}{ταυτα ειπων ο \textoverline{ιϲ} εξηλθεν ϲυν τοιϲ μα} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ταυτα ειπων ο \textoverline{ιϲ} εξηλθεν ϲυν τοιϲ μα} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{θηταιϲ αυτου περαν του χειμαρρου} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{του κεδρου οπου ην κηποϲ ειϲ ον ειϲ} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{εληλυθεν αυτοϲ και οι μαθηται αυτου} & 25 &  &  \\
@@ -8756,7 +8779,7 @@
 & \textbf{40} &  & \foreignlanguage{greek}{εκραυγαϲαν ουν παλιν λεγοντεϲ} & 4 &  &  \\
 &  & 5 & \foreignlanguage{greek}{μη τουτον αλλα τον βαραββαν} & 9 &  &  \\
 &  & 11 & \foreignlanguage{greek}{ην δε ο βαραββαϲ ληϲτηϲ} & 15 &  &  \\
-& {\LARGE\textbf{19}\par} &  & \foreignlanguage{greek}{τοτε ουν λαβων ο πειλατοϲ τον \textoverline{ιν}} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τοτε ουν λαβων ο πειλατοϲ τον \textoverline{ιν}} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{εμαϲτιγωϲεν και οι ϲτρατιωται} & 3 & \textbf{2} &  \\
 [0.2em]
 \cline{4-4}
@@ -9013,7 +9036,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{20}\par} &  & \foreignlanguage{greek}{τη δε μια των ϲαββατων μαριαμ η μαγδα} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τη δε μια των ϲαββατων μαριαμ η μαγδα} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ληνη ερχεται ϲκοτιαϲ ετι ουϲηϲ επι το} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{μνημιον κα βλεπει τον λιθον ηρμε} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{νον απο τηϲ θυραϲ εκ του μνημιου} & 26 &  &  \\
@@ -9173,7 +9196,7 @@
 &  & 5 & \foreignlanguage{greek}{ται οτι \textoverline{ιϲ} ο \textoverline{χϲ} εϲτιν ο \textoverline{υϲ} του \textoverline{θυ}} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{και ινα πιϲτευοντεϲ ζωην εχηται} & 19 &  &  \\
 &  & 20 & \foreignlanguage{greek}{εν τω ονοματι αυτου} & 23 &  &  \\
-& {\LARGE\textbf{21}\par} &  & \foreignlanguage{greek}{μετα ταυτα εφανερωϲεν εαυτον} & 4 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{μετα ταυτα εφανερωϲεν εαυτον} & 4 &  &  \\
 &  & 5 & \foreignlanguage{greek}{ο \textoverline{ιϲ} παλιν τοιϲ μαθηταιϲ επι τηϲ θα} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{λαϲϲηϲ τηϲ τιβεριαδοϲ εφανε} & 15 &  &  \\
 &  & 15 & \foreignlanguage{greek}{ρωϲεν δε ουτωϲ} & 17 &  &  \\
@@ -9340,11 +9363,11 @@
 \begin{center}
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
-\multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
+\multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{1}\par} &  & \foreignlanguage{greek}{επειδηπερ πολλοι επεχειρηϲαν αναταξα} & 4 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{επειδηπερ πολλοι επεχειρηϲαν αναταξα} & 4 &  &  \\
 &  & 4 & \foreignlanguage{greek}{ϲθαι διηγηϲιν περι των πεπληροφορημε} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{νων ημιν πραγματων καθωϲ παρεδοϲαν} & 2 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{ημιν οι απ αρχηϲ αυθοπται και υπηρεται} & 9 &  &  \\
@@ -9680,7 +9703,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{2}\par} &  & \foreignlanguage{greek}{εγενετο δε εν ταιϲ ημεραιϲ εκειναιϲ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εγενετο δε εν ταιϲ ημεραιϲ εκειναιϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{εξηλθεν δογμα παρα καιϲαροϲ αυγουϲτου} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{του απογραφεϲθαι παϲαν την οικουμενη̅} & 16 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{αυτη η απογραφη πρωτη εγενετο ηγε} & 6 &  &  \\
@@ -9921,7 +9944,7 @@
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
 &  & 9 & \foreignlanguage{greek}{και χαριτι παρα \textoverline{θω} και ανθρωποιϲ} & 14 &  &  \\
-& {\LARGE\textbf{3}\par} &  & \foreignlanguage{greek}{εν ετι δε πεντεκαιδεκατω τηϲ ηγεμο} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν ετι δε πεντεκαιδεκατω τηϲ ηγεμο} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{νιαϲ τιβαιριου καιϲαροϲ ηγεμονευο̅} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{τοϲ ποντιου πειλατου τηϲ ιουδαιαϲ} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{και τετραρχουντοϲ τηϲ γαλιλαιαϲ} & 17 &  &  \\
@@ -10042,7 +10065,7 @@
 &  & 27 & \foreignlanguage{greek}{ηυδοκηϲα και αυτοϲ ην \textoverline{ιϲ} αρ} & 5 & \textbf{23} &  \\
 &  & 5 & \foreignlanguage{greek}{χομενοϲ ωϲει ετων λ ων υιοϲ ωϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ενομιζετο ιωϲηφ} & 13 &  &  \\
-& {\LARGE\textbf{4}\par} &  & \foreignlanguage{greek}{\textoverline{ιϲ} δε πληρηϲ \textoverline{πνϲ} αγιου υπεϲτρεψεν} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{\textoverline{ιϲ} δε πληρηϲ \textoverline{πνϲ} αγιου υπεϲτρεψεν} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{απο του ιορδανου και ηγετο εν τω} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{\textoverline{πνι} εν τη ερημω ημεραϲ μ πειρα} & 3 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{ζομενοϲ υπο του διαβολου} & 6 &  &  \\
@@ -10269,7 +10292,7 @@
 &  & 14 & \foreignlanguage{greek}{την βαϲιλειαν του \textoverline{θυ} οτι επι του} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{το απεϲταλην} & 21 &  &  \\
 & \textbf{44} &  & \foreignlanguage{greek}{και ην κηρυϲϲων ειϲ ταϲ ϲυναγωγαϲ τω̅} & 7 &  &  \\
-&  & 8 & \foreignlanguage{greek}{ιουδαιων εγενετο δε εν τω το̅} & 5 & {\LARGE\textbf{5}\par} &  \\
+&  & 8 & \foreignlanguage{greek}{ιουδαιων εγενετο δε εν τω το̅} & 5 & \mygospelchapter &  \\
 &  & 6 & \foreignlanguage{greek}{οχλον επικειϲθαι αυτω και ακουειν} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{τον λογον του \textoverline{θυ} και αυτοϲ ην εϲτωϲ} & 18 &  &  \\
 &  & 19 & \foreignlanguage{greek}{παρα την λιμνην γεννηϲαρετ} & 22 &  &  \\
@@ -10478,7 +10501,7 @@
 &  & 3 & \foreignlanguage{greek}{νεον ειϲ αϲκουϲ καινουϲ βαλληται} & 7 &  &  \\
 & \textbf{39} &  & \foreignlanguage{greek}{και ουδειϲ πιων παλαιον θελει ναιον} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{λεγει γαρ ο παλαιοϲ χρηϲτοϲ εϲτιν} & 12 &  &  \\
-& {\LARGE\textbf{6}\par} &  & \foreignlanguage{greek}{εγενετο δε εν ϲαββατω διαπορευεϲθαι} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εγενετο δε εν ϲαββατω διαπορευεϲθαι} & 5 &  &  \\
 [0.2em]
 \cline{4-4}
 \end{tabular}
@@ -10761,7 +10784,7 @@
 &  & 17 & \foreignlanguage{greek}{και προϲερρηξεν αυτη ο ποταμοϲ και} & 22 &  &  \\
 &  & 23 & \foreignlanguage{greek}{ευθεωϲ επεϲεν και εγενετο το ρη} & 28 &  &  \\
 &  & 28 & \foreignlanguage{greek}{γμα τηϲ οικειαϲ εκεινηϲ μεγα} & 32 &  &  \\
-& {\LARGE\textbf{7}\par} &  & \foreignlanguage{greek}{επειδη επληρωϲεν παντα τα ρημα} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{επειδη επληρωϲεν παντα τα ρημα} & 5 &  &  \\
 &  & 5 & \foreignlanguage{greek}{τα αυτου ειϲ ταϲ ακοαϲ του λαου} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ειϲηλθεν ειϲ καφαρναουμ} & 14 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{εκατονταρχου δε τινοϲ δουλοϲ κα} & 5 &  &  \\
@@ -11040,7 +11063,7 @@
 &  & 13 & \foreignlanguage{greek}{και αμαρτιαϲ αφιηϲιν} & 15 &  &  \\
 & \textbf{50} &  & \foreignlanguage{greek}{ειπεν δε προϲ την γυναικα η πιϲτιϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ϲου ϲεϲωκεν ϲε πορευου ειϲ ειρηνην} & 13 &  &  \\
-& {\LARGE\textbf{8}\par} &  & \foreignlanguage{greek}{και εγενετο εν τω καθεξηϲ και αυ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο εν τω καθεξηϲ και αυ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{τοϲ διωδευεν κατα πολιν και κωμη̅} & 12 &  &  \\
 &  & 13 & \foreignlanguage{greek}{κηρυϲϲων και ευαγγελιζομενοϲ} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{την βαϲιλειαν του \textoverline{θυ} και οι δεκα} & 22 &  &  \\
@@ -11372,7 +11395,7 @@
 &  & 12 & \foreignlanguage{greek}{τη φαγειν και εξεϲτηϲαν οι γονειϲ} & 4 & \textbf{56} &  \\
 &  & 5 & \foreignlanguage{greek}{αυτηϲ ο δε παρηγγειλεν αυτοιϲ} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{μηδενει ειπειν το γεγονοϲ} & 13 &  &  \\
-& {\LARGE\textbf{9}\par} &  & \foreignlanguage{greek}{ϲυνκαλεϲαμενοϲ δε τουϲ δωδεκα ε} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ϲυνκαλεϲαμενοϲ δε τουϲ δωδεκα ε} & 5 &  &  \\
 &  & 5 & \foreignlanguage{greek}{δωκεν αυτοιϲ δυναμιν και εξουϲια̅} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{επι παντα τα δαιμονια και νοϲουϲ} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{θεραπευειν και απεϲτιλεν αυτουϲ} & 3 & \textbf{2} &  \\
@@ -11699,7 +11722,7 @@
 &  &  & &  &  & \\ [-0.9em]
 &  & 13 & \foreignlanguage{greek}{πυρ καταβηναι απο του ουρανου και α} & 19 &  &  \\
 &  & 19 & \foreignlanguage{greek}{ναλωϲαι αυτουϲ ωϲ και ηλιαϲ εποιηϲεν} & 24 &  &  \\
-& \textbf{55} & 1 & \foreignlanguage{greek}{ϲτραφειϲ δε επετιμηϲεν αυτοιϲ και} & 1 & \textbf{56} &  \\
+& \textbf{55} &  & \foreignlanguage{greek}{ϲτραφειϲ δε επετιμηϲεν αυτοιϲ και} & 1 &  &  \\
 &  & 2 & \foreignlanguage{greek}{επορευθηϲαν ειϲ ετεραν κωμην} & 5 &  &  \\
 & \textbf{57} &  & \foreignlanguage{greek}{εγενετο δε πορευομενων αυτων ε̅} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{τη οδω ειπεν τιϲ προϲ αυτον ακο} & 12 &  &  \\
@@ -11722,7 +11745,7 @@
 &  & 8 & \foreignlanguage{greek}{βαλλων την χειρα αυτου επ αροτρο̅} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{και βλεπων ειϲ τα οπιϲω ευθετοϲ ε} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{ϲτιν ειϲ την βαϲιλειαν του \textoverline{θυ}} & 25 &  &  \\
-& {\LARGE\textbf{10}\par} &  & \foreignlanguage{greek}{μετα δε ταυτα ανεδειξεν ο \textoverline{κϲ} και} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{μετα δε ταυτα ανεδειξεν ο \textoverline{κϲ} και} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ετερουϲ εβδομηκοντα και απε} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{ϲτιλεν αυτουϲ ανα δυο προ προϲω} & 16 &  &  \\
 &  & 16 & \foreignlanguage{greek}{που αυτου ειϲ παϲαν πολιν και τοπο̅} & 22 &  &  \\
@@ -11959,7 +11982,7 @@
 &  & 5 & \foreignlanguage{greek}{μαρια δε την αγαθην μεριδα εξε} & 10 &  &  \\
 &  & 10 & \foreignlanguage{greek}{λεξατο ητιϲ ουκ αφερεθηϲεται} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{απ αυτηϲ} & 15 &  &  \\
-& {\LARGE\textbf{11}\par} &  & \foreignlanguage{greek}{και εγενετο εν τω ειναι αυτον εν} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο εν τω ειναι αυτον εν} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{τοπω τινι προϲευχομενον ωϲ ε} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{παυϲατο ειπεν τιϲ των μαθητων} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{αυτου προϲ αυτον \textoverline{κε} διδαξον} & 21 &  &  \\
@@ -12283,7 +12306,7 @@
 &  & 19 & \foreignlanguage{greek}{ονων ενεδρευοντεϲ αυτον ζητουν} & 3 & \textbf{54} &  \\
 &  & 3 & \foreignlanguage{greek}{τεϲ θηρευϲαι τι εκ του ϲτοματοϲ αυτου} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{ινα κατηγορηϲωϲιν αυτου} & 13 &  &  \\
-& {\LARGE\textbf{12}\par} &  & \foreignlanguage{greek}{εν οιϲ επιϲυναχθιϲων των μυριαδω̅} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν οιϲ επιϲυναχθιϲων των μυριαδω̅} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{του οχλου ωϲτε καταπατειν αλληλουϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{ηρξατο λεγειν προϲ τουϲ μαθηταϲ αυτου} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{πρωτον προϲεχεται εαυτοιϲ απο τηϲ} & 21 &  &  \\
@@ -12583,7 +12606,7 @@
 &  & 31 & \foreignlanguage{greek}{και ο πρακτωρ ϲε βαλη ειϲ φυλακην} & 37 &  &  \\
 & \textbf{59} &  & \foreignlanguage{greek}{λεγω ϲοι ου μη εξελθηϲ εκειθεν εωϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ου και το εϲχατον λεπτον αποδωϲ} & 13 &  &  \\
-& {\LARGE\textbf{13}\par} &  & \foreignlanguage{greek}{παρηϲαν δε τινεϲ εν αυτω τω καιρω} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{παρηϲαν δε τινεϲ εν αυτω τω καιρω} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{απαγγελλοντεϲ αυτω περι των γαλι} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{λαιων ων το αιμα πιλατοϲ εμειξε̅} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{μετα των θυϲιων αυτων} & 21 &  &  \\
@@ -12780,7 +12803,7 @@
 &  & 7 & \foreignlanguage{greek}{λεγω δε υμιν οτι ου μη ιδηται με} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{εωϲ αν ηξει οτε ειπητε ευλογημε} & 21 &  &  \\
 &  & 21 & \foreignlanguage{greek}{νοϲ ο ερχομενοϲ εν ονοματι \textoverline{κυ}} & 26 &  &  \\
-& {\LARGE\textbf{14}\par} &  & \foreignlanguage{greek}{και εγενετο εν τω ελθειν αυτον ειϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο εν τω ελθειν αυτον ειϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{οικον τινοϲ των αρχοντων των φα} & 13 &  &  \\
 [0.2em]
 \cline{4-4}
@@ -12970,7 +12993,7 @@
 &  & 3 & \foreignlanguage{greek}{γην ουτε ειϲ κοπριαν ευθετον εϲτι̅} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{εξω βαλλουϲιν αυτο ο εχων ωτα α} & 15 &  &  \\
 &  & 15 & \foreignlanguage{greek}{κουειν ακουετω} & 16 &  &  \\
-& {\LARGE\textbf{15}\par} &  & \foreignlanguage{greek}{ηϲαν δε αυτω εγγιζοντεϲ οι τελωναι} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ηϲαν δε αυτω εγγιζοντεϲ οι τελωναι} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{και οι αμαρτωλοι ακουειν αυτου και} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{διεγογγυζον οι φαριϲαιοι και οι γραμ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ματιϲ λεγοντεϲ οτι ουτοϲ αμαρτω} & 11 &  &  \\
@@ -13117,7 +13140,7 @@
 &  & 3 & \foreignlanguage{greek}{και χαρηναι εδει οτι ο αδελφοϲ ϲου ουτοϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{νεκροϲ ην και ανεζηϲεν και απολω} & 16 &  &  \\
 &  & 16 & \foreignlanguage{greek}{λωϲ και ευρεθη} & 18 &  &  \\
-& {\LARGE\textbf{16}\par} &  & \foreignlanguage{greek}{ελεγεν δε και προϲ τουϲ μαθηταϲ εαυτου} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ελεγεν δε και προϲ τουϲ μαθηταϲ εαυτου} & 7 &  &  \\
 &  & 9 & \foreignlanguage{greek}{\textoverline{ανοϲ} τιϲ ην πλουϲιοϲ οϲ ειχεν οικονομον} & 15 &  &  \\
 [0.2em]
 \cline{4-4}
@@ -13286,7 +13309,7 @@
 & \textbf{31} &  & \foreignlanguage{greek}{ειπεν δε αυτω ει μωυϲεωϲ και των προ} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{φητων ουκ ακουουϲιν ουδε εαν τιϲ εκ} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{νεκρων απελθη πιϲτευουϲιν} & 17 &  &  \\
-& {\LARGE\textbf{17}\par} &  & \foreignlanguage{greek}{ειπεν δε προϲ τουϲ μαθηταϲ ανενδεκτο̅} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ειπεν δε προϲ τουϲ μαθηταϲ ανενδεκτο̅} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{εϲτιν του μη ελθειν τα ϲκανδαλα ουδε δι ου} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{ερχεται λυϲιτελει αυτω ει λιθοϲ ονικοϲ πε} & 6 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{ρικειτε περι τον τραχηλον αυτου και εριπτε} & 12 &  &  \\
@@ -13430,7 +13453,7 @@
 &  & 12 & \foreignlanguage{greek}{θηϲεται} & 12 &  &  \\
 & \textbf{37} &  & \foreignlanguage{greek}{αυτω που \textoverline{κε} ο δε ειπεν αυτοιϲ} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{οπου το ϲωμα εκει ϲυναχθηϲοντε οι αετοι} & 17 &  &  \\
-& {\LARGE\textbf{18}\par} &  & \foreignlanguage{greek}{ελεγεν δε και παραβολην αυτοιϲ προϲ} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ελεγεν δε και παραβολην αυτοιϲ προϲ} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{το δειν παντοτε προϲευχεϲθαι αυτουϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{και μη εκκακειν λεγων} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{κριτηϲ τιϲ ην εν τινι πολει τον \textoverline{θν} μη φο} & 11 &  &  \\
@@ -13596,7 +13619,7 @@
 &  & 9 & \foreignlanguage{greek}{ϲωκεν ϲε και παραχρημα ανεβλεψεν} & 3 & \textbf{43} &  \\
 &  & 4 & \foreignlanguage{greek}{και ηκολουθει αυτω δοξαζων τον \textoverline{θν}} & 10 &  &  \\
 &  & 11 & \foreignlanguage{greek}{και παϲ ο λαοϲ ιδων εδωκεν αινον τω \textoverline{θω}} & 19 &  &  \\
-& {\LARGE\textbf{19}\par} &  & \foreignlanguage{greek}{και εξελθων διηρχετο την ιεριχω} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εξελθων διηρχετο την ιεριχω} & 6 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και ιδου ανηρ ονοματι καλουμενοϲ ζαχ} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{χαιοϲ και αυτοϲ ην αρχιτελωνηϲ ουτοϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ην πλουϲιοϲ και εζητει ιδειν τον \textoverline{ιν} τιϲ} & 6 & \textbf{3} &  \\
@@ -13787,7 +13810,7 @@
 &  & 16 & \foreignlanguage{greek}{εζητουν αυτον απολεϲαι και οι πρωτοι} & 21 &  &  \\
 &  & 22 & \foreignlanguage{greek}{του λαου και ουχ ηυριϲκον το τι ποιηϲουϲι̅} & 6 & \textbf{48} &  \\
 &  & 7 & \foreignlanguage{greek}{ο λαοϲ γαρ απαϲ εξεκρεματο αυτου ακουων} & 13 &  &  \\
-& {\LARGE\textbf{20}\par} &  & \foreignlanguage{greek}{και εγενετο εν μια των ημερων εκεινω̅} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εγενετο εν μια των ημερων εκεινω̅} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{διδαϲκοντοϲ αυτου τον λαον εν τω ιερω} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{και ευαγγελιζομενου επεϲτηϲαν} & 17 &  &  \\
 &  & 19 & \foreignlanguage{greek}{οι ιερειϲ και οι γραμματιϲ ϲυν τοιϲ πρεϲ} & 26 &  &  \\
@@ -13981,7 +14004,7 @@
 &  & 3 & \foreignlanguage{greek}{ταϲ οικειαϲ των χηρων και προφαϲι} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{μακρα προϲευχονται ουτοι λημψον} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ται περιϲϲοτερον κριμα} & 14 &  &  \\
-& {\LARGE\textbf{21}\par} &  & \foreignlanguage{greek}{αναβλεψαϲ δε ειδεν τουϲ βαλλονταϲ} & 5 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{αναβλεψαϲ δε ειδεν τουϲ βαλλονταϲ} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{τα δωρα αυτων ειϲ το γαζοφυλακιον} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{πλουϲιουϲ ειδεν τινα και χηραν πενι} & 5 & \textbf{2} &  \\
 [0.2em]
@@ -14152,7 +14175,7 @@
 &  & 9 & \foreignlanguage{greek}{ταϲ δε νυκταϲ ηυλιζετο ειϲ το οροϲ το καλου} & 17 &  &  \\
 &  & 17 & \foreignlanguage{greek}{μενον ελεων και παϲ ο λαοϲ ωρθριζεν} & 5 & \textbf{38} &  \\
 &  & 6 & \foreignlanguage{greek}{προϲ αυτον εν τω ιερω ακουειν αυτου} & 12 &  &  \\
-& {\LARGE\textbf{22}\par} &  & \foreignlanguage{greek}{ηγγιζεν δε η εορτη των αζυμων η λεγομε} & 8 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ηγγιζεν δε η εορτη των αζυμων η λεγομε} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{νη παϲχα και εζητουν οι αρχιερειϲ και} & 5 & \textbf{2} &  \\
 &  & 6 & \foreignlanguage{greek}{οι γραμματιϲ το πωϲ ανελωϲιν αυτον εφο} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{βουντο γαρ τον λαον} & 15 &  &  \\
@@ -14413,7 +14436,7 @@
 &  & 12 & \foreignlanguage{greek}{ο δε προϲ αυτουϲ εφη υμειϲ λεγεται οτι ε} & 20 &  &  \\
 &  & 20 & \foreignlanguage{greek}{γω ειμει οι δε ειπον τι ετι χρειαν εχο} & 7 & \textbf{71} &  \\
 &  & 7 & \foreignlanguage{greek}{μεν μαρτυριαϲ αυτοι γαρ ηκουϲαμεν α} & 12 &  &  \\
-&  & 12 & \foreignlanguage{greek}{πο του ϲτοματοϲ αυτου και αναϲταν} & 2 & {\LARGE\textbf{23}\par} &  \\
+&  & 12 & \foreignlanguage{greek}{πο του ϲτοματοϲ αυτου και αναϲταν} & 2 & \mygospelchapter &  \\
 &  & 3 & \foreignlanguage{greek}{απαν το πληθοϲ αυτων ηγαγεν αυτον} & 8 &  &  \\
 &  & 9 & \foreignlanguage{greek}{επι τον πειλατον} & 11 &  &  \\
 [0.2em]
@@ -14648,7 +14671,7 @@
 &  & 18 & \foreignlanguage{greek}{ϲωμα αυτου υποϲτρεψαϲαι δε ητοι} & 3 & \textbf{56} &  \\
 &  & 3 & \foreignlanguage{greek}{μαϲαν αρωματα και μυρα και το μεν ϲαβ} & 10 &  &  \\
 &  & 10 & \foreignlanguage{greek}{βατον ηϲυχαϲαν κατα την εντολην} & 14 &  &  \\
-& {\LARGE\textbf{24}\par} &  & \foreignlanguage{greek}{τη δε μια των ϲαββατων ορθρου βαθεοϲ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{τη δε μια των ϲαββατων ορθρου βαθεοϲ} & 7 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ηλθον επι το μνημα φερουϲαι α ητοιμαϲα̅} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{αρωματα και τινεϲ ϲυν αυταιϲ ευρον} & 1 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{δε τον λιθον αποκεκυλιϲμενον απο του} & 7 &  &  \\
@@ -14892,11 +14915,11 @@
 \begin{center}
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
-\multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
+\multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& {\LARGE\textbf{1}\par} &  & \foreignlanguage{greek}{αρχη του ευαγγελιου \textoverline{ιυ} \textoverline{χυ} υιου \textoverline{θυ} ωϲ γε} & 2 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{αρχη του ευαγγελιου \textoverline{ιυ} \textoverline{χυ} υιου \textoverline{θυ} ωϲ γε} & 2 &  &  \\
 &  & 2 & \foreignlanguage{greek}{γραπται εν τοιϲ προφηταιϲ ιδου εγω α} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{ποϲτελλω τον αγγελον μου προ προϲω} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{που ϲου οϲ καταϲκευαϲει την οδον ϲου} & 19 &  &  \\
@@ -15098,7 +15121,7 @@
 &  & 11 & \foreignlanguage{greek}{μηκετι δυναϲθαι φανερωϲ ειϲ πολιν} & 15 &  &  \\
 &  & 16 & \foreignlanguage{greek}{ειϲελθειν αλλ εξω επ ερημοιϲ τοποιϲ η̅} & 22 &  &  \\
 &  & 23 & \foreignlanguage{greek}{και ηρχοντο προϲ αυτον παντοθεν} & 27 &  &  \\
-& {\LARGE\textbf{2}\par} &  & \foreignlanguage{greek}{και παλιν ερχεται ειϲ καφαρναουμ και} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και παλιν ερχεται ειϲ καφαρναουμ και} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ηκουϲθη οτι εν οικω εϲτιν και ϲυνη} & 2 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{χθηϲαν πολλοι ωϲτε μηκετι χωριν} & 6 &  &  \\
 &  & 7 & \foreignlanguage{greek}{και ελαλει προϲ αυτουϲ τον λογον} & 12 &  &  \\
@@ -15236,7 +15259,7 @@
 &  & 25 & \foreignlanguage{greek}{τοιϲ ιερευϲιν λεγω δε αυτοιϲ οτι το ϲαβ} & 6 & \textbf{27} &  \\
 &  & 6 & \foreignlanguage{greek}{βατον δια τον ανθρωπον εκτιϲθη ωϲτε} & 1 & \textbf{28} &  \\
 &  & 2 & \foreignlanguage{greek}{\textoverline{κϲ} εϲτιν ο υιοϲ του ανθρωπου και του ϲαβ} & 10 &  &  \\
-&  & 10 & \foreignlanguage{greek}{βατου και ειϲελθοντοϲ αυτου ειϲ τη̅} & 5 & {\LARGE\textbf{3}\par} &  \\
+&  & 10 & \foreignlanguage{greek}{βατου και ειϲελθοντοϲ αυτου ειϲ τη̅} & 5 & \mygospelchapter &  \\
 &  & 6 & \foreignlanguage{greek}{ϲυναγωγην ερχεται ανθρωποϲ προϲ αυ} & 10 &  &  \\
 &  & 10 & \foreignlanguage{greek}{τον εχων ξηραν την χειρα και παρετη} & 2 & \textbf{2} &  \\
 &  & 2 & \foreignlanguage{greek}{ρουντο αυτον ει τοιϲ ϲαββαϲιν θεραπευ} & 7 &  &  \\
@@ -15379,7 +15402,7 @@
 &  & 7 & \foreignlanguage{greek}{μαθηταϲ λεγει ειδε η μητηρ μου και οι α} & 15 &  &  \\
 &  & 15 & \foreignlanguage{greek}{δελφοι μου και οϲ αν ποιη το θελημα του} & 7 & \textbf{35} &  \\
 &  & 8 & \foreignlanguage{greek}{\textoverline{θυ} ουτοϲ μου αδελφοϲ και αδελφη και μη} & 15 &  &  \\
-&  & 15 & \foreignlanguage{greek}{τηρ εϲτιν και ηρξατο παλιν διδαϲκειν προϲ} & 5 & {\LARGE\textbf{4}\par} &  \\
+&  & 15 & \foreignlanguage{greek}{τηρ εϲτιν και ηρξατο παλιν διδαϲκειν προϲ} & 5 & \mygospelchapter &  \\
 &  & 6 & \foreignlanguage{greek}{την θαλαϲϲαν και ϲυνηχθη προϲ αυτον} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{οχλοϲ πλειϲτοϲ ωϲτε αυτον ειϲ το πλοιον} & 18 &  &  \\
 &  & 19 & \foreignlanguage{greek}{ενβαντα καθηϲθαι παρα τον αιγιαλον} & 23 &  &  \\
@@ -15539,7 +15562,7 @@
 & \textbf{41} &  & \foreignlanguage{greek}{και εφοβηθηϲαν φοβον μεγαν και} & 5 &  &  \\
 &  & 6 & \foreignlanguage{greek}{ελεγον προϲ αλληλουϲ τιϲ αρα ουτοϲ} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{εϲτιν οτι η θαλαϲϲα οι ανεμοι υ} & 18 &  &  \\
-&  & 18 & \foreignlanguage{greek}{πακουουϲιν αυτω και ηλθαν ειϲ το} & 4 & {\LARGE\textbf{5}\par} &  \\
+&  & 18 & \foreignlanguage{greek}{πακουουϲιν αυτω και ηλθαν ειϲ το} & 4 & \mygospelchapter &  \\
 &  & 5 & \foreignlanguage{greek}{περαν τηϲ θαλαϲϲηϲ ειϲ τη χωραν τω̅} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{γεργυϲτηνων και εξελθοντων αυ} & 3 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{των εκ του πλοιου απηντηϲεν αυτω} & 8 &  &  \\
@@ -15730,7 +15753,7 @@
 &  & 7 & \foreignlanguage{greek}{ριεπατει ην γαρ ετων ιβ και εξεϲτηϲα̅} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{εκϲταϲει μεγαλη και διεϲτιλατο αυτοιϲ} & 3 & \textbf{43} &  \\
 &  & 4 & \foreignlanguage{greek}{πολλα ινα μηδειϲ γνοι τουτο και ειπε} & 10 &  &  \\
-&  & 11 & \foreignlanguage{greek}{δοθηναι αυτη φαγειν και εξηλθεν} & 2 & {\LARGE\textbf{6}\par} &  \\
+&  & 11 & \foreignlanguage{greek}{δοθηναι αυτη φαγειν και εξηλθεν} & 2 & \mygospelchapter &  \\
 &  & 3 & \foreignlanguage{greek}{ειϲ την πατριδα αυτου και ακολου} & 8 &  &  \\
 &  & 8 & \foreignlanguage{greek}{θουϲιν αυτω οι μαθηται αυτου} & 12 &  &  \\
 & \textbf{2} &  & \foreignlanguage{greek}{και γενομενου ϲαββατου ηρξαντο ε̅} & 5 &  &  \\
@@ -16014,7 +16037,7 @@
 &  & 16 & \foreignlanguage{greek}{και παρεκαλουν αυτον ινα καν του} & 21 &  &  \\
 &  & 22 & \foreignlanguage{greek}{κραϲπεδου του ιματιου αυτου αψωνται} & 26 &  &  \\
 &  & 27 & \foreignlanguage{greek}{και οϲοι αν ηψαντο αυτου εϲωζοντο} & 32 &  &  \\
-& {\LARGE\textbf{7}\par} &  & \foreignlanguage{greek}{και ϲυναγονται προϲ αυτον οι φαρι} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και ϲυναγονται προϲ αυτον οι φαρι} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{ϲαιοι και τινεϲ των γραμματεων ελ} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{θοντεϲ απο ιεροϲολυμων και ιδοντεϲ} & 2 & \textbf{2} &  \\
 &  & 3 & \foreignlanguage{greek}{τινεϲ των μαθητων αυτου τιναϲ κοι} & 8 &  &  \\
@@ -16195,7 +16218,7 @@
 &  & 3 & \foreignlanguage{greek}{ριϲϲω εξεπληϲϲοντο λεγοντεϲ κα} & 6 &  &  \\
 &  & 6 & \foreignlanguage{greek}{λωϲ παντα πεποιηκεν και τουϲ κω} & 11 &  &  \\
 &  & 11 & \foreignlanguage{greek}{φουϲ πεποιηκεν ακουειν και λαλειν} & 15 &  &  \\
-& {\LARGE\textbf{8}\par} &  & \foreignlanguage{greek}{εν εκειναιϲ δε ταιϲ ημεραιϲ παλιν πολ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{εν εκειναιϲ δε ταιϲ ημεραιϲ παλιν πολ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{λου οχλου οντοϲ και μη εχοντων αυτω̅} & 13 &  &  \\
 &  & 14 & \foreignlanguage{greek}{τι φαγωϲιν προϲκαλεϲαμενοϲ τουϲ} & 17 &  &  \\
 &  & 18 & \foreignlanguage{greek}{μαθηταϲ αυτου λεγει ϲπλαγχνιζομε} & 1 & \textbf{2} &  \\
@@ -16354,7 +16377,7 @@
 &  & 13 & \foreignlanguage{greek}{χαλιδει και αμαρτωλω και ο υιοϲ του} & 19 &  &  \\
 &  & 20 & \foreignlanguage{greek}{\textoverline{ανου} επεϲχυνθηϲεται αυτον οταν ελθη} & 24 &  &  \\
 &  & 25 & \foreignlanguage{greek}{εν τη δοξη του \textoverline{πρϲ} αυτου και των αγγε} & 33 &  &  \\
-&  & 33 & \foreignlanguage{greek}{λων των αγιων και ελεγεν αυτοιϲ} & 3 & {\LARGE\textbf{9}\par} &  \\
+&  & 33 & \foreignlanguage{greek}{λων των αγιων και ελεγεν αυτοιϲ} & 3 & \mygospelchapter &  \\
 &  & 4 & \foreignlanguage{greek}{αμην λεγω υμιν οτι ειϲιν τινεϲ των ωδε} & 11 &  &  \\
 &  & 12 & \foreignlanguage{greek}{εϲτηκοτων οιτινεϲ ου μη γευϲωνται} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{θανατου εωϲ ιδωϲιν την βαϲιλειαν του} & 22 &  &  \\
@@ -16578,10 +16601,10 @@
 &  &  & &  &  & \\ [-0.9em]
 &  & 22 & \foreignlanguage{greek}{χοντα ειϲ την γεενναν οπου ο ϲκωληξ αυ} & 4 & \textbf{48} &  \\
 &  & 4 & \foreignlanguage{greek}{των ου τελευτα και το πυρ ου ϲβεννυεται} & 11 &  &  \\
-& \textbf{49} & 1 & \foreignlanguage{greek}{παϲ γαρ πυρι αλιϲγηθηϲεται καλον το αλα} & 3 & \textbf{50} &  \\
+& \textbf{49} &  & \foreignlanguage{greek}{παϲ γαρ πυρι αλιϲγηθηϲεται καλον το αλα} & 3 &  &  \\
 &  & 4 & \foreignlanguage{greek}{εαν δε το αλα μωρανθη εν τινι αυτο αρτυ} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ϲηται υμειϲ ουν εν εαυτοιϲ εχεται αλα} & 18 &  &  \\
-&  & 19 & \foreignlanguage{greek}{και ειρηνευεται εν αλληλοιϲ και εκειθε̅} & 2 & {\LARGE\textbf{10}\par} &  \\
+&  & 19 & \foreignlanguage{greek}{και ειρηνευεται εν αλληλοιϲ και εκειθε̅} & 2 & \mygospelchapter &  \\
 &  & 3 & \foreignlanguage{greek}{αναϲταϲ ερχεται ειϲ τα ορια τηϲ ιουδαιαϲ} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{περαν του ιορδανου και ϲυνπορευεται ο} & 15 &  &  \\
 &  & 15 & \foreignlanguage{greek}{χλοϲ προϲ αυτον και ωϲ ιωθει παλιν εδι} & 22 &  &  \\
@@ -16793,7 +16816,7 @@
 &  & 17 & \foreignlanguage{greek}{ινα αναβλεψω ο δε ειπεν αυτω υπαγε} & 5 & \textbf{52} &  \\
 &  & 6 & \foreignlanguage{greek}{η πιϲτιϲ ϲου ϲεϲωκεν ϲε και ευθεωϲ ανε} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{βλεψεν και ηκολουθει αυτω εν τη οδω} & 19 &  &  \\
-& {\LARGE\textbf{11}\par} &  & \foreignlanguage{greek}{και οτε ενγιζουϲιν ειϲ ιεροϲολυμα ειϲ βηθ} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και οτε ενγιζουϲιν ειϲ ιεροϲολυμα ειϲ βηθ} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{φαγη και βηθανιαν προϲ το οροϲ των ελεω̅} & 14 &  &  \\
 &  & 15 & \foreignlanguage{greek}{αποϲτελλει δυο των μαθητων αυτου λε} & 1 & \textbf{2} &  \\
 &  & 1 & \foreignlanguage{greek}{γων αυτοιϲ υπαγεται ειϲ την κατεναν} & 6 &  &  \\
@@ -16932,7 +16955,7 @@
 &  & 16 & \foreignlanguage{greek}{τηϲ ην και αποκριθεντεϲ τω \textoverline{ιυ} λεγουϲι̅} & 5 & \textbf{33} &  \\
 &  & 6 & \foreignlanguage{greek}{ουκ οιδομεν και ο \textoverline{ιϲ} αποκριθειϲ λε} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{γει αυτοιϲ ουδε εγω λεγω υμιν εν ποια} & 19 &  &  \\
-&  & 20 & \foreignlanguage{greek}{εξουϲια ταυτα ποιω και ηρξατο αυτοιϲ} & 3 & {\LARGE\textbf{12}\par} &  \\
+&  & 20 & \foreignlanguage{greek}{εξουϲια ταυτα ποιω και ηρξατο αυτοιϲ} & 3 & \mygospelchapter &  \\
 &  & 4 & \foreignlanguage{greek}{εν παραβολαιϲ λαλειν \textoverline{ανοϲ} τιϲ εφυ} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{τευϲεν αμπελωνα και περιεθηκεν αυ} & 13 &  &  \\
 &  & 13 & \foreignlanguage{greek}{τω φραγμον εξωρυξεν υποληνιον} & 16 &  &  \\
@@ -17133,7 +17156,7 @@
 &  & 20 & \foreignlanguage{greek}{λακιον παντεϲ γαρ εκ του περιϲϲευμα} & 5 & \textbf{44} &  \\
 &  & 5 & \foreignlanguage{greek}{τοϲ αυτων εβαλον αυτη δε εκ τηϲ υϲτε} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ρηϲεωϲ αυτηϲ εβαλεν ολον τον βιον αυτηϲ} & 18 &  &  \\
-& {\LARGE\textbf{13}\par} &  & \foreignlanguage{greek}{και εκπορευομενου αυτου εκ του ιερου} & 6 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και εκπορευομενου αυτου εκ του ιερου} & 6 &  &  \\
 [0.2em]
 \cline{4-4}
 \end{tabular}
@@ -17302,7 +17325,7 @@
 &  & 15 & \foreignlanguage{greek}{η αλεκτοροφωνιαϲ η πρωει μη ελθω̅} & 2 & \textbf{36} &  \\
 &  & 3 & \foreignlanguage{greek}{εξεφνηϲ ευρη υμαϲ καθευδονταϲ} & 6 &  &  \\
 & \textbf{37} &  & \foreignlanguage{greek}{α δε υμιν λεγω παϲιν γρηγοριται} & 6 &  &  \\
-& {\LARGE\textbf{14}\par} &  & \foreignlanguage{greek}{ην δε το παϲχα και τα αζυμα μετα δυο} & 9 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{ην δε το παϲχα και τα αζυμα μετα δυο} & 9 &  &  \\
 &  & 10 & \foreignlanguage{greek}{ημεραϲ και εζητουν οι αρχιερειϲ και οι} & 16 &  &  \\
 &  & 17 & \foreignlanguage{greek}{φαριϲαιοι πωϲ αυτον δολω κρατηϲοντεϲ} & 21 &  &  \\
 &  & 22 & \foreignlanguage{greek}{αποκτινωϲιν ελεγον δε μη εν τη εορ} & 6 & \textbf{2} &  \\
@@ -17633,7 +17656,7 @@
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
 &  & 22 & \foreignlanguage{greek}{τριϲ με απαρνηϲη επιβαλων εκλαιεν} & 26 &  &  \\
-& {\LARGE\textbf{15}\par} &  & \foreignlanguage{greek}{και ευθεωϲ επι το πρωει ϲυμβουλιον ποι} & 7 &  &  \\
+& \mygospelchapter &  & \foreignlanguage{greek}{και ευθεωϲ επι το πρωει ϲυμβουλιον ποι} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ηϲαντεϲ οι αρχιερειϲ μετα των πρεϲβυτε} & 12 &  &  \\
 &  & 12 & \foreignlanguage{greek}{ρων και των γραμματεων και ολον το ϲυ̅} & 19 &  &  \\
 &  & 19 & \foreignlanguage{greek}{εδριον δηϲαντεϲ τον \textoverline{ιν} απηγαγον} & 23 &  &  \\
@@ -17680,7 +17703,7 @@
 \cline{4-4} \\
 \cline{4-4}
 &  &  & &  &  & \\ [-0.9em]
-& \textbf{38} & 1 & \foreignlanguage{greek}{απ ανωθεν εωϲ κατω ιδων δε ο κεντυ} & 4 & \textbf{39} &  \\
+& \textbf{38} &  & \foreignlanguage{greek}{απ ανωθεν εωϲ κατω ιδων δε ο κεντυ} & 4 &  &  \\
 &  & 4 & \foreignlanguage{greek}{ριων παρεϲτωϲ αυτω οτι κραξαϲ εξεπνευ} & 9 &  &  \\
 &  & 9 & \foreignlanguage{greek}{ϲεν ειπεν αληθωϲ ο \textoverline{ανοϲ} ουτοϲ \textoverline{υϲ} ην \textoverline{θυ}} & 17 &  &  \\
 & \textbf{40} &  & \foreignlanguage{greek}{ηϲαν δε και γυναικεϲ απο μακροθεν θε} & 7 &  &  \\
@@ -17707,7 +17730,7 @@
 &  & 20 & \foreignlanguage{greek}{μενον εκ τηϲ πετραϲ και προϲεκυλειϲε} & 25 &  &  \\
 &  & 26 & \foreignlanguage{greek}{λιθον επι την θυραν του μνημιου} & 31 &  &  \\
 & \textbf{47} &  & \foreignlanguage{greek}{η δε μαρια η μαγδαληνη και μαρια η ιωϲη} & 9 &  &  \\
-&  & 10 & \foreignlanguage{greek}{\textoverline{μηρ} εθεωρουν που τιθεται και διαγε} & 2 & {\LARGE\textbf{16}\par} &  \\
+&  & 10 & \foreignlanguage{greek}{\textoverline{μηρ} εθεωρουν που τιθεται και διαγε} & 2 & \mygospelchapter &  \\
 &  & 2 & \foreignlanguage{greek}{νομενου του ϲαββατου μαρια η μαγδα} & 7 &  &  \\
 &  & 7 & \foreignlanguage{greek}{ληνη και μαρια η ιακωβου κα ϲαλωμη} & 13 &  &  \\
 [0.2em]
