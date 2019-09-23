@@ -172,7 +172,7 @@ public class Topdf {
                 
                 // Pour les nomina sacra
                 Node index = node;
-                nominasacra(index, manuscrit);
+                nominasacra_or_number(index, manuscrit);
                 
                 // Générer "le numéro du mot".
                 String numeroDuMot = milestone + pos_in_milestone;
@@ -266,17 +266,17 @@ public class Topdf {
         pdf.generer();
     }
 
-    static void nominasacra (Node index, String manuscrit) {
+    static void nominasacra_or_number (Node index, String manuscrit) {
         if(index.hasChildNodes()) {
             NodeList test = index.getChildNodes();
             for (int i = 0; i < test.getLength(); i++){
                 if(test.item(i).hasChildNodes()) {
                     NodeList bb = test.item(i).getChildNodes();
                     for (int j = 0; j < bb.getLength(); j++){
-                        nominasacra(bb.item(j), manuscrit);
+                        nominasacra_or_number(bb.item(j), manuscrit);
                     }
                 }
-                if(test.item(i).getNodeName() == "abbr" && ( (Element) test.item(i) ).getAttribute("type").equals("nominasacra")){
+                if(test.item(i).getNodeName() == "abbr" && ( ( (Element) test.item(i) ).getAttribute("type").equals("nominasacra") || ( (Element) test.item(i) ).getAttribute("type").equals("number") ) ){
                     test.item(i).setTextContent("\\" + "textoverline{" + ((Element)test).getTextContent() + "}");
                 }
             }
