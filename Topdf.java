@@ -102,7 +102,7 @@ public class Topdf {
                     else the_rdg_index_we_will_use_now = rdg1;
                     
                     NodeList liste_de_mot_dans_le_rdg;
-                    if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
+                    if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList && ((NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now)).getLength() >= 1) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
                         liste_de_mot_dans_le_rdg = (NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now);
                         
                         // On passe toute les balises qui ne sont pas <w> comme par exemple <lb> si présente.
@@ -163,8 +163,10 @@ public class Topdf {
                         dernier_indice_du_mot_en_rdg = 0;
                         if (!second_rdg) second_rdg = true;
                         else if (second_rdg) { second_rdg = false; in_app = false; }
+                        numero_de_mot++;
                         continue;
                     }
+
                 }
                 
                 // Pour les corrections scribales
