@@ -21,8 +21,9 @@ import java.util.Arrays;
  
  Pour avoir accès à d'autres propriétés d'un mot voir la classe mot.java .
  
- Pour la prochaine fois :
- 1. Résoudre Mt 2:17 et Mt 17:25.
+ Ajouter des petits pointillés entre le numéro de chapitre et sa page.
+ Mettre le sommaire de chaque livre côte à côte sur la même page.
+ Et mettre en bas de cette page la page de correction scribale et son numéro de page.
  
 Information concernant le fonctionnement du programme :
  1. Les mots sont classées par espace ou retour à la ligne.
@@ -32,6 +33,8 @@ Information concernant le fonctionnement du programme :
     --> On ajoute la page avant d'ajouter son premier mot.
     Ainsi, on peut, sur les prochaines itérations, faire : texte.size()-1 sans ajouter sur l'index 0 de texte mais bien sur le bon index, la bonne page!
  */
+
+ // Mt 2:17 et Mt 17:25.
 
 public class Topdf {
     
@@ -62,10 +65,19 @@ public class Topdf {
         boolean in_app = false;
         boolean second_rdg = false;
         int dernier_indice_du_mot_en_rdg = 0;
+    
+        int nombreAoterSurNumerotationPourRenumerotation = 0;
+        
+        // Pour enregistrer toute modification scribale.
+        // The reference of the first word concerned.
+        ArrayList<ArrayList<mot>> corr_references = new ArrayList<ArrayList<mot>>(); // Si on a une insertion, prendre le numéro du premier mot inséré.
+        ArrayList<mot> corrections_value = new ArrayList<mot>(); // The first value of this ArrayList would be the initial value, then the others the modifications made.
         
         // Pour les numéros de mot.
         String milestone = "000000";
         String pos_in_milestone = "00";
+        
+        // boolean stop_debugging = false;
         
         for (int temp = 0; temp < balises.getLength(); temp++)
         {
@@ -129,6 +141,9 @@ public class Topdf {
                         {
                             dernier_indice_du_mot_en_rdg++;
                         }
+                        if(second_rdg) {
+                            nombreAoterSurNumerotationPourRenumerotation++;
+                        }
                         if (dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength() && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null &&  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
                             node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
                             dernier_indice_du_mot_en_rdg++;
@@ -143,27 +158,16 @@ public class Topdf {
                                 }
                             }
                         }
-                        else if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // Si nous sommes arrivé à la fin sans avoir trouvé de <w>.
-                            dernier_indice_du_mot_en_rdg = 0;
-                            if (!second_rdg) { // Si ce <rdg> n'est pas le dernier de <app>
-                                // On sort du <rdg> et on va au premier <w> du second <rdg>.
-                                second_rdg = true;
-                            }
-                            else if (second_rdg) { // Sinon
-                                // On sort de <app> et on va au <w> suivant.
-                                // System.out.println("Test");
-                                second_rdg = false;
-                                in_app = false;
-                            }
-                            continue;
-                        }
                     }
                     else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
                         // Le code ci-dessous est expliqué ci-dessus.
                         dernier_indice_du_mot_en_rdg = 0;
-                        if (!second_rdg) second_rdg = true;
-                        else if (second_rdg) { second_rdg = false; in_app = false; }
-                        numero_de_mot++;
+                        if (second_rdg) {
+                            second_rdg = false;
+                            in_app = false;
+                        }
+                        else if (!second_rdg) {second_rdg = true;}
+                        nombreAoterSurNumerotationPourRenumerotation++;
                         continue;
                     }
 
@@ -180,8 +184,9 @@ public class Topdf {
                 String numeroDuMot = milestone + pos_in_milestone;
                 
                 Element eElement = (Element) node;
+                
 
-                int prochain_numero_de_mot = numero_de_mot + 1;
+                int prochain_numero_de_mot = numero_de_mot + 1; // - nombreAoterSurNumerotationPourRenumerotation;
                 String prochain_mot = Integer.toString(page) + "1" + String.format("%02d", numero_de_ligne) + String.format("%02d", prochain_numero_de_mot);
 
                 int prochain_numero_de_ligne = numero_de_ligne + 1;
@@ -189,9 +194,18 @@ public class Topdf {
 
                 int prochain_numero_de_page = page + 1;
                 String prochaine_page = Integer.toString(prochain_numero_de_page) + "10101";
+                
+                int numeroDeMotRenumerote = Integer.parseInt(eElement.getAttribute("n")) - nombreAoterSurNumerotationPourRenumerotation;
+                String numeroDePlacementDuMot = Integer.toString(numeroDeMotRenumerote);
+                
+                /* if( !stop ) { // debugging code.
+                    System.out.println("text: " + eElement.getTextContent() + "\nprochain_mot: " + prochain_mot + "\nnumeroDePlacementDuMot: " + numeroDePlacementDuMot + "\nprochaineligne: " + prochaine_ligne + "\nnombreAoterSurNumerotationPourRenumerotation: " + nombreAoterSurNumerotationPourRenumerotation);
+                    if(eElement.getTextContent().equals("ηκουϲθη")) stop = true;
+                }*/
 
                 // "PROCHAIN MOT" --------------------------------------------------------------------
-                if(eElement.getAttribute("n").equals(prochain_mot)) {
+                // On pourrait inverser les conditions if et else if mais je préfère les laisser commme tel pour montrer qu'on ne "peut" pas faire n'importe quoi concernant leur ordre.
+                if( !eElement.getAttribute("n").equals(prochaine_ligne) && numeroDePlacementDuMot.equals(prochain_mot)) {
                     
                     if(PrendreLeMot) {
                         manuscrit += " ";
@@ -201,6 +215,9 @@ public class Topdf {
                         texte.get(texte.size()-1).get(texte.get(texte.size()-1).size()-1).add(new mot(eElement.getTextContent(), numeroDuMot)); // On ajoute le mot sur la dernière ligne qu'on ait de la dernière page "écrite".
                     }
                     numero_de_mot++;
+                    // On incrémente la position du milestone.
+                    int tmp = Integer.parseInt(pos_in_milestone);
+                    pos_in_milestone = String.format("%02d", (tmp+1));
                     
                 }
 
@@ -219,11 +236,15 @@ public class Topdf {
                     }
                     numero_de_ligne++;
                     numero_de_mot = 1;
+                    nombreAoterSurNumerotationPourRenumerotation = 0;
+                    // On incrémente la position du milestone.
+                    int tmp = Integer.parseInt(pos_in_milestone);
+                    pos_in_milestone = String.format("%02d", (tmp+1));
                     
                 }
 
                 // "PROCHAINE PAGE" ------------------------------------------------------------------
-                else if(eElement.getAttribute("n").equals(prochaine_page)) {
+                else if(eElement.getAttribute("n").equals(prochaine_page) || numeroDePlacementDuMot.equals(prochaine_page)) {
                     
                     if(eElement.getElementsByTagName("pb").getLength() == 1 ) {
                         manuscrit = mot_coupe(eElement, PrendreLeMot, manuscrit, texte, numeroDuMot);
@@ -239,12 +260,11 @@ public class Topdf {
                     page++;
                     numero_de_ligne = 1;
                     numero_de_mot = 1;
-                    
+                    nombreAoterSurNumerotationPourRenumerotation = 0;
+                    // On incrémente la position du milestone.
+                    int tmp = Integer.parseInt(pos_in_milestone);
+                    pos_in_milestone = String.format("%02d", (tmp+1));
                 }
-                
-                // On incrémente la position du milestone.
-                int tmp = Integer.parseInt(pos_in_milestone);
-                pos_in_milestone = String.format("%02d", (tmp+1));
             }
         }
         classe_et_prepare_une_page(texte);
