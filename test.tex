@@ -13,6 +13,13 @@
  \usepackage[nomarginpar, margin=0.7in]{geometry}
  \pagestyle{plain}
 
+ % pour afficher dans le "toc", des lignes en pointillées entre les chapitres des livres et leur numéro de page.
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+ % suppress page number in toc for parts
+\cftpagenumbersoff{part}
+
  \usepackage{polyglossia}
  \setmainlanguage{french}
  \setotherlanguage{greek}

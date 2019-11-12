@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.6)  11 NOV 2019 03:45
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.6)  12 NOV 2019 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -412,13 +412,50 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks21
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip51
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftpartindent=\skip56
+\cftbeforesecskip=\skip57
+\cftsecindent=\skip58
+\cftsecnumwidth=\skip59
+\cftbeforesubsecskip=\skip60
+\cftsubsecindent=\skip61
+\cftsubsecnumwidth=\skip62
+\cftbeforesubsubsecskip=\skip63
+\cftsubsubsecindent=\skip64
+\cftsubsubsecnumwidth=\skip65
+\cftbeforeparaskip=\skip66
+\cftparaindent=\skip67
+\cftparanumwidth=\skip68
+\cftbeforesubparaskip=\skip69
+\cftsubparaindent=\skip70
+\cftsubparanumwidth=\skip71
+\cftbeforeloftitleskip=\skip72
+\cftafterloftitleskip=\skip73
+\cftbeforefigskip=\skip74
+\cftfigindent=\skip75
+\cftfignumwidth=\skip76
+\c@lofdepth=\count299
+\c@lotdepth=\count300
+\cftbeforelottitleskip=\skip77
+\cftafterlottitleskip=\skip78
+\cftbeforetabskip=\skip79
+\cfttabindent=\skip80
+\cfttabnumwidth=\skip81
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2019/04/04 v1.44 Alternative to Babel for XeLaTeX and LuaL
 aTeX
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count299
+\etb@tempcnta=\count301
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/makecmds/makecmds.sty
 Package: makecmds 2009/09/03 v1.0a extra command making commands
@@ -431,7 +468,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
 )
-\XKV@depth=\count300
+\XKV@depth=\count302
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -455,7 +492,7 @@ Package polyglossia Info: Default language is french.
 File: gloss-greek.ldf polyglossia: module for greek
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/polyglossia/xgreek-fixes.def)
-\@attic@num=\count301
+\@attic@num=\count303
 )
 
 Package fontspec Info: Could not resolve font "KoineGreek/BI" (it probably
@@ -572,23 +609,23 @@ Package pageslts Info: Option fnsymbolmult enabled
 (pageslts)             If you do not want this, call pageslts with option
 (pageslts)             fnsymbolmult=false.
 (pageslts)              on input line 322.
-\c@CurrentPage=\count302
-\c@pagesLTS.pagenr=\count303
-\c@pagesLTS.current.local.0=\count304
-\c@pagesLTS.pnc.0=\count305
+\c@CurrentPage=\count304
+\c@pagesLTS.pagenr=\count305
+\c@pagesLTS.current.local.0=\count306
+\c@pagesLTS.pnc.0=\count307
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+\f@nch@headwidth=\skip82
+\f@nch@O@elh=\skip83
+\f@nch@O@erh=\skip84
+\f@nch@O@olh=\skip85
+\f@nch@O@orh=\skip86
+\f@nch@O@elf=\skip87
+\f@nch@O@erf=\skip88
+\f@nch@O@olf=\skip89
+\f@nch@O@orf=\skip90
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2019/09/28 v7.00a Hypertext links for LaTeX
@@ -628,13 +665,13 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen157
-\Hy@linkcounter=\count306
-\Hy@pagecounter=\count307
+\Hy@linkcounter=\count308
+\Hy@pagecounter=\count309
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2019/09/28 v7.00a Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count308
+\Hy@SavedSpaceFactor=\count310
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -646,7 +683,7 @@ Package hyperref Info: Plain pages OFF on input line 4555.
 Package hyperref Info: Backreferencing OFF on input line 4560.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4793.
-\c@Hy@tempcnt=\count309
+\c@Hy@tempcnt=\count311
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
@@ -654,7 +691,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5152.
 \XeTeXLinkMargin=\dimen158
-\Fld@menulength=\count310
+\Fld@menulength=\count312
 \Field@Width=\dimen159
 \Fld@charsize=\dimen160
 Package hyperref Info: Hyper figures OFF on input line 6423.
@@ -666,9 +703,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6448.
 Package hyperref Info: PDF/A mode OFF on input line 6453.
 LaTeX Info: Redefining \ref on input line 6493.
 LaTeX Info: Redefining \pageref on input line 6497.
-\Hy@abspage=\count311
-\c@Item=\count312
-\c@Hfootnote=\count313
+\Hy@abspage=\count313
+\c@Item=\count314
+\c@Hfootnote=\count315
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -683,41 +720,41 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box49
-\c@Hy@AnnotLevel=\count314
-\HyField@AnnotCount=\count315
-\Fld@listcount=\count316
-\c@bookmark@seq@number=\count317
-\Hy@SectionHShift=\skip60
+\c@Hy@AnnotLevel=\count316
+\HyField@AnnotCount=\count317
+\Fld@listcount=\count318
+\c@bookmark@seq@number=\count319
+\Hy@SectionHShift=\skip91
 )
-\c@gospelbook=\count318
-\c@gospelchapter=\count319
+\c@gospelbook=\count320
+\c@gospelchapter=\count321
 
 (./test.aux
-\c@pagesLTS.roman.1.local.cnt=\count320
-\c@pagesLTS.arabic.1.local.cnt=\count321
+\c@pagesLTS.roman.1.local.cnt=\count322
+\c@pagesLTS.arabic.1.local.cnt=\count323
 )
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Info: Redefining \dots on input line 47.
-LaTeX Info: Redefining \up on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Info: Redefining \dots on input line 54.
+LaTeX Info: Redefining \up on input line 54.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -759,10 +796,10 @@ roblem,
 (pageslts)             which is probably solved in the new version used here.
 (pageslts)             To play it safe, you could load the atveryend package
 (pageslts)             before the etoolbox package.
-(pageslts)              on input line 47.
+(pageslts)              on input line 54.
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -770,53 +807,53 @@ Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count324
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (./test.out) (./test.out)
 \@outlinefile=\write3
 \openout3 = `test.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-1.
+8.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-1.
+8.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-51.
+58.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-51.
+58.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 51.
+(Font)              <12> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 51.
+(Font)              <8> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 51.
+(Font)              <6> on input line 58.
 
 
 LaTeX Warning: No \author given.
 
-\c@pagesLTS.pnc.roman=\count323
-\c@pagesLTS.double.roman=\count324
-\c@pagesLTS.current.local.roman=\count325
+\c@pagesLTS.pnc.roman=\count325
+\c@pagesLTS.double.roman=\count326
+\c@pagesLTS.current.local.roman=\count327
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -828,6 +865,8 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 LaTeX Font Warning: Font shape `TU/KoineGreek(0)/bx/n' undefined
 (Font)              using `TU/KoineGreek(0)/m/n' instead on input line 3.
 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
 [1
 
 ] [2] [3])
@@ -835,12 +874,12 @@ LaTeX Font Warning: Font shape `TU/KoineGreek(0)/bx/n' undefined
 \openout4 = `test.toc'.
 
  [4]
-\c@pagesLTS.roman.1.local.count=\count326
-\c@pagesLTS.pnc.arabic=\count327
-\c@pagesLTS.double.arabic=\count328
-\c@pagesLTS.current.local.arabic=\count329
+\c@pagesLTS.roman.1.local.count=\count328
+\c@pagesLTS.pnc.arabic=\count329
+\c@pagesLTS.double.arabic=\count330
+\c@pagesLTS.current.local.arabic=\count331
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 64.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 71.
  [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
 [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
@@ -873,9 +912,9 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 [367] [368] [369] [370] [371] 
 AED: pageslts setting LastPage 
 [372]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17868.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 17868.
-\c@pagesLTS.arabic.1.local.count=\count330
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17875.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 17875.
+\c@pagesLTS.arabic.1.local.count=\count332
  
 AED: pageslts setting VeryLastPage via AfterLastShipout 
 
@@ -886,22 +925,22 @@ Package pageslts Info: Total number of pages is odd.
 
 
 (./test.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 17868.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17868
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 17875.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17875
 .
 Package rerunfilecheck Info: File `test.out' has not changed.
-(rerunfilecheck)             Checksum: 2418C4E4C67727DAE683A94FF78C63CE.
+(rerunfilecheck)             Checksum: A7AB3C06D452C30D465EEC17732B8F61.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22909 strings out of 492482
- 437615 string characters out of 6129471
- 593200 words of memory out of 5000000
- 27190 multiletter control sequences out of 15000+600000
- 547123 words of font info for 51 fonts, out of 8000000 for 9000
+ 23169 strings out of 492482
+ 441505 string characters out of 6129471
+ 598939 words of memory out of 5000000
+ 27444 multiletter control sequences out of 15000+600000
+ 550728 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  43i,9n,58p,820b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
 

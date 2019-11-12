@@ -21,10 +21,6 @@ import java.util.Arrays;
  
  Pour avoir accès à d'autres propriétés d'un mot voir la classe mot.java .
  
- Ajouter des petits pointillés entre le numéro de chapitre et sa page.
- Mettre le sommaire de chaque livre côte à côte sur la même page.
- Et mettre en bas de cette page la page de correction scribale et son numéro de page.
- 
 Information concernant le fonctionnement du programme :
  1. Les mots sont classées par espace ou retour à la ligne.
  2. Sur la 1ère boucle for, ce n'est pas sur un mot que l'on tombe en premier, mais sur une page : la première !
@@ -34,6 +30,7 @@ Information concernant le fonctionnement du programme :
     Ainsi, on peut, sur les prochaines itérations, faire : texte.size()-1 sans ajouter sur l'index 0 de texte mais bien sur le bon index, la bonne page!
  */
 
+ // Enregistrer les corrections scribales.
  // Mt 2:17 et Mt 17:25.
 
 public class Topdf {
@@ -166,7 +163,7 @@ public class Topdf {
                             second_rdg = false;
                             in_app = false;
                         }
-                        else if (!second_rdg) {second_rdg = true;}
+                        else if (!second_rdg) {second_rdg = true;} // on devrait pouvoir remplacer ça par un simple else.
                         nombreAoterSurNumerotationPourRenumerotation++;
                         continue;
                     }
