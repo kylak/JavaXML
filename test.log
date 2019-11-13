@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.6)  12 NOV 2019 22:43
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.6)  13 NOV 2019 03:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,26 +735,26 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Info: Redefining \dots on input line 54.
-LaTeX Info: Redefining \up on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Info: Redefining \dots on input line 56.
+LaTeX Info: Redefining \up on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -796,10 +796,10 @@ roblem,
 (pageslts)             which is probably solved in the new version used here.
 (pageslts)             To play it safe, you could load the atveryend package
 (pageslts)             before the etoolbox package.
-(pageslts)              on input line 54.
+(pageslts)              on input line 56.
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 56.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -809,44 +809,44 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count324
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
 
 (./test.out) (./test.out)
 \@outlinefile=\write3
 \openout3 = `test.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-8.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+0.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-8.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+0.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-58.
+60.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-58.
+60.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 58.
+(Font)              <12> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <8> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 60.
 
 
 LaTeX Warning: No \author given.
@@ -879,7 +879,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \c@pagesLTS.double.arabic=\count330
 \c@pagesLTS.current.local.arabic=\count331
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 71.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 73.
  [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
 [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
@@ -912,8 +912,8 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 [367] [368] [369] [370] [371] 
 AED: pageslts setting LastPage 
 [372]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17875.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 17875.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17877.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 17877.
 \c@pagesLTS.arabic.1.local.count=\count332
  
 AED: pageslts setting VeryLastPage via AfterLastShipout 
@@ -925,8 +925,8 @@ Package pageslts Info: Total number of pages is odd.
 
 
 (./test.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 17875.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17875
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 17877.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17877
 .
 Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: A7AB3C06D452C30D465EEC17732B8F61.
@@ -934,12 +934,15 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 23169 strings out of 492482
- 441505 string characters out of 6129471
- 598939 words of memory out of 5000000
- 27444 multiletter control sequences out of 15000+600000
+ 23174 strings out of 492482
+ 441563 string characters out of 6129471
+ 599939 words of memory out of 5000000
+ 27449 multiletter control sequences out of 15000+600000
  550728 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  43i,9n,58p,820b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
