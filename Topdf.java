@@ -60,15 +60,18 @@ public class Topdf {
         
         // Pour les <w> dans les <app>.
         boolean in_app = false;
-        boolean second_rdg = false;
+        int nbr_of_rdg_visited = 0;
         int dernier_indice_du_mot_en_rdg = 0;
+        
+        // Pour les <rdg>, on considère que parmi plusieurs corrections, celle qui "a le dernier mot" càd celle a afficher, est celle qui est premier enfant de <app>.
     
         int nombreAoterSurNumerotationPourRenumerotation = 0;
-        
-        // Pour enregistrer toute modification scribale.
-        // The reference of the first word concerned.
-        ArrayList<ArrayList<mot>> corr_references = new ArrayList<ArrayList<mot>>(); // Si on a une insertion, prendre le numéro du premier mot inséré.
-        ArrayList<mot> corrections_value = new ArrayList<mot>(); // The first value of this ArrayList would be the initial value, then the others the modifications made.
+                
+        ArrayList<ArrayList<ArrayList<mot>>> corrections = new ArrayList<ArrayList<ArrayList<mot>>>(); // Toutes les corrections.
+        ArrayList<ArrayList<mot>> correction1 = new ArrayList<ArrayList<mot>>(); // Une correction parmi d'autres.
+        ArrayList<mot> etape0 = new ArrayList<mot>(); // Une étape de correction parmi d'autres (Exemple d'un cas à 4 étapes (rare, en général on a simplement deux étapes : origin et correction par x): origin, correction par ^, puis seconde correction au même endoit toujours par ^, puis encore au même endroit une correction sur ces corrections mais par a cette fois). etape0 correspond à origin. Voir Luc 10:11
+        correction1.add(etape0);
+        corrections.add(correction1);
         
         // Pour les numéros de mot.
         String milestone = "000000";
@@ -95,80 +98,79 @@ public class Topdf {
             if (node.getNodeType() == Node.ELEMENT_NODE && ( ((Element)node).getTagName() == "w" || ((Element)node).getTagName() == "app"))
             {
                 
-                if ( (node.getNodeType() == Node.ELEMENT_NODE && ((Element)node).getTagName() == "app")) {
-                    in_app = true; // Vaudra false au dernier <w> du dernier <rdg> (le 2ème donc).
-                    NodeList balises_dans_app = node.getChildNodes(); // On récupère les balises filles de <app> comme <rdg> par exemple.
-                    int the_rdg_index_we_will_use_now = 0;
-                    int rdg1, rdg2; rdg1 = rdg2 = 0;
-                    for (int i = 0, indice_rdg = 0; i < balises_dans_app.getLength(); i++) { // On passe en revue les balises filles de <app> une par une.
-                        if( (balises_dans_app.item(i).getNodeType() == Node.ELEMENT_NODE) && ( ((Element)balises_dans_app.item(i)).getTagName() == "rdg" ) ) {
-                            indice_rdg++;
-                            if(indice_rdg == 1) rdg1 = i;       // Si on vient d'entrer pour la première fois dans cette balise <app>.
-                            else if (indice_rdg == 2) rdg2 = i;
-                        }
-                    }
-                    if(second_rdg) the_rdg_index_we_will_use_now = rdg2;
-                    else the_rdg_index_we_will_use_now = rdg1;
-                    
-                    NodeList liste_de_mot_dans_le_rdg;
-                    if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList && ((NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now)).getLength() >= 1) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
-                        liste_de_mot_dans_le_rdg = (NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now);
-                        
-                        // On passe toute les balises qui ne sont pas <w> comme par exemple <lb> si présente.
-                        while( // Cette condition est sûrement simplifiable.
-                              dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength()
-                              && (
-                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) == null
-                                  ||
-                                  (
-                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
-                                      &&
-                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() != Node.ELEMENT_NODE
-                                   )
-                                  ||
-                                  (
-                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
-                                      &&
-                                      liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
-                                      &&
-                                      ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() != "w"
-                                   )
-                                  )
-                              )
-                        {
-                            dernier_indice_du_mot_en_rdg++;
-                        }
-                        if(second_rdg) {
-                            nombreAoterSurNumerotationPourRenumerotation++;
-                        }
-                        if (dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength() && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null &&  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
-                            node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
-                            dernier_indice_du_mot_en_rdg++;
-                            if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
-                                dernier_indice_du_mot_en_rdg = 0;
-                                if (!second_rdg) {
-                                    second_rdg = true;
-                                }
-                                else {
-                                    in_app = false;
-                                    second_rdg = false;
-                                }
-                            }
-                        }
-                    }
-                    else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
-                        // Le code ci-dessous est expliqué ci-dessus.
-                        dernier_indice_du_mot_en_rdg = 0;
-                        if (second_rdg) {
-                            second_rdg = false;
-                            in_app = false;
-                        }
-                        else if (!second_rdg) {second_rdg = true;} // on devrait pouvoir remplacer ça par un simple else.
-                        nombreAoterSurNumerotationPourRenumerotation++;
-                        continue;
-                    }
+                            if ( (node.getNodeType() == Node.ELEMENT_NODE && ((Element)node).getTagName() == "app")) {
+                                in_app = true; // Vaudra false au dernier <w> du dernier <rdg> (le 2ème donc).
+                                corrections.add(new ArrayList<ArrayList<mot>>());
+                                NodeList balises_dans_app = node.getChildNodes(); // On récupère les balises filles de <app> comme <rdg> par exemple.
+                                int the_rdg_index_we_will_use_now = 0;
 
-                }
+                                int last_rdg_index = 0;
+                                boolean notYet = true;
+                                for (int i = 0; i < balises_dans_app.getLength(); i++) {
+                                    if( (balises_dans_app.item(i).getNodeType() == Node.ELEMENT_NODE) && ( ((Element)balises_dans_app.item(i)).getTagName() == "rdg" ) ) {
+                                        if (i >= nbr_of_rdg_visited && notYet) {the_rdg_index_we_will_use_now = i; notYet = false;}
+                                        last_rdg_index = i;
+                                    }
+                                }
+                                
+                                NodeList liste_de_mot_dans_le_rdg;
+                                if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList && ((NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now)).getLength() >= 1) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
+                                    liste_de_mot_dans_le_rdg = (NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now);
+                                    
+                                    // On passe toute les balises qui ne sont pas <w> comme par exemple <lb> si présente.
+                                    while( // Cette condition est sûrement simplifiable.
+                                          dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength()
+                                          && (
+                                              liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) == null
+                                              ||
+                                              (
+                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
+                                                  &&
+                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() != Node.ELEMENT_NODE
+                                               )
+                                              ||
+                                              (
+                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
+                                                  &&
+                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
+                                                  &&
+                                                  ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() != "w"
+                                               )
+                                              )
+                                          )
+                                    {
+                                        dernier_indice_du_mot_en_rdg++;
+                                    }
+                                    if (the_rdg_index_we_will_use_now > 0) { // => Si nous ne sommes pas dans le "premier" <rdg> (càd celui que l'on retient).
+                                        nombreAoterSurNumerotationPourRenumerotation++;
+                                    }
+                                    if (dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength() && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null &&  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
+                                        node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
+                                        dernier_indice_du_mot_en_rdg++;
+                                        if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
+                                            dernier_indice_du_mot_en_rdg = 0;
+                                            nbr_of_rdg_visited++;
+                                            
+                                            if (the_rdg_index_we_will_use_now == last_rdg_index) {
+                                                in_app = false;
+                                                nbr_of_rdg_visited = 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
+                                    // Le code ci-dessous est expliqué ci-dessus.
+                                    dernier_indice_du_mot_en_rdg = 0;
+                                    nbr_of_rdg_visited++;
+                                    if (the_rdg_index_we_will_use_now == last_rdg_index) {
+                                        in_app = false;
+                                        nbr_of_rdg_visited = 0;
+                                    }
+                                    nombreAoterSurNumerotationPourRenumerotation++; // Car lors d'une suppresion, on compte le mot vide qui remplace ce(ux) qui étai(en)t à l'origine.
+                                    continue;
+                                }
+                                
+                            }
                 
                 // Pour les corrections scribales
                 boolean PrendreLeMot = ! isTheWordToIgnore(node, FINAL);
