@@ -1,6 +1,0 @@
-
-page 124 à la ligne 9, "λεγι αυτη ο ισ πιστευε μοι γυναι οτι ερχετε ωρα"
-47 caractères, espace inclus, comtpés.
-38 caractères sans les espaces.
-
-Par défaut, ne pas compter les espaces (et l'indiquer) car je n'ai pas trouvé un espace dans le manuscrit.
