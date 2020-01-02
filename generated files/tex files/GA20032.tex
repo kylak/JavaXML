@@ -12,7 +12,16 @@
  \title{{\myfont ``GA 032''}}
  \usepackage{layout}
  \usepackage[nomarginpar, margin=0.7in]{geometry}
- \pagestyle{plain}
+ \usepackage{graphicx}
+%\newcommand{\tailleDeLaPolice}{14.5}
+%\usepackage[fontsize=\tailleDeLaPolice pt]{scrextend}%
+
+  %\def\longueurFinalN#1{\FPdiv\result{11}{0.7}
+%\FPdiv\result{#1}{\result}
+%\FPround\result{\result}{2}
+%\num{\result}}
+
+\pagestyle{plain}
 
 \newcommand{\newPart}[1]{
 \part*{#1}
@@ -45,7 +54,7 @@
 \newcommand\Pheader{\rule[-2ex]{0pt}{5ex}}
 \newsavebox\TBox
 \def\textoverline#1{\savebox\TBox{#1}%
-\makebox[0pt][l]{#1}\rule[1.1\ht\TBox]{\wd\TBox}{0.7pt}}
+\makebox[0pt][l]{#1}\rule[1.1\ht\TBox]{\wd\TBox}{0.7pt}} % prendre la valeur de \thelongueurFinalN{\tailleDeLaPolice}
  % amélioration : ajouter un "padding" sur le tabular + agrandir le tabular et son contenu.
 
 \usepackage{pageslts}
@@ -83,12 +92,14 @@
 \newpage
 \foreignlanguage{greek}{\tableofcontents}
 \clearpage\pagenumbering{arabic}\setcounter{page}{1}
+\newgeometry{margin=0.0in}
 \clearpage
 \newpage
  {
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\mygospelbook{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -128,6 +139,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -137,6 +149,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{1:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -176,6 +189,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -185,6 +199,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{1:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -224,6 +239,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -233,6 +249,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{2:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -272,6 +289,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -281,6 +299,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{2:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -320,6 +339,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -329,6 +349,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{2:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -369,6 +390,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -378,6 +400,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{3:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -417,6 +440,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -426,6 +450,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{3:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -465,6 +490,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -474,6 +500,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{4:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -513,6 +540,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -522,6 +550,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{4:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -561,6 +590,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -570,6 +600,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{4:24})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -609,6 +640,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -618,6 +650,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{5:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -657,6 +690,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -666,6 +700,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{5:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -705,6 +740,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -714,6 +750,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{5:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -753,6 +790,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -762,6 +800,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{5:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -801,6 +840,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -810,6 +850,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{5:48})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -849,6 +890,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -858,6 +900,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{6:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -897,6 +940,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -906,6 +950,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{6:17})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -945,6 +990,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -954,6 +1000,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{6:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -993,6 +1040,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1002,6 +1050,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{6:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1041,6 +1090,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1050,6 +1100,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{7:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1090,6 +1141,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1099,6 +1151,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{7:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1139,6 +1192,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1148,6 +1202,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{7:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1187,6 +1242,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1196,6 +1252,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{8:9})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1235,6 +1292,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1244,6 +1302,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{8:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1283,6 +1342,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1292,6 +1352,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{8:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1331,6 +1392,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1340,6 +1402,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{9:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1379,6 +1442,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1388,6 +1452,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{9:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1427,6 +1492,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1436,6 +1502,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{9:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1475,6 +1542,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1484,6 +1552,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{9:30})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1523,6 +1592,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1532,6 +1602,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{10:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1571,6 +1642,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1580,6 +1652,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{10:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1619,6 +1692,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1628,6 +1702,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{10:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1667,6 +1742,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1676,6 +1752,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{10:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1715,6 +1792,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1724,6 +1802,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{10:39})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1763,6 +1842,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1772,6 +1852,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{11:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1811,6 +1892,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1820,6 +1902,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{11:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1859,6 +1942,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1868,6 +1952,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{11:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1907,6 +1992,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1916,6 +2002,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -1955,6 +2042,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -1964,6 +2052,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2003,6 +2092,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2012,6 +2102,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2051,6 +2142,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2060,6 +2152,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2099,6 +2192,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2108,6 +2202,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2147,6 +2242,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2156,6 +2252,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{12:49})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2195,6 +2292,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2204,6 +2302,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2243,6 +2342,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2252,6 +2352,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2291,6 +2392,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2300,6 +2402,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2339,6 +2442,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2348,6 +2452,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2387,6 +2492,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2396,6 +2502,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2435,6 +2542,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2444,6 +2552,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{13:51})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2483,6 +2592,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2492,6 +2602,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{14:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2531,6 +2642,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2540,6 +2652,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{14:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2579,6 +2692,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2588,6 +2702,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{14:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2627,6 +2742,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2636,6 +2752,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{14:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2675,6 +2792,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2684,6 +2802,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{15:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2723,6 +2842,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2732,6 +2852,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{15:17})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2771,6 +2892,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2780,6 +2902,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{15:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2819,6 +2942,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2828,6 +2952,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{15:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2867,6 +2992,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2876,6 +3002,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{16:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2915,6 +3042,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2924,6 +3052,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{16:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -2963,6 +3092,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -2972,6 +3102,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{16:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3011,6 +3142,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3020,6 +3152,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{17:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3059,6 +3192,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3068,6 +3202,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{17:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3107,6 +3242,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3116,6 +3252,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{17:24})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3155,6 +3292,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3164,6 +3302,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{18:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3203,6 +3342,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3212,6 +3352,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{18:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3252,6 +3393,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3261,6 +3403,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{18:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3300,6 +3443,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3309,6 +3453,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{18:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3348,6 +3493,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3357,6 +3503,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{19:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3396,6 +3543,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3405,6 +3553,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{19:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3444,6 +3593,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3453,6 +3603,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{19:24})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3492,6 +3643,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3501,6 +3653,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{20:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3540,6 +3693,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3549,6 +3703,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{20:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3588,6 +3743,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3597,6 +3753,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{20:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3636,6 +3793,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3645,6 +3803,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{20:30})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3684,6 +3843,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3693,6 +3853,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{21:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3732,6 +3893,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3741,6 +3903,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{21:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3780,6 +3943,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3789,6 +3953,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{21:24})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3828,6 +3993,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3837,6 +4003,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{21:32})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3876,6 +4043,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3885,6 +4053,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{21:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3924,6 +4093,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3933,6 +4103,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{22:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -3972,6 +4143,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -3981,6 +4153,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{22:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4020,6 +4193,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4029,6 +4203,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{22:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4068,6 +4243,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4077,6 +4253,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{22:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4116,6 +4293,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4125,6 +4303,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{23:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4164,6 +4343,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4173,6 +4353,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{23:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4212,6 +4393,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4221,6 +4403,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{23:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4260,6 +4443,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4269,6 +4453,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{23:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4308,6 +4493,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4317,6 +4503,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{24:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4357,6 +4544,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4366,6 +4554,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{24:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4405,6 +4594,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4414,6 +4604,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{24:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4453,6 +4644,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4462,6 +4654,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{24:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4501,6 +4694,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4510,6 +4704,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{24:48})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4549,6 +4744,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4558,6 +4754,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{25:9})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4597,6 +4794,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4606,6 +4804,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{25:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4645,6 +4844,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4654,6 +4854,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{25:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4693,6 +4894,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4702,6 +4904,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{25:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4741,6 +4944,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4750,6 +4954,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4789,6 +4994,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4798,6 +5004,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:17})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4837,6 +5044,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4846,6 +5054,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4885,6 +5094,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4894,6 +5104,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4933,6 +5144,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4942,6 +5154,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:47})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -4981,6 +5194,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -4990,6 +5204,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:56})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5029,6 +5244,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5038,6 +5254,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{26:65})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5078,6 +5295,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5087,6 +5305,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5126,6 +5345,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5135,6 +5355,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5174,6 +5395,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5183,6 +5405,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5222,6 +5445,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5231,6 +5455,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5271,6 +5496,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5280,6 +5506,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:51})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5319,6 +5546,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5328,6 +5556,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{27:61})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5367,6 +5596,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5376,6 +5606,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{28:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5415,6 +5646,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5424,6 +5656,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαθθαιον} \textbf{(\nospace{28:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5450,6 +5683,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5459,6 +5693,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5498,6 +5733,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5507,6 +5743,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{1:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5546,6 +5783,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5555,6 +5793,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{1:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5594,6 +5833,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5603,6 +5843,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{1:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5642,6 +5883,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5651,6 +5893,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{1:45})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5690,6 +5933,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5699,6 +5943,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{2:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5738,6 +5983,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5747,6 +5993,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{2:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5786,6 +6033,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5795,6 +6043,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{2:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5834,6 +6083,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5843,6 +6093,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{3:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5882,6 +6133,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5891,6 +6143,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{3:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5930,6 +6183,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5939,6 +6193,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{3:30})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -5978,6 +6233,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -5987,6 +6243,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{4:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6026,6 +6283,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6035,6 +6293,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{4:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6075,6 +6334,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6084,6 +6344,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{4:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6124,6 +6385,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6133,6 +6395,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{4:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6173,6 +6436,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6182,6 +6446,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{4:53})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6222,6 +6487,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6231,6 +6497,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{5:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6270,6 +6537,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6279,6 +6547,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{5:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6318,6 +6587,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6327,6 +6597,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{5:30})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6366,6 +6637,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6375,6 +6647,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{5:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6414,6 +6687,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6423,6 +6697,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6462,6 +6737,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6471,6 +6747,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6510,6 +6787,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6519,6 +6797,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6558,6 +6837,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6567,6 +6847,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6606,6 +6887,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6615,6 +6897,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:45})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6654,6 +6937,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6663,6 +6947,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:56})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6702,6 +6987,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6711,6 +6997,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{6:65})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6750,6 +7037,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6759,6 +7047,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{7:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6798,6 +7087,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6807,6 +7097,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{7:17})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6846,6 +7137,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6855,6 +7147,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{7:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6894,6 +7187,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6903,6 +7197,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{7:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6942,6 +7237,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6951,6 +7247,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{7:46})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -6990,6 +7287,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -6999,6 +7297,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{8:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7038,6 +7337,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7047,6 +7347,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{8:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7086,6 +7387,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7095,6 +7397,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{8:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7134,6 +7437,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7143,6 +7447,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{8:47})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7182,6 +7487,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7191,6 +7497,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{8:57})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7230,6 +7537,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7239,6 +7547,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{9:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7278,6 +7587,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7287,6 +7597,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{9:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7326,6 +7637,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7335,6 +7647,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{9:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7374,6 +7687,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7383,6 +7697,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{9:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7422,6 +7737,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7431,6 +7747,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{10:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7470,6 +7787,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7479,6 +7797,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{10:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7518,6 +7837,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7527,6 +7847,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{10:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7566,6 +7887,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7575,6 +7897,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{11:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7614,6 +7937,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7623,6 +7947,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{11:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7662,6 +7987,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7671,6 +7997,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{11:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7710,6 +8037,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7719,6 +8047,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{11:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7758,6 +8087,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7767,6 +8097,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{11:48})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7806,6 +8137,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7815,6 +8147,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{12:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7854,6 +8187,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7863,6 +8197,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{12:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7902,6 +8237,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7911,6 +8247,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{12:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7950,6 +8287,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -7959,6 +8297,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{12:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -7998,6 +8337,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8007,6 +8347,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{12:40})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8046,6 +8387,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8055,6 +8397,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{13:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8094,6 +8437,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8103,6 +8447,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{13:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8142,6 +8487,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8151,6 +8497,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{13:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8190,6 +8537,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8199,6 +8547,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{13:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8238,6 +8587,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8247,6 +8597,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{14:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8286,6 +8637,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8295,6 +8647,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{14:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8334,6 +8687,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8343,6 +8697,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{16:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8382,6 +8737,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8391,6 +8747,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{16:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8430,6 +8787,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8439,6 +8797,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{16:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8478,6 +8837,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8487,6 +8847,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{17:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8526,6 +8887,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8535,6 +8897,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{17:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8574,6 +8937,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8583,6 +8947,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{17:24})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8622,6 +8987,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8631,6 +8997,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{18:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8670,6 +9037,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8679,6 +9047,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{18:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8718,6 +9087,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8727,6 +9097,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{18:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8766,6 +9137,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8775,6 +9147,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{18:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8814,6 +9187,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8823,6 +9197,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{19:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8861,6 +9236,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8870,6 +9246,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{19:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8908,6 +9285,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8917,6 +9295,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{19:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -8956,6 +9335,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -8965,6 +9345,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{19:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9004,6 +9385,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9013,6 +9395,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{19:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9051,6 +9434,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9060,6 +9444,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{20:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9099,6 +9484,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9108,6 +9494,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{20:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9147,6 +9534,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9156,6 +9544,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{20:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9195,6 +9584,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9204,6 +9594,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{20:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9243,6 +9634,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9252,6 +9644,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{21:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9291,6 +9684,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9300,6 +9694,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{21:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9339,6 +9734,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9348,6 +9744,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα ιωαννην} \textbf{(\nospace{21:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9382,6 +9779,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9391,6 +9789,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9430,6 +9829,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9439,6 +9839,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9478,6 +9879,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9487,6 +9889,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9526,6 +9929,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9535,6 +9939,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9574,6 +9979,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9583,6 +9989,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9622,6 +10029,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9631,6 +10039,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:58})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9670,6 +10079,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9679,6 +10089,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{1:67})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9718,6 +10129,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9727,6 +10139,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9766,6 +10179,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9775,6 +10189,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9814,6 +10229,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9823,6 +10239,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9862,6 +10279,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9871,6 +10289,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9910,6 +10329,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9919,6 +10339,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -9958,6 +10379,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -9967,6 +10389,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{2:52})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10006,6 +10429,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10015,6 +10439,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{3:8})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10054,6 +10479,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10063,6 +10489,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{3:16})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10102,6 +10529,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10111,6 +10539,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{4:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10150,6 +10579,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10159,6 +10589,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{4:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10198,6 +10629,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10207,6 +10639,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{4:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10246,6 +10679,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10255,6 +10689,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{4:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10294,6 +10729,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10303,6 +10739,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{4:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10342,6 +10779,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10351,6 +10789,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{5:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10390,6 +10829,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10399,6 +10839,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{5:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10438,6 +10879,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10447,6 +10889,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{5:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10487,6 +10930,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10496,6 +10940,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{5:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10535,6 +10980,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10544,6 +10990,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10583,6 +11030,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10592,6 +11040,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10631,6 +11080,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10640,6 +11090,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10679,6 +11130,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10688,6 +11140,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10727,6 +11180,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10736,6 +11190,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10775,6 +11230,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10784,6 +11240,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{6:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10823,6 +11280,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10832,6 +11290,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10871,6 +11330,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10880,6 +11340,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10919,6 +11380,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10928,6 +11390,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -10967,6 +11430,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -10976,6 +11440,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11015,6 +11480,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11024,6 +11490,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11063,6 +11530,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11072,6 +11540,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{7:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11111,6 +11580,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11120,6 +11590,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11160,6 +11631,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11169,6 +11641,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11208,6 +11681,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11217,6 +11691,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11256,6 +11731,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11265,6 +11741,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11304,6 +11781,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11313,6 +11791,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11352,6 +11831,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11361,6 +11841,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11400,6 +11881,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11409,6 +11891,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{8:52})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11448,6 +11931,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11457,6 +11941,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11495,6 +11980,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11504,6 +11990,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11543,6 +12030,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11552,6 +12040,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11591,6 +12080,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11600,6 +12090,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11639,6 +12130,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11648,6 +12140,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11687,6 +12180,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11696,6 +12190,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:46})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11735,6 +12230,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11744,6 +12240,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{9:54})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11783,6 +12280,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11792,6 +12290,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{10:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11831,6 +12330,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11840,6 +12340,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{10:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11879,6 +12380,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11888,6 +12390,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{10:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11927,6 +12430,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11936,6 +12440,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{10:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -11975,6 +12480,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -11984,6 +12490,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{10:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12023,6 +12530,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12032,6 +12540,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12072,6 +12581,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12081,6 +12591,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12120,6 +12631,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12129,6 +12641,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12168,6 +12681,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12177,6 +12691,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12216,6 +12731,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12225,6 +12741,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12264,6 +12781,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12273,6 +12791,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12312,6 +12831,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12321,6 +12841,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{11:52})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12359,6 +12880,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12368,6 +12890,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:6})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12407,6 +12930,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12416,6 +12940,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12455,6 +12980,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12464,6 +12990,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12502,6 +13029,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12511,6 +13039,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12550,6 +13079,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12559,6 +13089,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:44})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12598,6 +13129,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12607,6 +13139,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{12:53})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12646,6 +13179,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12655,6 +13189,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{13:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12694,6 +13229,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12703,6 +13239,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{13:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12742,6 +13279,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12751,6 +13289,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{13:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12790,6 +13329,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12799,6 +13339,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{13:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12838,6 +13379,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12847,6 +13389,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{14:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12887,6 +13430,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12896,6 +13440,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{14:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12935,6 +13480,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12944,6 +13490,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{14:19})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -12983,6 +13530,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -12992,6 +13540,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{14:28})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13031,6 +13580,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13040,6 +13590,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{15:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13079,6 +13630,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13088,6 +13640,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{15:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13127,6 +13680,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13136,6 +13690,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{15:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13175,6 +13730,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13184,6 +13740,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{16:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13223,6 +13780,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13232,6 +13790,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{16:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13271,6 +13830,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13280,6 +13840,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{16:21})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13319,6 +13880,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13328,6 +13890,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{16:30})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13367,6 +13930,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13376,6 +13940,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{17:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13415,6 +13980,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13424,6 +13990,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{17:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13463,6 +14030,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13472,6 +14040,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{17:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13512,6 +14081,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13521,6 +14091,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{18:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13560,6 +14131,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13569,6 +14141,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{18:20})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13608,6 +14181,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13617,6 +14191,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{18:31})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13656,6 +14231,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13665,6 +14241,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{19:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13704,6 +14281,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13713,6 +14291,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{19:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13752,6 +14331,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13761,6 +14341,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{19:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13800,6 +14381,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13809,6 +14391,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{19:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13848,6 +14431,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13857,6 +14441,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{20:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13896,6 +14481,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13905,6 +14491,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{20:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13944,6 +14531,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -13953,6 +14541,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{20:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -13992,6 +14581,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14001,6 +14591,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{20:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14040,6 +14631,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14049,6 +14641,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{21:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14088,6 +14681,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14097,6 +14691,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{21:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14136,6 +14731,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14145,6 +14741,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{21:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14184,6 +14781,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14193,6 +14791,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{21:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14232,6 +14831,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14241,6 +14841,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{22:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14280,6 +14881,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14289,6 +14891,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{22:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14328,6 +14931,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14337,6 +14941,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{22:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14376,6 +14981,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14385,6 +14991,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{22:49})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14424,6 +15031,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14433,6 +15041,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{22:60})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14472,6 +15081,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14481,6 +15091,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{23:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14520,6 +15131,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14529,6 +15141,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{23:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14568,6 +15181,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14577,6 +15191,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{23:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14616,6 +15231,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14625,6 +15241,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{23:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14664,6 +15281,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14673,6 +15291,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{23:48})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14712,6 +15331,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14721,6 +15341,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{24:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14760,6 +15381,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14769,6 +15391,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{24:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14808,6 +15431,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14817,6 +15441,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{24:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14856,6 +15481,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14865,6 +15491,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{24:36})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14904,6 +15531,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14913,6 +15541,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα λουκαν} \textbf{(\nospace{24:49})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14934,6 +15563,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14943,6 +15573,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\agospelbook{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον}} \textbf{(\nospace{1:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -14982,6 +15613,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -14991,6 +15623,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{1:7})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15030,6 +15663,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15039,6 +15673,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{1:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15078,6 +15713,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15087,6 +15723,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{1:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15126,6 +15763,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15135,6 +15773,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{1:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15174,6 +15813,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15183,6 +15823,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{2:9})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15222,6 +15863,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15231,6 +15873,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{2:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15270,6 +15913,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15279,6 +15923,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{2:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15318,6 +15963,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15327,6 +15973,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{3:10})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15366,6 +16013,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15375,6 +16023,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{3:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15414,6 +16063,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15423,6 +16073,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{3:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15462,6 +16113,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15471,6 +16123,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{4:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15510,6 +16163,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15519,6 +16173,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{4:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15558,6 +16213,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15567,6 +16223,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{4:35})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15606,6 +16263,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15615,6 +16273,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{5:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15654,6 +16313,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15663,6 +16323,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{5:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15702,6 +16363,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15711,6 +16373,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{5:26})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15750,6 +16413,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15759,6 +16423,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{5:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15798,6 +16463,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15807,6 +16473,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15846,6 +16513,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15855,6 +16523,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15894,6 +16563,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15903,6 +16573,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:22})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15942,6 +16613,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15951,6 +16623,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -15990,6 +16663,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -15999,6 +16673,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:41})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16038,6 +16713,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16047,6 +16723,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{6:52})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16086,6 +16763,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16095,6 +16773,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{7:5})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16134,6 +16813,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16143,6 +16823,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{7:15})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16182,6 +16863,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16191,6 +16873,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{7:27})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16230,6 +16913,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16239,6 +16923,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{7:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16278,6 +16963,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16287,6 +16973,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{8:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16326,6 +17013,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16335,6 +17023,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{8:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16374,6 +17063,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16383,6 +17073,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{8:33})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16422,6 +17113,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16431,6 +17123,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{9:3})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16470,6 +17163,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16479,6 +17173,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{9:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16518,6 +17213,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16527,6 +17223,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{9:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16566,6 +17263,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16575,6 +17273,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{9:37})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16614,6 +17313,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16623,6 +17323,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{9:47})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16662,6 +17363,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16671,6 +17373,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{10:13})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16710,6 +17413,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16719,6 +17423,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{10:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16758,6 +17463,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16767,6 +17473,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{10:32})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16806,6 +17513,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16815,6 +17523,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{10:42})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16854,6 +17563,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16863,6 +17573,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{11:2})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16902,6 +17613,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16911,6 +17623,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{11:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16950,6 +17663,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -16959,6 +17673,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{11:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -16998,6 +17713,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17007,6 +17723,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{12:4})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17046,6 +17763,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17055,6 +17773,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{12:14})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17094,6 +17813,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17103,6 +17823,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{12:25})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17142,6 +17863,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17151,6 +17873,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{12:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17190,6 +17913,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17199,6 +17923,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{13:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17238,6 +17963,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17247,6 +17973,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{13:11})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17286,6 +18013,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17295,6 +18023,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{13:23})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17334,6 +18063,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17343,6 +18073,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{13:34})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17382,6 +18113,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17391,6 +18123,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:8})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17430,6 +18163,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17439,6 +18173,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:18})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17478,6 +18213,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17487,6 +18223,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:29})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17526,6 +18263,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17535,6 +18273,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:40})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17574,6 +18313,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17583,6 +18323,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:50})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17622,6 +18363,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17631,6 +18373,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:62})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17670,6 +18413,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17679,6 +18423,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{14:72})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17718,6 +18463,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17727,6 +18473,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{15:38})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17766,6 +18513,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17775,6 +18523,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{16:1})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17814,6 +18563,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17823,6 +18573,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{16:12})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17862,6 +18613,7 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
@@ -17871,6 +18623,7 @@
  \setlength\arrayrulewidth{1pt}
 \begin{table}
 \begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{ccc|l|ccc}
 \cline{4-4} \\ [-1em]
 \multicolumn{7}{c}{\foreignlanguage{greek}{ευαγγελιον κατα μαρκον} \textbf{(\nospace{16:17})} } \\ \\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}
@@ -17892,9 +18645,11 @@
 [0.2em]
 \cline{4-4}
 \end{tabular}
+}
 \end{center}
 \end{table}
 }
+\restoregeometry
 \clearpage
 \newpage
 \newPart{Rectifications scribales.} 
