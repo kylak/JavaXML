@@ -307,7 +307,7 @@ public class get_data {
         }
         */
         
-        data_to_tex tex = new data_to_tex(texte, corrections, data_name_file.substring(0, data_name_file.length()-4));
+        data_to_tex tex = new data_to_tex(texte, corrections, data_name_file.substring(0, data_name_file.length()-4), true);
         tex.generer();
     }
 
