@@ -97,6 +97,6 @@
 \contentsline {section}{16}{369}{section*.92}% 
 \contentsline {part}{Rectifications scribales.}{373}{section*.94}% 
 \contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα μαθθαιον}}{373}{section*.96}% 
-\contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα ιωαννην}}{374}{section*.98}% 
+\contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα ιωαννην}}{373}{section*.98}% 
 \contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα λουκαν}}{374}{section*.100}% 
-\contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα μαρκον}}{376}{section*.102}% 
+\contentsline {section}{\foreignlanguage {greek}{ευαγγελιον κατα μαρκον}}{375}{section*.102}% 

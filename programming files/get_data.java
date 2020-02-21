@@ -1,3 +1,14 @@
+/* Source :
+Gustav Berloty (author of this file),
+Alan Bunning (transcripted data and greek font, http://greekcntr.org/),
+Charles Lang Freer (original manuscript),
+and the One who created that manuscript …
+This file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence :
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+The greek font "KoineGreek" is copyright © 2019 by Alan Bunning released under the
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+(CC BY-NC-ND 4.0). */
+
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
@@ -30,14 +41,7 @@ Information concernant le fonctionnement du programme :
     Ainsi, on peut, sur les prochaines itérations, faire : texte.size()-1 sans ajouter sur l'index 0 de texte mais bien sur le bon index, la bonne page!
  */
 
-<<<<<<< HEAD:Topdf.java
- // Enregistrer les corrections scribales.
- // Mt 2:17 et Mt 17:25.
-
-public class Topdf {
-=======
 public class get_data {
->>>>>>> dev:programming files/get_data.java
     
     
     public static void main(String[] args) throws ParserConfigurationException, SAXException, DocumentException, IOException {
@@ -68,23 +72,12 @@ public class get_data {
         int nbr_of_rdg_visited = 0;
         int dernier_indice_du_mot_en_rdg = 0;
         
-<<<<<<< HEAD:Topdf.java
-        // Pour les <rdg>, on considère que parmi plusieurs corrections, celle qui "a le dernier mot" càd celle a afficher, est celle qui est premier enfant de <app>.
-=======
         // On considère qu'une balise <app> reprèsente une réctification scribale.
         // Pour les <rdg>, on considère que parmi plusieurs étapes de corrections (<rdg>), celle qui "a le dernier mot" càd celle a afficher, est celle qui est premier enfant de <app>.
->>>>>>> dev:programming files/get_data.java
     
         int nombreAoterSurNumerotationPourRenumerotation = 0;
                 
         ArrayList<ArrayList<ArrayList<mot>>> corrections = new ArrayList<ArrayList<ArrayList<mot>>>(); // Toutes les corrections.
-<<<<<<< HEAD:Topdf.java
-        ArrayList<ArrayList<mot>> correction1 = new ArrayList<ArrayList<mot>>(); // Une correction parmi d'autres.
-        ArrayList<mot> etape0 = new ArrayList<mot>(); // Une étape de correction parmi d'autres (Exemple d'un cas à 4 étapes (rare, en général on a simplement deux étapes : origin et correction par x): origin, correction par ^, puis seconde correction au même endoit toujours par ^, puis encore au même endroit une correction sur ces corrections mais par a cette fois). etape0 correspond à origin. Voir Luc 10:11
-        correction1.add(etape0);
-        corrections.add(correction1);
-=======
->>>>>>> dev:programming files/get_data.java
         
         // Pour les numéros de mot.
         String milestone = "000000";
@@ -115,19 +108,11 @@ public class get_data {
                 
                             if ( (node.getNodeType() == Node.ELEMENT_NODE && ((Element)node).getTagName() == "app")) {
                                 in_app = true; // Vaudra false au dernier <w> du dernier <rdg> (le 2ème donc).
-<<<<<<< HEAD:Topdf.java
-                                corrections.add(new ArrayList<ArrayList<mot>>());
-                                NodeList balises_dans_app = node.getChildNodes(); // On récupère les balises filles de <app> comme <rdg> par exemple.
-                                int the_rdg_index_we_will_use_now = 0;
-
-                                int last_rdg_index = 0;
-=======
                                 NodeList balises_dans_app = node.getChildNodes(); // On récupère les balises filles de <app> comme <rdg> par exemple.
                                 
                                 int the_rdg_index_we_will_use_now = 0;
                                 int last_rdg_index = 0;
                                 
->>>>>>> dev:programming files/get_data.java
                                 boolean notYet = true;
                                 for (int i = 0; i < balises_dans_app.getLength(); i++) {
                                     if( (balises_dans_app.item(i).getNodeType() == Node.ELEMENT_NODE) && ( ((Element)balises_dans_app.item(i)).getTagName() == "rdg" ) ) {
@@ -136,64 +121,6 @@ public class get_data {
                                     }
                                 }
                                 
-<<<<<<< HEAD:Topdf.java
-                                NodeList liste_de_mot_dans_le_rdg;
-                                if(balises_dans_app.item(the_rdg_index_we_will_use_now) instanceof NodeList && ((NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now)).getLength() >= 1) { // balises_dans_app.item(the_rdg_index_we_will_use_now) correspond à une balise <rdg>, la première ou la seconde (cela dépend du code juste au-dessus).
-                                    liste_de_mot_dans_le_rdg = (NodeList)balises_dans_app.item(the_rdg_index_we_will_use_now);
-                                    
-                                    // On passe toute les balises qui ne sont pas <w> comme par exemple <lb> si présente.
-                                    while( // Cette condition est sûrement simplifiable.
-                                          dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength()
-                                          && (
-                                              liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) == null
-                                              ||
-                                              (
-                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
-                                                  &&
-                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() != Node.ELEMENT_NODE
-                                               )
-                                              ||
-                                              (
-                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null
-                                                  &&
-                                                  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
-                                                  &&
-                                                  ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() != "w"
-                                               )
-                                              )
-                                          )
-                                    {
-                                        dernier_indice_du_mot_en_rdg++;
-                                    }
-                                    if (the_rdg_index_we_will_use_now > 0) { // => Si nous ne sommes pas dans le "premier" <rdg> (càd celui que l'on retient).
-                                        nombreAoterSurNumerotationPourRenumerotation++;
-                                    }
-                                    if (dernier_indice_du_mot_en_rdg < liste_de_mot_dans_le_rdg.getLength() && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg) != null &&  liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
-                                        node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
-                                        dernier_indice_du_mot_en_rdg++;
-                                        if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
-                                            dernier_indice_du_mot_en_rdg = 0;
-                                            nbr_of_rdg_visited++;
-                                            
-                                            if (the_rdg_index_we_will_use_now == last_rdg_index) {
-                                                in_app = false;
-                                                nbr_of_rdg_visited = 0;
-                                            }
-                                        }
-                                    }
-                                }
-                                else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
-                                    // Le code ci-dessous est expliqué ci-dessus.
-                                    dernier_indice_du_mot_en_rdg = 0;
-                                    nbr_of_rdg_visited++;
-                                    if (the_rdg_index_we_will_use_now == last_rdg_index) {
-                                        in_app = false;
-                                        nbr_of_rdg_visited = 0;
-                                    }
-                                    nombreAoterSurNumerotationPourRenumerotation++; // Car lors d'une suppresion, on compte le mot vide qui remplace ce(ux) qui étai(en)t à l'origine.
-                                    continue;
-                                }
-=======
                                 // Bloc pour sauvegarder les rectifications scribales.
                                 if (dernier_indice_du_mot_en_rdg == 0) { // Si nous sommes dans un nouveau <rdg>, autrement dit à une nouvelle étape.
                                     if (nbr_of_rdg_visited == 0) { // Si nous venons d'entrer dans <app>, autrement dit si nous venons de "découvrir" la correction, nous sommes dans "la première étape".
@@ -265,7 +192,6 @@ public class get_data {
                                     nombreAoterSurNumerotationPourRenumerotation++; // Car lors d'une suppresion, on compte le mot vide qui remplace ce(ux) qui étai(en)t à l'origine.
                                     continue;
                                 }
->>>>>>> dev:programming files/get_data.java
                                 
                             }
                 
