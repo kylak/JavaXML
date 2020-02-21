@@ -1,3 +1,7 @@
+Aide pour lire le pdf :   
+![alt text](https://github.com/kylak/JavaXML/tree/dev/data/readme-image)
+
+
 - Voici une commande à entrer dans le terminale pour exécuter le programme : 
 javac programming\ files/*.java -d generated\ files/java\ class && cd generated\ files/java\ class && java get_data && cd ../..
 
@@ -34,3 +38,7 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 - Autres notes :
  // Mt 2:17 et Mt 17:25.
  // J'ai remarqué une erreur en Luc 11:4.10 c'est apheiomen et non apeiolomen (le lo est en trop).
+
+Under licence : ![alt text](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) http://creativecommons.org/licenses/by-nc-sa/4.0/ 
+
+
