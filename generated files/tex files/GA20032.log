@@ -1,0 +1,2170 @@
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.21)  21 FEB 2020 23:56
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**GA20032.tex
+(./GA20032.tex
+LaTeX2e <2018-12-01>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/05/04 3.31 The Babel package
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/05/04 3.31 Babel switching mechanism
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2019/03/30 v3.5e French support from the babel system
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/05/04 3.31 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/xebabel.def
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def))
+\bbl@dirlevel=\count89
+)
+\l@acadian = a dialect from \language\l@french 
+\FB@nonchar=\count90
+Package french.ldf Info: No need for active punctuation characters
+(french.ldf)             with this version of XeTeX!
+(french.ldf)             reported on input line 326.
+\FB@punctthick=\XeTeXcharclass1
+\FB@punctthin=\XeTeXcharclass2
+\FB@punctnul=\XeTeXcharclass3
+\FB@guilo=\XeTeXcharclass4
+\FB@guilf=\XeTeXcharclass5
+\FB@guilnul=\XeTeXcharclass6
+\FBguill@level=\count91
+\FBold@everypar=\toks16
+\FB@Mht=\dimen104
+LaTeX Info: Redefining \degres on input line 777.
+\mc@charclass=\count92
+\mc@charfam=\count93
+\mc@charslot=\count94
+\std@mcc=\count95
+\dec@mcc=\count96
+\c@FBcaption@count=\count97
+\listindentFB=\dimen105
+\descindentFB=\dimen106
+\labelindentFB=\dimen107
+\labelwidthFB=\dimen108
+\leftmarginFB=\dimen109
+\parindentFFN=\dimen110
+\FBfnindent=\dimen111
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2019-05-07 L3 programming layer (loader) 
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2019-05-07 L3 programming layer (code)
+\c_max_int=\count98
+\l_tmpa_int=\count99
+\l_tmpb_int=\count100
+\g_tmpa_int=\count101
+\g_tmpb_int=\count102
+\g__kernel_prg_map_int=\count103
+\c__ior_term_ior=\count104
+\c_log_iow=\count105
+\l_iow_line_count_int=\count106
+\l__iow_line_target_int=\count107
+\l__iow_one_indent_int=\count108
+\l__iow_indent_int=\count109
+\c_zero_dim=\dimen112
+\c_max_dim=\dimen113
+\l_tmpa_dim=\dimen114
+\l_tmpb_dim=\dimen115
+\g_tmpa_dim=\dimen116
+\g_tmpb_dim=\dimen117
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count110
+\l__intarray_loop_int=\count111
+\c__intarray_sp_dim=\dimen118
+\g__intarray_font_int=\count112
+\c__fp_leading_shift_int=\count113
+\c__fp_middle_shift_int=\count114
+\c__fp_trailing_shift_int=\count115
+\c__fp_big_leading_shift_int=\count116
+\c__fp_big_middle_shift_int=\count117
+\c__fp_big_trailing_shift_int=\count118
+\c__fp_Bigg_leading_shift_int=\count119
+\c__fp_Bigg_middle_shift_int=\count120
+\c__fp_Bigg_trailing_shift_int=\count121
+\g__fp_array_int=\count122
+\l__fp_array_loop_int=\count123
+\l__sort_length_int=\count124
+\l__sort_min_int=\count125
+\l__sort_top_int=\count126
+\l__sort_max_int=\count127
+\l__sort_true_max_int=\count128
+\l__sort_block_int=\count129
+\l__sort_begin_int=\count130
+\l__sort_end_int=\count131
+\l__sort_A_int=\count132
+\l__sort_B_int=\count133
+\l__sort_C_int=\count134
+\l__tl_analysis_normal_int=\count135
+\l__tl_analysis_index_int=\count136
+\l__tl_analysis_nesting_int=\count137
+\l__tl_analysis_type_int=\count138
+\l__regex_internal_a_int=\count139
+\l__regex_internal_b_int=\count140
+\l__regex_internal_c_int=\count141
+\l__regex_balance_int=\count142
+\l__regex_group_level_int=\count143
+\l__regex_mode_int=\count144
+\c__regex_cs_in_class_mode_int=\count145
+\c__regex_cs_mode_int=\count146
+\l__regex_catcodes_int=\count147
+\l__regex_default_catcodes_int=\count148
+\c__regex_catcode_L_int=\count149
+\c__regex_catcode_O_int=\count150
+\c__regex_catcode_A_int=\count151
+\c__regex_all_catcodes_int=\count152
+\l__regex_show_lines_int=\count153
+\l__regex_min_state_int=\count154
+\l__regex_max_state_int=\count155
+\l__regex_left_state_int=\count156
+\l__regex_right_state_int=\count157
+\l__regex_capturing_group_int=\count158
+\l__regex_min_pos_int=\count159
+\l__regex_max_pos_int=\count160
+\l__regex_curr_pos_int=\count161
+\l__regex_start_pos_int=\count162
+\l__regex_success_pos_int=\count163
+\l__regex_curr_char_int=\count164
+\l__regex_curr_catcode_int=\count165
+\l__regex_last_char_int=\count166
+\l__regex_case_changed_char_int=\count167
+\l__regex_curr_state_int=\count168
+\l__regex_step_int=\count169
+\l__regex_min_active_int=\count170
+\l__regex_max_active_int=\count171
+\l__regex_replacement_csnames_int=\count172
+\l__regex_match_count_int=\count173
+\l__regex_min_submatch_int=\count174
+\l__regex_submatch_int=\count175
+\l__regex_zeroth_submatch_int=\count176
+\g__regex_trace_regex_int=\count177
+\c_empty_box=\box27
+\l_tmpa_box=\box28
+\l_tmpb_box=\box29
+\g_tmpa_box=\box30
+\g_tmpb_box=\box31
+\l__box_top_dim=\dimen119
+\l__box_bottom_dim=\dimen120
+\l__box_left_dim=\dimen121
+\l__box_right_dim=\dimen122
+\l__box_top_new_dim=\dimen123
+\l__box_bottom_new_dim=\dimen124
+\l__box_left_new_dim=\dimen125
+\l__box_right_new_dim=\dimen126
+\l__box_internal_box=\box32
+\l__coffin_internal_box=\box33
+\l__coffin_internal_dim=\dimen127
+\l__coffin_offset_x_dim=\dimen128
+\l__coffin_offset_y_dim=\dimen129
+\l__coffin_x_dim=\dimen130
+\l__coffin_y_dim=\dimen131
+\l__coffin_x_prime_dim=\dimen132
+\l__coffin_y_prime_dim=\dimen133
+\c_empty_coffin=\box34
+\l__coffin_aligned_coffin=\box35
+\l__coffin_aligned_internal_coffin=\box36
+\l_tmpa_coffin=\box37
+\l_tmpb_coffin=\box38
+\g_tmpa_coffin=\box39
+\g_tmpb_coffin=\box40
+\l__coffin_bounding_shift_dim=\dimen134
+\l__coffin_left_corner_dim=\dimen135
+\l__coffin_right_corner_dim=\dimen136
+\l__coffin_bottom_corner_dim=\dimen137
+\l__coffin_top_corner_dim=\dimen138
+\l__coffin_scaled_total_height_dim=\dimen139
+\l__coffin_scaled_width_dim=\dimen140
+\c__coffin_empty_coffin=\box41
+\l__coffin_display_coffin=\box42
+\l__coffin_display_coord_coffin=\box43
+\l__coffin_display_pole_coffin=\box44
+\l__coffin_display_offset_dim=\dimen141
+\l__coffin_display_x_dim=\dimen142
+\l__coffin_display_y_dim=\dimen143
+\g__file_internal_ior=\read1
+\l__seq_internal_a_int=\count178
+\l__seq_internal_b_int=\count179
+\c__deprecation_minus_one=\count180
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvipdfmx.def 2019-04-06 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count181
+\l__driver_pdf_tmp_box=\box45
+\g__driver_pdf_object_int=\count182
+\g__driver_pdf_annotation_int=\count183
+))
+Package: xparse 2019-05-03 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count184
+\g__xparse_grabber_int=\count185
+\l__xparse_m_args_int=\count186
+\l__xparse_v_nesting_int=\count187
+)
+Package: fontspec 2019/03/15 v2.7c Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2019/03/15 v2.7c Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count188
+\l__fontspec_language_int=\count189
+\l__fontspec_strnum_int=\count190
+\l__fontspec_tmp_int=\count191
+\l__fontspec_tmpa_int=\count192
+\l__fontspec_tmpb_int=\count193
+\l__fontspec_tmpc_int=\count194
+\l__fontspec_em_int=\count195
+\l__fontspec_emdef_int=\count196
+\l__fontspec_strong_int=\count197
+\l__fontspec_strongdef_int=\count198
+\l__fontspec_tmpa_dim=\dimen144
+\l__fontspec_tmpb_dim=\dimen145
+\l__fontspec_tmpc_dim=\dimen146
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 4051.
+LaTeX Info: Redefining \slshape on input line 4056.
+LaTeX Info: Redefining \scshape on input line 4061.
+LaTeX Info: Redefining \upshape on input line 4066.
+LaTeX Info: Redefining \em on input line 4096.
+LaTeX Info: Redefining \emph on input line 4121.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen147
+\ar@mcellbox=\box46
+\extrarowheight=\dimen148
+\NC@list=\toks18
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box47
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks19
+\verbatim@line=\toks20
+\verbatim@in@stream=\read2
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/layout.sty
+Package: layout 2014/10/28 v1.2c Show layout parameters
+\oneinch=\count199
+\cnt@paperwidth=\count266
+\cnt@paperheight=\count267
+\cnt@hoffset=\count268
+\cnt@voffset=\count269
+\cnt@textheight=\count270
+\cnt@textwidth=\count271
+\cnt@topmargin=\count272
+\cnt@oddsidemargin=\count273
+\cnt@evensidemargin=\count274
+\cnt@headheight=\count275
+\cnt@headsep=\count276
+\cnt@marginparsep=\count277
+\cnt@marginparwidth=\count278
+\cnt@marginparpush=\count279
+\cnt@footskip=\count280
+\fheight=\count281
+\ref@top=\count282
+\ref@hoffset=\count283
+\ref@voffset=\count284
+\ref@head=\count285
+\ref@body=\count286
+\ref@foot=\count287
+\ref@margin=\count288
+\ref@marginwidth=\count289
+\ref@marginpar=\count290
+\Interval=\count291
+\ExtraYPos=\count292
+\PositionX=\count293
+\PositionY=\count294
+\ArrowLength=\count295
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks21
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/koma-script/scrextend.sty
+Package: scrextend 2019/02/01 v3.26b KOMA-Script package (extend other classes 
+with features of KOMA-Script classes)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2019/02/01 v3.26b KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2019/02/01 v3.26b KOMA-Script package (KOMA-Script-independent
+ basics and keyval usage)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2019/02/01 v3.26b KOMA-Script package (loading files)
+))))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip51
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftpartindent=\skip56
+\cftbeforesecskip=\skip57
+\cftsecindent=\skip58
+\cftsecnumwidth=\skip59
+\cftbeforesubsecskip=\skip60
+\cftsubsecindent=\skip61
+\cftsubsecnumwidth=\skip62
+\cftbeforesubsubsecskip=\skip63
+\cftsubsubsecindent=\skip64
+\cftsubsubsecnumwidth=\skip65
+\cftbeforeparaskip=\skip66
+\cftparaindent=\skip67
+\cftparanumwidth=\skip68
+\cftbeforesubparaskip=\skip69
+\cftsubparaindent=\skip70
+\cftsubparanumwidth=\skip71
+\cftbeforeloftitleskip=\skip72
+\cftafterloftitleskip=\skip73
+\cftbeforefigskip=\skip74
+\cftfigindent=\skip75
+\cftfignumwidth=\skip76
+\c@lofdepth=\count299
+\c@lotdepth=\count300
+\cftbeforelottitleskip=\skip77
+\cftafterlottitleskip=\skip78
+\cftbeforetabskip=\skip79
+\cfttabindent=\skip80
+\cfttabnumwidth=\skip81
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2019/04/04 v1.44 Alternative to Babel for XeLaTeX and LuaL
+aTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count301
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/makecmds/makecmds.sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
+)
+\XKV@depth=\count302
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+\xpg@normalclass=\XeTeXcharclass7
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
+File: gloss-french.ldf polyglossia: module for french
+\french@openbrackets=\XeTeXcharclass8
+\french@closebrackets=\XeTeXcharclass9
+\french@punctthin=\XeTeXcharclass10
+\french@punctthick=\XeTeXcharclass11
+\french@punctguillstart=\XeTeXcharclass12
+\french@punctguillend=\XeTeXcharclass13
+)
+Package polyglossia Info: Default language is french.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/polyglossia/gloss-greek.ldf
+File: gloss-greek.ldf polyglossia: module for greek
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/polyglossia/xgreek-fixes.def)
+\@attic@num=\count303
+)
+
+Package fontspec Info: Could not resolve font "KoineGreek/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "KoineGreek/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "KoineGreek/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'KoineGreek(0)' created for font
+(fontspec)             'KoineGreek' with options [].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"KoineGreek/AAT"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+\TBox=\box48
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pageslts/pageslts.sty
+Package: pageslts 2015/12/21 v1.2f Refers to special pages' numbers/names (HMM)
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/atveryend.sty
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/undolabl/undolabl.sty
+Package: undolabl 2015/03/29 v1.0l Overriding labels (HMM)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/uniquecounter.sty
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+))
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+Package pageslts Info: Option pagecontinue enabled
+(pageslts)             (maybe by default):
+(pageslts)             The pageslts package will continue the page numbering,
+(pageslts)             when the same page numbering scheme is used twice.
+(pageslts)             If you do not want this, call pageslts with option
+(pageslts)             pagecontinue=false (or use \setcounter{page}=1).
+(pageslts)              on input line 179.
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/alphalph.sty
+Package: alphalph 2016/05/16 v2.5 Convert numbers to letters (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+))
+Package pageslts Info: Option romanMult enabled
+(pageslts)             (maybe by default):
+(pageslts)             The pageslts package will extend the page numbering
+(pageslts)             of the roman scheme below i with
+(pageslts)             0, -i, -ii, -iii, -iv,...
+(pageslts)             If you do not want this, call pageslts with option
+(pageslts)             romanMult=false.
+(pageslts)              on input line 278.
+Package pageslts Info: Option RomanMulti enabled
+(pageslts)             (maybe by default):
+(pageslts)             The pageslts package will extend the page numbering
+(pageslts)             of the Roman scheme below I with
+(pageslts)             0, -I, -II, -III, -IV,...
+(pageslts)             If you do not want this, call pageslts with option
+(pageslts)             RomanMulti=false.
+(pageslts)              on input line 300.
+Package pageslts Info: Option fnsymbolmult enabled
+(pageslts)             (maybe by default):
+(pageslts)             The pageslts package will extend the page numbering
+(pageslts)             of the footnotesymbol scheme using the alphalph
+(pageslts)             package.
+(pageslts)             If you do not want this, call pageslts with option
+(pageslts)             fnsymbolmult=false.
+(pageslts)              on input line 322.
+\c@CurrentPage=\count304
+\c@pagesLTS.pagenr=\count305
+\c@pagesLTS.current.local.0=\count306
+\c@pagesLTS.pnc.0=\count307
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip82
+\f@nch@O@elh=\skip83
+\f@nch@O@erh=\skip84
+\f@nch@O@olh=\skip85
+\f@nch@O@orh=\skip86
+\f@nch@O@elf=\skip87
+\f@nch@O@erf=\skip88
+\f@nch@O@olf=\skip89
+\f@nch@O@orf=\skip90
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package hobsub Info: Skipping package `intcalc' (already loaded).
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package hobsub Info: Skipping package `bigintcalc' (already loaded).
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package hobsub Info: Skipping package `uniquecounter' (already loaded).
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package hobsub Info: Skipping package `letltxmacro' (already loaded).
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package hobsub Info: Skipping package `atveryend' (already loaded).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen159
+\Hy@linkcounter=\count308
+\Hy@pagecounter=\count309
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count310
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count311
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen160
+\Fld@menulength=\count312
+\Field@Width=\dimen161
+\Fld@charsize=\dimen162
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count313
+\c@Item=\count314
+\c@Hfootnote=\count315
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box49
+\c@Hy@AnnotLevel=\count316
+\HyField@AnnotCount=\count317
+\Fld@listcount=\count318
+\c@bookmark@seq@number=\count319
+\Hy@SectionHShift=\skip91
+)
+\c@gospelbook=\count320
+\c@gospelchapter=\count321
+
+(./GA20032.aux
+\c@pagesLTS.roman.1.local.cnt=\count322
+\c@pagesLTS.arabic.1.local.cnt=\count323
+)
+\openout1 = `GA20032.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Info: Redefining \dots on input line 96.
+LaTeX Info: Redefining \up on input line 96.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(50.58878pt, 496.33032pt, 50.58878pt)
+* v-part:(T,H,B)=(50.58878pt, 743.8693pt, 50.58878pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=496.33032pt
+* \textheight=743.8693pt
+* \oddsidemargin=-21.68121pt
+* \evensidemargin=-21.68121pt
+* \topmargin=-58.68121pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=13.04996pt plus 5.79936pt minus 2.9006pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package pageslts Info: etoolbox package loaded before atveryend package
+(pageslts)             With atveryend version 1.8 of 2011/06/30 this caused a p
+roblem,
+(pageslts)             which is probably solved in the new version used here.
+(pageslts)             To play it safe, you could load the atveryend package
+(pageslts)             before the etoolbox package.
+(pageslts)              on input line 96.
+ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box50
+Package hyperref Info: Link coloring OFF on input line 96.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count324
+)
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
+
+(./GA20032.out) (./GA20032.out)
+\@outlinefile=\write3
+\openout3 = `GA20032.out'.
+
+LaTeX Font Info:    Calculating math sizes for size <17.39995> on input line 10
+0.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 100.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 100.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 100
+.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 100
+.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.39995> on input line 100.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.1799> on input line 100.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.69997> on input line 100.
+
+Overfull \hbox (177.45946pt too wide) in paragraph at lines 100--100
+ [][] 
+ []
+
+\c@pagesLTS.pnc.roman=\count325
+\c@pagesLTS.double.roman=\count326
+\c@pagesLTS.current.local.roman=\count327
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+)
+[1
+
+] (./GA20032.toc
+
+LaTeX Font Warning: Font shape `TU/KoineGreek(0)/bx/n' undefined
+(Font)              using `TU/KoineGreek(0)/m/n' instead on input line 3.
+
+LaTeX Font Info:    Calculating math sizes for size <14.5> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.5> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.14995> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.25> on input line 4.
+[1
+
+] [2] [3] [4] [5])
+\tf@toc=\write4
+\openout4 = `GA20032.toc'.
+
+ [6]
+\c@pagesLTS.roman.1.local.count=\count328
+\c@pagesLTS.pnc.arabic=\count329
+\c@pagesLTS.double.arabic=\count330
+\c@pagesLTS.current.local.arabic=\count331
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 845.04684pt, 0.0pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=597.50787pt
+* \textheight=845.04684pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-109.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=13.04996pt plus 5.79936pt minus 2.9006pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <17.39995> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 152.
+
+
+LaTeX Warning: Float too large for page by 71.28717pt on input line 154.
+
+[1]
+
+LaTeX Warning: Float too large for page by 53.73546pt on input line 204.
+
+[2]
+
+LaTeX Warning: Float too large for page by 6.45427pt on input line 254.
+
+[3]
+
+LaTeX Warning: Float too large for page by 24.80142pt on input line 304.
+
+[4] [5]
+
+LaTeX Warning: Float too large for page by 81.07657pt on input line 405.
+
+[6]
+
+LaTeX Warning: Float too large for page by 13.79333pt on input line 455.
+
+[7]
+
+LaTeX Warning: Float too large for page by 26.58287pt on input line 505.
+
+[8]
+
+LaTeX Warning: Float too large for page by 18.38438pt on input line 555.
+
+[9] [10] [11] [12] [13]
+
+LaTeX Warning: Float too large for page by 16.30798pt on input line 805.
+
+[14] [15]
+
+LaTeX Warning: Float too large for page by 61.74585pt on input line 905.
+
+[16] [17] [18]
+
+LaTeX Warning: Float too large for page by 33.93135pt on input line 1055.
+
+[19]
+
+LaTeX Warning: Float too large for page by 8.6667pt on input line 1105.
+
+[20] [21]
+
+LaTeX Warning: Float too large for page by 24.1392pt on input line 1207.
+
+[22] [23] [24] [25]
+
+LaTeX Warning: Float too large for page by 40.0163pt on input line 1407.
+
+[26]
+
+LaTeX Warning: Float too large for page by 40.01448pt on input line 1457.
+
+[27]
+
+LaTeX Warning: Float too large for page by 17.06969pt on input line 1507.
+
+[28] [29]
+
+LaTeX Warning: Float too large for page by 3.37845pt on input line 1607.
+
+[30]
+
+LaTeX Warning: Float too large for page by 22.02592pt on input line 1657.
+
+[31]
+
+LaTeX Warning: Float too large for page by 38.16762pt on input line 1707.
+
+[32]
+
+LaTeX Warning: Float too large for page by 13.46988pt on input line 1757.
+
+[33]
+
+LaTeX Warning: Float too large for page by 42.10132pt on input line 1807.
+
+[34]
+
+LaTeX Warning: Float too large for page by 31.34332pt on input line 1857.
+
+[35] [36] [37]
+
+LaTeX Warning: Float too large for page by 16.91624pt on input line 2007.
+
+[38]
+
+LaTeX Warning: Float too large for page by 26.48134pt on input line 2057.
+
+[39]
+
+LaTeX Warning: Float too large for page by 4.66342pt on input line 2107.
+
+[40]
+
+LaTeX Warning: Float too large for page by 10.22485pt on input line 2157.
+
+[41]
+
+LaTeX Warning: Float too large for page by 3.59914pt on input line 2207.
+
+[42]
+
+LaTeX Warning: Float too large for page by 36.90509pt on input line 2257.
+
+[43]
+
+LaTeX Warning: Float too large for page by 0.74203pt on input line 2307.
+
+[44] [45]
+
+LaTeX Warning: Float too large for page by 25.25009pt on input line 2407.
+
+[46]
+
+LaTeX Warning: Float too large for page by 51.9512pt on input line 2457.
+
+[47]
+
+LaTeX Warning: Float too large for page by 14.23158pt on input line 2507.
+
+[48]
+
+LaTeX Warning: Float too large for page by 7.2198pt on input line 2557.
+
+[49] [50]
+
+LaTeX Warning: Float too large for page by 20.48166pt on input line 2657.
+
+[51]
+
+LaTeX Warning: Float too large for page by 14.12723pt on input line 2707.
+
+[52]
+
+LaTeX Warning: Float too large for page by 32.23058pt on input line 2757.
+
+[53]
+
+LaTeX Warning: Float too large for page by 19.1028pt on input line 2807.
+
+[54] [55] [56] [57] [58] [59]
+
+LaTeX Warning: Float too large for page by 7.2198pt on input line 3107.
+
+[60] [61] [62]
+
+LaTeX Warning: Float too large for page by 42.44565pt on input line 3257.
+
+[63] [64] [65]
+
+LaTeX Warning: Float too large for page by 9.48314pt on input line 3408.
+
+[66] [67]
+
+LaTeX Warning: Float too large for page by 8.15956pt on input line 3508.
+
+[68] [69]
+
+LaTeX Warning: Float too large for page by 3.18176pt on input line 3608.
+
+[70] [71]
+
+LaTeX Warning: Float too large for page by 63.13666pt on input line 3708.
+
+[72]
+
+LaTeX Warning: Float too large for page by 0.95927pt on input line 3758.
+
+[73]
+
+LaTeX Warning: Float too large for page by 20.25212pt on input line 3808.
+
+[74] [75]
+
+LaTeX Warning: Float too large for page by 11.84215pt on input line 3908.
+
+[76] [77] [78]
+
+LaTeX Warning: Float too large for page by 36.21643pt on input line 4058.
+
+[79] [80] [81] [82] [83] [84] [85]
+
+LaTeX Warning: Float too large for page by 21.91115pt on input line 4408.
+
+[86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
+
+LaTeX Warning: Float too large for page by 26.70044pt on input line 5009.
+
+[98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109]
+
+LaTeX Warning: Float too large for page by 12.13512pt on input line 5611.
+
+[110] [111] [112] [113]
+
+LaTeX Warning: Float too large for page by 1.37665pt on input line 5798.
+
+[114]
+
+LaTeX Warning: Float too large for page by 42.78998pt on input line 5848.
+
+[115] [116]
+
+LaTeX Warning: Float too large for page by 46.39812pt on input line 5948.
+
+[117]
+
+LaTeX Warning: Float too large for page by 60.10031pt on input line 5998.
+
+[118]
+
+LaTeX Warning: Float too large for page by 31.88625pt on input line 6048.
+
+[119]
+
+LaTeX Warning: Float too large for page by 19.76192pt on input line 6098.
+
+[120]
+
+LaTeX Warning: Float too large for page by 35.98688pt on input line 6148.
+
+[121]
+
+LaTeX Warning: Float too large for page by 21.35814pt on input line 6198.
+
+[122]
+
+LaTeX Warning: Float too large for page by 42.04681pt on input line 6248.
+
+[123]
+
+LaTeX Warning: Float too large for page by 64.72266pt on input line 6298.
+
+[124] [125] [126] [127] [128]
+
+LaTeX Warning: Float too large for page by 32.67924pt on input line 6552.
+
+[129]
+
+LaTeX Warning: Float too large for page by 43.77248pt on input line 6602.
+
+[130]
+
+LaTeX Warning: Float too large for page by 25.81354pt on input line 6652.
+
+[131]
+
+LaTeX Warning: Float too large for page by 16.47685pt on input line 6702.
+
+[132] [133]
+
+LaTeX Warning: Float too large for page by 20.14777pt on input line 6802.
+
+[134] [135]
+
+LaTeX Warning: Float too large for page by 1.06363pt on input line 6902.
+
+[136] [137]
+
+LaTeX Warning: Float too large for page by 31.43758pt on input line 7002.
+
+[138]
+
+LaTeX Warning: Float too large for page by 11.13754pt on input line 7052.
+
+[139] [140]
+
+LaTeX Warning: Float too large for page by 18.04175pt on input line 7152.
+
+[141]
+
+LaTeX Warning: Float too large for page by 46.29587pt on input line 7202.
+
+[142]
+
+LaTeX Warning: Float too large for page by 8.5032pt on input line 7252.
+
+[143] [144] [145] [146] [147]
+
+LaTeX Warning: Float too large for page by 31.09323pt on input line 7502.
+
+[148]
+
+LaTeX Warning: Float too large for page by 1.69406pt on input line 7552.
+
+[149] [150]
+
+LaTeX Warning: Float too large for page by 24.2484pt on input line 7652.
+
+[151]
+
+LaTeX Warning: Float too large for page by 11.84215pt on input line 7702.
+
+[152] [153]
+
+LaTeX Warning: Float too large for page by 24.36319pt on input line 7802.
+
+[154] [155] [156]
+
+LaTeX Warning: Float too large for page by 17.50792pt on input line 7952.
+
+[157] [158] [159] [160] [161] [162] [163]
+
+LaTeX Warning: Float too large for page by 23.13196pt on input line 8302.
+
+[164]
+
+LaTeX Warning: Float too large for page by 7.32414pt on input line 8352.
+
+[165] [166] [167]
+
+LaTeX Warning: Float too large for page by 51.9512pt on input line 8502.
+
+[168] [169]
+
+LaTeX Warning: Float too large for page by 3.23003pt on input line 8602.
+
+[170] [171] [172] [173]
+
+LaTeX Warning: Float too large for page by 33.13835pt on input line 8802.
+
+[174] [175]
+
+LaTeX Warning: Float too large for page by 10.44395pt on input line 8902.
+
+[176]
+
+LaTeX Warning: Float too large for page by 10.1205pt on input line 8952.
+
+[177]
+
+LaTeX Warning: Float too large for page by 0.84663pt on input line 9002.
+
+[178] [179]
+
+LaTeX Warning: Float too large for page by 23.91452pt on input line 9102.
+
+[180]
+
+LaTeX Warning: Float too large for page by 23.58063pt on input line 9152.
+
+[181]
+
+LaTeX Warning: Float too large for page by 21.08012pt on input line 9202.
+
+[182]
+
+LaTeX Warning: Float too large for page by 7.47205pt on input line 9251.
+
+[183] [184]
+
+LaTeX Warning: Float too large for page by 4.66342pt on input line 9350.
+
+[185]
+
+LaTeX Warning: Float too large for page by 38.62674pt on input line 9400.
+
+[186] [187] [188]
+
+LaTeX Warning: Float too large for page by 7.54326pt on input line 9549.
+
+[189]
+
+LaTeX Warning: Float too large for page by 19.04175pt on input line 9599.
+
+[190]
+
+LaTeX Warning: Float too large for page by 52.51837pt on input line 9649.
+
+[191]
+
+LaTeX Warning: Float too large for page by 54.45541pt on input line 9699.
+
+[192] [193] [194] [195] [196] [197] [198] [199]
+
+LaTeX Warning: Float too large for page by 70.37799pt on input line 10094.
+
+[200] [201] [202] [203]
+
+LaTeX Warning: Float too large for page by 16.85057pt on input line 10294.
+
+[204]
+
+LaTeX Warning: Float too large for page by 1.48099pt on input line 10344.
+
+[205] [206]
+
+LaTeX Warning: Float too large for page by 81.791pt on input line 10444.
+
+[207] [208]
+
+LaTeX Warning: Float too large for page by 11.11893pt on input line 10544.
+
+[209] [210] [211] [212]
+
+LaTeX Warning: Float too large for page by 1.7001pt on input line 10744.
+
+[213]
+
+LaTeX Warning: Float too large for page by 3.1692pt on input line 10794.
+
+[214] [215] [216] [217]
+
+LaTeX Warning: Float too large for page by 6.67397pt on input line 10995.
+
+[218]
+
+LaTeX Warning: Float too large for page by 8.82666pt on input line 11045.
+
+[219] [220] [221] [222] [223]
+
+LaTeX Warning: Float too large for page by 31.75223pt on input line 11295.
+
+[224] [225] [226]
+
+LaTeX Warning: Float too large for page by 7.6476pt on input line 11445.
+
+[227]
+
+LaTeX Warning: Float too large for page by 27.59778pt on input line 11495.
+
+[228]
+
+LaTeX Warning: Float too large for page by 20.80511pt on input line 11545.
+
+[229]
+
+LaTeX Warning: Float too large for page by 33.04861pt on input line 11595.
+
+[230]
+
+LaTeX Warning: Float too large for page by 53.8707pt on input line 11646.
+
+[231] [232]
+
+LaTeX Warning: Float too large for page by 43.9586pt on input line 11746.
+
+[233]
+
+LaTeX Warning: Float too large for page by 10.1205pt on input line 11796.
+
+[234] [235]
+
+LaTeX Warning: Float too large for page by 36.44598pt on input line 11896.
+
+[236]
+
+LaTeX Warning: Float too large for page by 29.87865pt on input line 11946.
+
+[237] [238]
+
+LaTeX Warning: Float too large for page by 24.5823pt on input line 12045.
+
+[239]
+
+LaTeX Warning: Float too large for page by 7.54326pt on input line 12095.
+
+[240]
+
+LaTeX Warning: Float too large for page by 23.79973pt on input line 12145.
+
+[241]
+
+LaTeX Warning: Float too large for page by 38.39719pt on input line 12195.
+
+[242] [243]
+
+LaTeX Warning: Float too large for page by 37.59958pt on input line 12295.
+
+[244] [245] [246]
+
+LaTeX Warning: Float too large for page by 8.72232pt on input line 12445.
+
+[247]
+
+LaTeX Warning: Float too large for page by 64.23225pt on input line 12495.
+
+[248] [249]
+
+LaTeX Warning: Float too large for page by 87.24739pt on input line 12596.
+
+[250]
+
+LaTeX Warning: Float too large for page by 10.76743pt on input line 12646.
+
+[251]
+
+LaTeX Warning: Float too large for page by 72.86133pt on input line 12696.
+
+[252]
+
+LaTeX Warning: Float too large for page by 17.06969pt on input line 12746.
+
+[253] [254]
+
+LaTeX Warning: Float too large for page by 9.04579pt on input line 12846.
+
+[255] [256]
+
+LaTeX Warning: Float too large for page by 17.94615pt on input line 12945.
+
+[257]
+
+LaTeX Warning: Float too large for page by 1.27231pt on input line 12995.
+
+[258] [259]
+
+LaTeX Warning: Float too large for page by 44.07338pt on input line 13094.
+
+[260]
+
+LaTeX Warning: Float too large for page by 11.95692pt on input line 13144.
+
+[261]
+
+LaTeX Warning: Float too large for page by 25.2963pt on input line 13194.
+
+[262] [263] [264]
+
+LaTeX Warning: Float too large for page by 12.2804pt on input line 13344.
+
+[265]
+
+LaTeX Warning: Float too large for page by 10.0143pt on input line 13394.
+
+[266]
+
+LaTeX Warning: Float too large for page by 36.9673pt on input line 13445.
+
+[267]
+
+LaTeX Warning: Float too large for page by 29.62202pt on input line 13495.
+
+[268] [269] [270]
+
+LaTeX Warning: Float too large for page by 1.7001pt on input line 13645.
+
+[271] [272] [273] [274] [275] [276] [277] [278] [279] [280] [281] [282]
+[283] [284] [285] [286] [287] [288] [289] [290] [291] [292] [293] [294]
+[295] [296] [297] [298] [299] [300] [301] [302] [303] [304] [305] [306]
+[307] [308] [309] [310]
+
+LaTeX Warning: Float too large for page by 8.27466pt on input line 15628.
+
+[311] [312]
+
+LaTeX Warning: Float too large for page by 0.7506pt on input line 15728.
+
+[313]
+
+LaTeX Warning: Float too large for page by 4.33997pt on input line 15778.
+
+[314]
+
+LaTeX Warning: Float too large for page by 0.42816pt on input line 15828.
+
+[315]
+
+LaTeX Warning: Float too large for page by 19.37564pt on input line 15878.
+
+[316]
+
+LaTeX Warning: Float too large for page by 13.36554pt on input line 15928.
+
+[317] [318] [319] [320] [321] [322] [323]
+
+LaTeX Warning: Float too large for page by 18.33908pt on input line 16278.
+
+[324]
+
+LaTeX Warning: Float too large for page by 34.9539pt on input line 16328.
+
+[325] [326] [327]
+
+LaTeX Warning: Float too large for page by 26.63542pt on input line 16478.
+
+[328]
+
+LaTeX Warning: Float too large for page by 13.04208pt on input line 16528.
+
+[329]
+
+LaTeX Warning: Float too large for page by 19.37564pt on input line 16578.
+
+[330] [331]
+
+LaTeX Warning: Float too large for page by 39.3154pt on input line 16678.
+
+[332] [333] [334] [335] [336] [337] [338] [339] [340] [341] [342] [343]
+[344] [345] [346] [347] [348] [349] [350] [351] [352] [353] [354] [355]
+[356] [357] [358] [359] [360] [361] [362] [363] [364] [365] [366] [367]
+[368] [369]
+
+LaTeX Warning: Float too large for page by 0.54192pt on input line 18578.
+
+[370] [371] [372]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.5> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 18670.
+
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+ [373
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (15.25589pt too wide) in paragraph at lines 18846--18849
+[]\TU/lmtt/b/n/14.5 27:55\TU/lmr/m/n/12.08348 .(14-16) []\TU/KoineGreek(0)/bx/n
+/14.5 γαλιλαιαϲ διακον[]η[]ϲαι αυτω []\U/pzd/m/n/14.5 Þ []\TU/KoineGreek(0)/bx/
+n/14.5 γαλιλαιαϲ διακον[]ου[]ϲαι αυτω 
+ []
+
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+[374]
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (30.79124pt too wide) in paragraph at lines 19038--19041
+[]\TU/lmtt/b/n/14.5 11:49\TU/lmr/m/n/12.08348 .(16-18) []\TU/KoineGreek(0)/bx/n
+/14.5 αυτων αποκτενουϲ[][]  εκδιωξουϲιν []\U/pzd/m/n/14.5 Þ []\TU/KoineGreek(0)
+/bx/n/14.5 αυτων αποκτ[]ι[]ενουϲ[][]
+ []
+
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (10.19766pt too wide) in paragraph at lines 19102--19105
+[]\TU/lmtt/b/n/14.5 20:16\TU/lmr/m/n/12.08348 .(05-07) []\TU/KoineGreek(0)/bx/n
+/14.5 γεωργουϲ α[]μπελ[]ω[]νο[]ϲ και []\U/pzd/m/n/14.5 Þ []\TU/KoineGreek(0)/bx
+/n/14.5 γεωργουϲ []τουτουϲ κ[]α[]ι δ[]ωϲ[]ει[]
+ []
+
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (0.22418pt too wide) in paragraph at lines 19114--19117
+[]\TU/lmtt/b/n/14.5 21:05\TU/lmr/m/n/12.08348 .(11-13) []\TU/KoineGreek(0)/bx/n
+/14.5 αναθεμαϲιν κεκοϲμητ[]ο[] ειπεν []\U/pzd/m/n/14.5 Þ []\TU/KoineGreek(0)/bx
+/n/14.5 αναθεμαϲιν κεκοϲμητ[]ε[]
+ []
+
+[375]
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (8.3176pt too wide) in paragraph at lines 19146--19149
+[]\TU/lmtt/b/n/14.5 23:09\TU/lmr/m/n/14.5 -\TU/lmtt/b/n/14.5 10  []\TU/KoineGre
+ek(0)/bx/n/14.5 απεκρινατο αυτ[]ον[] ιϲτηκειϲαν []\U/pzd/m/n/14.5 Þ []\TU/Koine
+Greek(0)/bx/n/14.5 απεκρινατο αυτ[]ω[] ιϲτη-
+ []
+
+[376]
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+Missing character: There is no - in font KoineGreek/AAT!
+
+Overfull \hbox (18.27838pt too wide) in paragraph at lines 19269--19272
+[]\TU/lmtt/b/n/14.5 14:27\TU/lmr/m/n/12.08348 .(07-08) []\TU/KoineGreek(0)/bx/n
+/14.5 παντεϲ ϲκανδαλιϲθηϲ[]οντ[]ε λιϲθηϲεϲθαι []\U/pzd/m/n/14.5 Þ []\TU/KoineGr
+eek(0)/bx/n/14.5 παντεϲ ϲκαν-
+ []
+
+
+AED: pageslts setting LastPage 
+[377]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 19285.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 19285.
+\c@pagesLTS.arabic.1.local.count=\count332
+ 
+AED: pageslts setting VeryLastPage via AfterLastShipout 
+
+AED: pageslts setting LastPages via AfterLastShipout 
+
+
+Package pageslts Info: Total number of pages is even.
+
+
+(./GA20032.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 19285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 19285
+.
+Package rerunfilecheck Info: File `GA20032.out' has not changed.
+(rerunfilecheck)             Checksum: 7EB5F54E5D4834D0883C5EBB4322E6C2.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 24315 strings out of 492916
+ 455955 string characters out of 6133345
+ 635422 words of memory out of 5000000
+ 28100 multiletter control sequences out of 15000+600000
+ 559073 words of font info for 69 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 44i,11n,65p,818b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on GA20032.pdf (384 pages).
