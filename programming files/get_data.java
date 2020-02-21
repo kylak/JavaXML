@@ -1,13 +1,7 @@
-/* Source :
-Gustav Berloty (author of this file),
-Alan Bunning (transcripted data and greek font, http://greekcntr.org/),
-Charles Lang Freer (original manuscript),
-and the One who created that manuscript …
-This file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence :
+/* Licence :
+This file is copyright © 2020 by Gustav Berloty (creator of this file) released under the CC BY-NC-SA 4.0 licence :
 https://creativecommons.org/licenses/by-nc-sa/4.0/
-The greek font "KoineGreek" is copyright © 2019 by Alan Bunning released under the
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
-(CC BY-NC-ND 4.0). */
+*/
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
