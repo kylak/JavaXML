@@ -1,8 +1,0 @@
-
-class RectificationsScribales {
-
-    public RectificationsScribales () {
-        
-    }
-
-}
