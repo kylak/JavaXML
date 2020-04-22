@@ -49,6 +49,7 @@ import java.util.regex.Pattern;
  6- le n-ième mot de la l-ième ligne du manuscrit: texte.get(0).get(l).get(n).valeur; 
  7- la l-ième ligne du manuscrit: texte.get(0).get(l).get(0).valeur;
  8- tout le manuscrit: texte.get(0).get(0).get(0).valeur;
+ On peut remplacer le .valeur par .scribe pour savoir quel scribe a écrit le mot en question.
  
  Les mots sont classées par espace ou retour à la ligne.
  */
@@ -146,6 +147,98 @@ class data_to_tex {
             
             String previous_livre = "";
             boolean first_book = true;
+            
+            // Rectifications scribales computed.
+            String last_book = "";
+            String last_chapter = "";
+            String rectifications_scribales = "";
+            rectifications_scribales = "\\restoregeometry\n\\clearpage\n\\newpage\n\\newPart{Rectifications scribales.}"; // corrections.size() pour en avoir le nombre.
+            for (int j = 0; j < corrections.size(); j++) {
+                String[] etape = new String[corrections.get(j).size()];
+                int numeroDeReference = Integer.parseInt(corrections.get(j).get(0).get(0).numero);
+                for (int k = 0; k < corrections.get(j).size(); k++) {
+                    etape[k] = "";
+                    for (int l = 0; l < corrections.get(j).get(k).size(); l++) {
+                        if (corrections.get(j).get(k).get(l).valeur.equals("")) {
+                            etape[k] += corrections.get(j).get(k).get(l).valeur;
+                        }
+                        else if (etape[k].length() > 1) {
+                            etape[k] += " " + corrections.get(j).get(k).get(l).valeur;
+                        }
+                        else { // Pour ne pas qu'on ait un espace devant le premier mot.
+                            etape[k] += corrections.get(j).get(k).get(l).valeur;
+                        }
+                    }
+                }
+
+                String reference_du_mot_precedent = "";
+                String reference_du_mot_suivant = "";
+                String mot_precedent = "";
+                String mot_suivant = "";
+                // Faire une fonction de recherche de mot pour trouver le précédent et le suivant.
+                if(getWordIndex(numeroDeReference)-1 != -2) {
+                    if (getWordIndex(numeroDeReference)-1 > -1) {
+                        mot_precedent = texte.get(0).get(0).get(getWordIndex(numeroDeReference)-1).valeur;
+                        reference_du_mot_precedent = texte.get(0).get(0).get(getWordIndex(numeroDeReference)-1).numero;
+                    }
+                    else { // Dans le cas où le premier mot rectifié est le premier mot du manuscrit.
+                        mot_precedent = null;
+                        reference_du_mot_precedent = Integer.toString(numeroDeReference);
+                    }
+                    if (getWordIndex(numeroDeReference)+1 < texte.get(0).get(0).size()) {
+                        mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).valeur;
+                        reference_du_mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).numero;
+                    }
+                    else { // Dans le cas où le premier mot rectifié est le dernier mot du manuscrit.
+                        mot_suivant = null;
+                        reference_du_mot_suivant = Integer.toString(numeroDeReference);
+                    }
+
+                    if (!last_book.equals(reference_du_mot_precedent.substring(0, 2))) {
+                        String livre_actuel = "";
+                        if (reference_du_mot_precedent.substring(0, 2).equals("01")) livre_actuel = livre_01;
+                        else if (reference_du_mot_precedent.substring(0, 2).equals("02")) livre_actuel = livre_02;
+                        else if (reference_du_mot_precedent.substring(0, 2).equals("03")) livre_actuel = livre_03;
+                        else if (reference_du_mot_precedent.substring(0, 2).equals("04")) livre_actuel = livre_04;
+                        rectifications_scribales += " \n\n\\newSection{" + livre_actuel + "} \n";
+                        last_book = reference_du_mot_precedent.substring(0, 2);
+                    }
+                    
+                    String reference = "\n\n\\normalsize\\textbf{\\nospace{" + reference_du_mot_precedent.substring(2, 4) + ":" + reference_du_mot_precedent.substring(4, 6) + "}}\\footnotesize.(" + reference_du_mot_precedent.substring(6, 8);
+                    if (!reference_du_mot_precedent.substring(2, 4).equals(reference_du_mot_suivant.substring(2, 4))) {
+                        reference += ")\\normalsize-\\textbf{\\nospace{" + reference_du_mot_suivant.substring(2, 4) + ":" + reference_du_mot_suivant.substring(4, 6) + "}}\\footnotesize.(" + reference_du_mot_suivant.substring(6, 8) + ") \n\\normalsize";
+                    }
+                    else if (reference_du_mot_precedent.substring(4, 6).equals(reference_du_mot_suivant.substring(4, 6))) {
+                        reference += "-" + reference_du_mot_suivant.substring(6, 8) + ") \n\\normalsize";
+                    }
+                    else {
+                        reference = reference.substring(0, reference.length()-17);
+                        reference += "-\\textbf{\\nospace{" + reference_du_mot_suivant.substring(4, 6) + "}}\\hspace{1.5em}\n\\normalsize";
+                    }
+                    
+                    // Mettre en forme la rectification.
+                    for (int k = etape.length - 1; k >= 0; k--) {
+                        if(k-1 >= 0) {
+                            String[] s = {etape[k], etape[k-1]};
+                            String[] etapes_mis_en_forme = detect_common_bloc(s);
+                            etape[k] = etapes_mis_en_forme[0];
+                            etape[k-1] = etapes_mis_en_forme[1];
+                        }
+                    }
+                    for (int k = etape.length - 1; k >= 0; k--) {
+                        etape[k] = etape[k].replaceAll("(\\\\foreignlanguage\\{greek\\}\\{.*)(°.+°)(.*\\})", "\\\\textoverline{$1$2$3}");
+                        etape[k] = etape[k].replaceAll("\\\\foreignlanguage\\{greek\\}\\{°\\}", "");
+                        etape[k] = etape[k].replaceAll("°", "");
+                    }
+                    
+                    String a_correction = reference + " \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[etape.length-1] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
+                    for (int l = etape.length - 2; l >= 0; l--) {
+                        a_correction += " \n\\ding{222} \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[l] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
+                    }
+                    a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
+                    rectifications_scribales += a_correction;
+                }
+            }
             
             for (int i=1; i < texte.size(); i++) {
                 
@@ -265,96 +358,7 @@ class data_to_tex {
                 
             }
             
-            String last_book = "";
-            String last_chapter = "";
-            writer2.write("\\restoregeometry\n\\clearpage\n\\newpage\n\\newPart{Rectifications scribales.}"); // corrections.size() pour en avoir le nombre.
-            for (int j = 0; j < corrections.size(); j++) {
-                String[] etape = new String[corrections.get(j).size()];
-                int numeroDeReference = Integer.parseInt(corrections.get(j).get(0).get(0).numero);
-                for (int k = 0; k < corrections.get(j).size(); k++) {
-                    etape[k] = "";
-                    for (int l = 0; l < corrections.get(j).get(k).size(); l++) {
-                        if (corrections.get(j).get(k).get(l).valeur.equals("")) {
-                            etape[k] += corrections.get(j).get(k).get(l).valeur;
-                        }
-                        else if (etape[k].length() > 1) {
-                            etape[k] += " " + corrections.get(j).get(k).get(l).valeur;
-                        }
-                        else { // Pour ne pas qu'on ait un espace devant le premier mot.
-                            etape[k] += corrections.get(j).get(k).get(l).valeur;
-                        }
-                    }
-                }
-
-                String reference_du_mot_precedent = "";
-                String reference_du_mot_suivant = "";
-                String mot_precedent = "";
-                String mot_suivant = "";
-                // Faire une fonction de recherche de mot pour trouver le précédent et le suivant.
-                if(getWordIndex(numeroDeReference)-1 != -2) {
-                    if (getWordIndex(numeroDeReference)-1 > -1) {
-                        mot_precedent = texte.get(0).get(0).get(getWordIndex(numeroDeReference)-1).valeur;
-                        reference_du_mot_precedent = texte.get(0).get(0).get(getWordIndex(numeroDeReference)-1).numero;
-                    }
-                    else { // Dans le cas où le premier mot rectifié est le premier mot du manuscrit.
-                        mot_precedent = null;
-                        reference_du_mot_precedent = Integer.toString(numeroDeReference);
-                    }
-                    if (getWordIndex(numeroDeReference)+1 < texte.get(0).get(0).size()) {
-                        mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).valeur;
-                        reference_du_mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).numero;
-                    }
-                    else { // Dans le cas où le premier mot rectifié est le dernier mot du manuscrit.
-                        mot_suivant = null;
-                        reference_du_mot_suivant = Integer.toString(numeroDeReference);
-                    }
-
-                    if (!last_book.equals(reference_du_mot_precedent.substring(0, 2))) {
-                        String livre_actuel = "";
-                        if (reference_du_mot_precedent.substring(0, 2).equals("01")) livre_actuel = livre_01;
-                        else if (reference_du_mot_precedent.substring(0, 2).equals("02")) livre_actuel = livre_02;
-                        else if (reference_du_mot_precedent.substring(0, 2).equals("03")) livre_actuel = livre_03;
-                        else if (reference_du_mot_precedent.substring(0, 2).equals("04")) livre_actuel = livre_04;
-                        writer2.write(" \n\n\\newSection{" + livre_actuel + "} \n");
-                        last_book = reference_du_mot_precedent.substring(0, 2);
-                    }
-                    
-                    String reference = "\n\n\\normalsize\\textbf{\\nospace{" + reference_du_mot_precedent.substring(2, 4) + ":" + reference_du_mot_precedent.substring(4, 6) + "}}\\footnotesize.(" + reference_du_mot_precedent.substring(6, 8);
-                    if (!reference_du_mot_precedent.substring(2, 4).equals(reference_du_mot_suivant.substring(2, 4))) {
-                        reference += ")\\normalsize-\\textbf{\\nospace{" + reference_du_mot_suivant.substring(2, 4) + ":" + reference_du_mot_suivant.substring(4, 6) + "}}\\footnotesize.(" + reference_du_mot_suivant.substring(6, 8) + ") \n\\normalsize";
-                    }
-                    else if (reference_du_mot_precedent.substring(4, 6).equals(reference_du_mot_suivant.substring(4, 6))) {
-                        reference += "-" + reference_du_mot_suivant.substring(6, 8) + ") \n\\normalsize";
-                    }
-                    else {
-                        reference = reference.substring(0, reference.length()-17);
-                        reference += "-\\textbf{\\nospace{" + reference_du_mot_suivant.substring(4, 6) + "}}\\hspace{1.5em}\n\\normalsize";
-                    }
-                    
-                    // Mettre en forme la rectification.
-                    for (int k = etape.length - 1; k >= 0; k--) {
-                        if(k-1 >= 0) {
-                            String[] s = {etape[k], etape[k-1]};
-                            String[] etapes_mis_en_forme = detect_common_bloc(s);
-                            etape[k] = etapes_mis_en_forme[0];
-                            etape[k-1] = etapes_mis_en_forme[1];
-                        }
-                    }
-                    for (int k = etape.length - 1; k >= 0; k--) {
-                        etape[k] = etape[k].replaceAll("(\\\\foreignlanguage\\{greek\\}\\{.*)(°.+°)(.*\\})", "\\\\textoverline{$1$2$3}");
-                        etape[k] = etape[k].replaceAll("\\\\foreignlanguage\\{greek\\}\\{°\\}", "");
-                        etape[k] = etape[k].replaceAll("°", "");
-                    }
-                    
-                    String a_correction = reference + " \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[etape.length-1] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
-                    for (int l = etape.length - 2; l >= 0; l--) {
-                        a_correction += " \n\\ding{222} \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[l] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
-                    }
-                    a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
-                    writer2.write(a_correction);
-                }
-            }
-            
+            writer2.write(rectifications_scribales);
             writer2.write("\n\n\\end{document}");
             writer2.close();
             // grec

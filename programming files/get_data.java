@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
+/* 
  Voici comment accèder à l'ArrayList texte :
  Pour avoir :
  1- la p-ième page du manuscrit: texte.get(p).get(0).get(0).valeur;
@@ -70,17 +70,28 @@ public class get_data {
         // Pour les <rdg>, on considère que parmi plusieurs étapes de corrections (<rdg>), celle qui "a le dernier mot" càd celle a afficher, est celle qui est premier enfant de <app>.
     
         int nombreAoterSurNumerotationPourRenumerotation = 0;
-                
+        
+        /* 
+			 Par rapport à l'ArrayList corrections :
+				
+				Le premier indice (i) correspond au numéro de la correction (numéro du <app>).
+				Le second indice (j) correspond au numéro de l'étape de la correction (numéro du <rdg>).
+				Le dernier indice (h) correspond au numéro du mot (numéro du <w>).
+				
+				corrections.get(i).get(j).get(h);
+		*/
+		
         ArrayList<ArrayList<ArrayList<mot>>> corrections = new ArrayList<ArrayList<ArrayList<mot>>>(); // Toutes les corrections.
         
         // Pour les numéros de mot.
         String milestone = "000000";
         String pos_in_milestone = "00";
-        
+       	String scribe = "";
         // boolean stop_debugging = false;
         
         for (int temp = 0; temp < balises.getLength(); temp++)
         {
+            
             
             Node node = balises.item(temp);
             if(in_app) {
@@ -110,7 +121,16 @@ public class get_data {
                                 boolean notYet = true;
                                 for (int i = 0; i < balises_dans_app.getLength(); i++) {
                                     if( (balises_dans_app.item(i).getNodeType() == Node.ELEMENT_NODE) && ( ((Element)balises_dans_app.item(i)).getTagName() == "rdg" ) ) {
-                                        if (i >= nbr_of_rdg_visited && notYet) {the_rdg_index_we_will_use_now = i; notYet = false;}
+                                        if (i >= nbr_of_rdg_visited && notYet) {
+                                        	the_rdg_index_we_will_use_now = i;
+                                        	if (((Element)balises_dans_app.item(i)).hasAttribute("hand")) {
+                                        		scribe = ((Element)balises_dans_app.item(i)).getAttribute("hand");
+                                        	}
+                                        	else /*if (((Element)balises_dans_app.item(i)).hasAttribute("orig")) if not throws exception*/ {
+                                        		scribe = "orig";
+                                        	}
+                                        	notYet = false;
+                                        }
                                         last_rdg_index = i;
                                     }
                                 }
@@ -161,7 +181,8 @@ public class get_data {
                                         && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
                                         && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
                                             node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
-                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot));
+                                            // ici.
+                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot, scribe));
                                             dernier_indice_du_mot_en_rdg++;
                                             if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
                                                 dernier_indice_du_mot_en_rdg = 0;
@@ -175,7 +196,7 @@ public class get_data {
                                 }
                                 else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
                                     // On sauvegarde la réctification comme un mot vide.
-                                    corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot("", numeroDuMot));
+                                    corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot("", numeroDuMot, scribe));
                                     // Le code ci-dessous est expliqué ci-dessus.
                                     dernier_indice_du_mot_en_rdg = 0;
                                     nbr_of_rdg_visited++;

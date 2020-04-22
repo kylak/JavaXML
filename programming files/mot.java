@@ -16,9 +16,11 @@ class mot {
      // ajouter sa position dans le manuscrit grâce à l'ArrayList texte ?
      Nous pourrons ainsi avoir un code couleur selon certaines de ses propriétés.
      */
+    String scribe;
     
     public mot(String m) {
         valeur = m;
+        scribe = "orig"; // for the original scribe.
     }
     
     /*public mot(String n) {
@@ -28,5 +30,17 @@ class mot {
     public mot(String m, String n) {
         valeur = m;
         numero = n;
+        scribe = "orig";
+    }
+        
+    public mot(String m, String n, String s) {
+    	valeur = m;
+    	numero = n;
+    	scribe = s;
     }
 }
+
+
+
+
+
