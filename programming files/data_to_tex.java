@@ -156,6 +156,7 @@ class data_to_tex {
             for (int j = 0; j < corrections.size(); j++) {
                 String[] etape = new String[corrections.get(j).size()];
                 int numeroDeReference = Integer.parseInt(corrections.get(j).get(0).get(0).numero);
+                int posManuscript = corrections.get(j).get(0).get(0).posManuscript;
                 for (int k = 0; k < corrections.get(j).size(); k++) {
                     etape[k] = "";
                     for (int l = 0; l < corrections.get(j).get(k).size(); l++) {
@@ -235,6 +236,9 @@ class data_to_tex {
                     for (int l = etape.length - 2; l >= 0; l--) {
                         a_correction += " \n\\ding{222} \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[l] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
                     }
+                    texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur = etape[0];
+                    rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript));
+                    System.out.println(texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur);	// On met à jour le mot dans le texte grec en lui-même.
                     a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
                     rectifications_scribales += a_correction;
                 }
@@ -378,6 +382,35 @@ class data_to_tex {
             }
         }
         return -1;
+    }
+    
+   int getWordIndex2(int word_number) {
+    	String w = Integer.toString(word_number);
+    	if (w.length() == 8) { System.out.println("numéro : " + w + "\nword: " + Integer.parseInt(w.substring(6, 8))); return Integer.parseInt(w.substring(6, 8)); }
+    	else if (w.length() == 7) { System.out.println("numéro : " + w + "\nword: " + Integer.parseInt(w.substring(5, 7))); return Integer.parseInt(w.substring(5, 7)); }
+    	else { System.out.println("numéro : " + w + "\nword: " + Integer.parseInt(w.substring(4, 6))); return Integer.parseInt(w.substring(4, 6)); }
+    }
+    
+    int getLineIndex(int word_number) {
+    	String w = Integer.toString(word_number);
+    	if (w.length() == 8) { System.out.println("numéro : " + w + "\nline: " + Integer.parseInt(w.substring(4, 6))); return Integer.parseInt(w.substring(4, 6)); }
+    	else if (w.length() == 7) { System.out.println("numéro : " + w + "\nline: " + Integer.parseInt(w.substring(3, 5))); return Integer.parseInt(w.substring(3, 5)); }
+    	else { System.out.println("numéro : " + w + "\nline: " + Integer.parseInt(w.substring(2, 4))); return Integer.parseInt(w.substring(2, 4)); }
+    }
+    
+    int getPageIndex(int word_number) {
+	    String w = Integer.toString(word_number);
+    	if (w.length() == 8) { System.out.println("numéro : " + w + "\npage: " + Integer.parseInt(w.substring(0, 3))); return Integer.parseInt(w.substring(0, 3)); }
+    	else if (w.length() == 7) { System.out.println("numéro : " + w + "\npage: " + Integer.parseInt(w.substring(0, 2))); return Integer.parseInt(w.substring(0, 2)); }
+    	else { System.out.println("numéro : " + w + "\npage: " + Integer.parseInt(w.substring(0, 1))); return Integer.parseInt(w.substring(0, 1)); }
+    }
+    
+    void rewriteTheLine (int pageNumber, int lineNumber) {
+    	texte.get(pageNumber).get(lineNumber).get(0).valeur = "";
+    	for (int i = 1; i < texte.get(pageNumber).get(lineNumber).size(); i++) {
+    		texte.get(pageNumber).get(lineNumber).get(0).valeur += texte.get(pageNumber).get(lineNumber).get(i).valeur + " ";
+    	}
+    	texte.get(pageNumber).get(lineNumber).get(0).valeur = (texte.get(pageNumber).get(lineNumber).get(0).valeur).substring(0, (texte.get(pageNumber).get(lineNumber).get(0).valeur).length()-1);
     }
     
     /*

@@ -17,10 +17,11 @@ class mot {
      Nous pourrons ainsi avoir un code couleur selon certaines de ses propriétés.
      */
     String scribe;
-    
+    int posManuscript = 0; // use for rectification
+        
     public mot(String m) {
         valeur = m;
-        scribe = "orig"; // for the original scribe.
+        scribe = "orig"; // for the original scribe
     }
     
     /*public mot(String n) {
@@ -32,15 +33,19 @@ class mot {
         numero = n;
         scribe = "orig";
     }
-        
-    public mot(String m, String n, String s) {
+    
+        public mot(String m, String n, String s) {
     	valeur = m;
     	numero = n;
     	scribe = s;
     }
+        
+    public mot(String m, String n, String s, int givenPos) {
+    	valeur = m;
+    	numero = n;
+    	scribe = s;
+    	posManuscript = givenPos;
+    }
 }
-
-
-
 
 

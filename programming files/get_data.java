@@ -87,6 +87,7 @@ public class get_data {
         String milestone = "000000";
         String pos_in_milestone = "00";
        	String scribe = "";
+       	int lastManuscriptPos = 0;
         // boolean stop_debugging = false;
         
         for (int temp = 0; temp < balises.getLength(); temp++)
@@ -182,7 +183,8 @@ public class get_data {
                                         && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
                                             node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
                                             // ici.
-                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot, scribe));
+                                            lastManuscriptPos = Integer.parseInt(((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getAttribute("n"));
+                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot, scribe, lastManuscriptPos));
                                             dernier_indice_du_mot_en_rdg++;
                                             if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
                                                 dernier_indice_du_mot_en_rdg = 0;
@@ -196,7 +198,7 @@ public class get_data {
                                 }
                                 else { // Dans ce cas, le scribe a fait une suppression, ou alors une insertion.
                                     // On sauvegarde la réctification comme un mot vide.
-                                    corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot("", numeroDuMot, scribe));
+                                    corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot("", numeroDuMot, scribe, lastManuscriptPos));
                                     // Le code ci-dessous est expliqué ci-dessus.
                                     dernier_indice_du_mot_en_rdg = 0;
                                     nbr_of_rdg_visited++;
@@ -229,8 +231,10 @@ public class get_data {
                 int prochain_numero_de_page = page + 1;
                 String prochaine_page = Integer.toString(prochain_numero_de_page) + "10101";
                 
-                int numeroDeMotRenumerote = Integer.parseInt(eElement.getAttribute("n")) - nombreAoterSurNumerotationPourRenumerotation;
+                int numeroDeMotRenumerote = Integer.parseInt(eElement.getAttribute("n")) - nombreAoterSurNumerotationPourRenumerotation; 
                 String numeroDePlacementDuMot = Integer.toString(numeroDeMotRenumerote);
+                
+                lastManuscriptPos = Integer.parseInt(eElement.getAttribute("n"));
                 
                 /* if( !stop ) { // debugging code.
                     System.out.println("text: " + eElement.getTextContent() + "\nprochain_mot: " + prochain_mot + "\nnumeroDePlacementDuMot: " + numeroDePlacementDuMot + "\nprochaineligne: " + prochaine_ligne + "\nnombreAoterSurNumerotationPourRenumerotation: " + nombreAoterSurNumerotationPourRenumerotation);
