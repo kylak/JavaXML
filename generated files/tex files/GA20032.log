@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.21)  22 APR 2020 17:56
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.21)  13 AUG 2020 07:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1417,9 +1417,6 @@ Package rerunfilecheck Info: File `GA20032.out' has not changed.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:

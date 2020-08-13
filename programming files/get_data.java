@@ -323,6 +323,17 @@ public class get_data {
         
         System.out.println("Informations:\nNombre de page du manuscrit: " + Integer.toString(texte.size()-1) + "\nNombre de ligne dans le manuscrit (sans compter les 4 titres des évangiles): " +  Integer.toString(texte.get(0).size()-1));
         
+        /* Fot test
+        for(ArrayList<ArrayList<mot>> tmp1 : corrections) {
+        	System.out.println("Nouvelle correction");
+        	for(ArrayList<mot> tmp2: tmp1) {
+        		System.out.println("Nouveau <rdg>");
+        		for(mot tmp3: tmp2) {
+        			System.out.println(tmp3.valeur);
+        		}
+        	}
+        } */
+                
         /* Debugging part for saved corrections
         System.out.println("\nListe des " + corrections.size() + " corrections : ");
         for (ArrayList<ArrayList<mot>> cor_i : corrections) {

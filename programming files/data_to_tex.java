@@ -156,7 +156,9 @@ class data_to_tex {
             for (int j = 0; j < corrections.size(); j++) {
                 String[] etape = new String[corrections.get(j).size()];
                 int numeroDeReference = Integer.parseInt(corrections.get(j).get(0).get(0).numero);
+                int lastNumeroDeReference = 0;
                 int posManuscript = corrections.get(j).get(0).get(0).posManuscript;
+                int lastPosManuscript = 0;
                 for (int k = 0; k < corrections.get(j).size(); k++) {
                     etape[k] = "";
                     for (int l = 0; l < corrections.get(j).get(k).size(); l++) {
@@ -169,8 +171,16 @@ class data_to_tex {
                         else { // Pour ne pas qu'on ait un espace devant le premier mot.
                             etape[k] += corrections.get(j).get(k).get(l).valeur;
                         }
+                        if (k == corrections.get(j).size() - 1 && l == corrections.get(j).get(k).size() - 1) {
+                        	lastNumeroDeReference = Integer.parseInt(corrections.get(j).get(k).get(l).numero);
+                        }
+                        if (k == 0 && l == corrections.get(j).get(k).size() - 1) {
+                        	lastPosManuscript = corrections.get(j).get(k).get(l).posManuscript;
+                        }
                     }
                 }
+                
+                int additionalWord = lastPosManuscript - posManuscript;
 
                 String reference_du_mot_precedent = "";
                 String reference_du_mot_suivant = "";
@@ -186,13 +196,13 @@ class data_to_tex {
                         mot_precedent = null;
                         reference_du_mot_precedent = Integer.toString(numeroDeReference);
                     }
-                    if (getWordIndex(numeroDeReference)+1 < texte.get(0).get(0).size()) {
-                        mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).valeur;
-                        reference_du_mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference)+1).numero;
+                    if (getWordIndex(numeroDeReference) + additionalWord + 1 < texte.get(0).get(0).size()) {
+                        mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference) + additionalWord + 1).valeur;
+                        reference_du_mot_suivant = texte.get(0).get(0).get(getWordIndex(numeroDeReference) + additionalWord + 1).numero;
                     }
                     else { // Dans le cas où le premier mot rectifié est le dernier mot du manuscrit.
                         mot_suivant = null;
-                        reference_du_mot_suivant = Integer.toString(numeroDeReference);
+                        reference_du_mot_suivant = Integer.toString(numeroDeReference + additionalWord);
                     }
 
                     if (!last_book.equals(reference_du_mot_precedent.substring(0, 2))) {
@@ -237,6 +247,9 @@ class data_to_tex {
                         a_correction += " \n\\ding{222} \\foreignlanguage{greek}{" + mot_precedent + "} " + etape[l] + " \\foreignlanguage{greek}{" + mot_suivant + "}";
                     }
                     texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur = etape[0];
+                    for (int i = posManuscript + 1; i <= lastPosManuscript; i++) {
+                    	texte.get(getPageIndex(i)).get(getLineIndex(i)).get(getWordIndex2(i)).valeur = "";
+                    }
                     rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript));
                     System.out.println(texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur);	// On met à jour le mot dans le texte grec en lui-même.
                     a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
