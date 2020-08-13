@@ -250,7 +250,9 @@ class data_to_tex {
                     for (int i = posManuscript + 1; i <= lastPosManuscript; i++) {
                     	texte.get(getPageIndex(i)).get(getLineIndex(i)).get(getWordIndex2(i)).valeur = "";
                     }
-                    rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript));
+                    boolean normalCase = true;
+                    if (additionalWord > 0) normalCase = false;
+                    rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript), normalCase, getWordIndex2(lastPosManuscript));
                     System.out.println(texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur);	// On met à jour le mot dans le texte grec en lui-même.
                     a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
                     rectifications_scribales += a_correction;
@@ -418,10 +420,12 @@ class data_to_tex {
     	else { System.out.println("numéro : " + w + "\npage: " + Integer.parseInt(w.substring(0, 1))); return Integer.parseInt(w.substring(0, 1)); }
     }
     
-    void rewriteTheLine (int pageNumber, int lineNumber) {
+    void rewriteTheLine (int pageNumber, int lineNumber, boolean normalCase, int exception) {
     	texte.get(pageNumber).get(lineNumber).get(0).valeur = "";
     	for (int i = 1; i < texte.get(pageNumber).get(lineNumber).size(); i++) {
-    		texte.get(pageNumber).get(lineNumber).get(0).valeur += texte.get(pageNumber).get(lineNumber).get(i).valeur + " ";
+    		texte.get(pageNumber).get(lineNumber).get(0).valeur += texte.get(pageNumber).get(lineNumber).get(i).valeur;
+    		if (!normalCase && exception == i) System.out.print("");
+    		else texte.get(pageNumber).get(lineNumber).get(0).valeur += " ";
     	}
     	texte.get(pageNumber).get(lineNumber).get(0).valeur = (texte.get(pageNumber).get(lineNumber).get(0).valeur).substring(0, (texte.get(pageNumber).get(lineNumber).get(0).valeur).length()-1);
     }
