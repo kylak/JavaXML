@@ -37,7 +37,8 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
  - Avoir les titres que les manuscrits donnent eux-mêmes aux livres.
  
 - Autres notes :
- // Mt 2:17 et Mt 17:25.
+// résoudre, dans les rectifications scribales à la fin du document, la valeur du mot suivant quand le mot corrigé est coupé par une fin de ligne, voir par exemple notamment Mt 1:9.
+// résoudre l'insertion des mots coupés corrigés, voir par exemple Mt 1:9.
  // J'ai remarqué une erreur dans le fichier XML (w n='25010706') en Luc 11:4.10 c'est apheiomen et non apeiolomen (le lo est en trop).
 
 Under licence : ![alt text](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) http://creativecommons.org/licenses/by-nc-sa/4.0/ 
