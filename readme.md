@@ -27,7 +27,6 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
  11. Avoir un autre format que pdf pour pouvoir faire des annotations et copiers-collers sur les mots et aussi trouver la définition d'un mot.
  12. Les concitoyens.
  12. Créer un fichier de configuration pour personnaliser le rendu (avoir un toc sur plusieurs pages ou sur une page en multicolonne,
- 12. au niveau des corrections: utiliser un simple barre pour barrer les suppressions ou utiliser deux barres qui se croisent(\cancel), afficher les numéros de mots 
  12. pour les corrections ou simplement les chapitres et versets, intégrer les corrections au texte : de tous les scribes, seulement du scribe "", d'aucun scribe, etc…)
 13. résoudre : "Rerun to get cross-references right"
 14. synchroniser le code.
