@@ -30,6 +30,7 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
  12. au niveau des corrections: utiliser un simple barre pour barrer les suppressions ou utiliser deux barres qui se croisent(\cancel), afficher les numéros de mots 
  12. pour les corrections ou simplement les chapitres et versets, intégrer les corrections au texte : de tous les scribes, seulement du scribe "", d'aucun scribe, etc…)
 13. résoudre : "Rerun to get cross-references right"
+14. synchroniser le code.
  
 - Ce que l'on pourrait améliorer sur la structure XML :
  - Mettre les dimensions du codex dans des balises spécifiques pour pouvoir les récupérer et les utiliser de façon plus sûr, cela permettrait d'avoir les dimensions de notre tableau tex selon celles dans les données XML.
