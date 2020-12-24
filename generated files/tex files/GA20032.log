@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.21)  13 AUG 2020 13:38
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.21)  24 DEC 2020 08:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1378,22 +1378,7 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
 
 
 
-] [374]
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
-Missing character: There is no - in font KoineGreek/AAT!
- [375] 
+] [374] [375] 
 AED: pageslts setting LastPage 
 [376]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 19296.

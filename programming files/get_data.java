@@ -182,9 +182,8 @@ public class get_data {
                                         && liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg).getNodeType() == Node.ELEMENT_NODE
                                         && ((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getTagName() == "w" ) {
                                             node = liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg);
-                                            // ici.
                                             lastManuscriptPos = Integer.parseInt(((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg)).getAttribute("n"));
-                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot, scribe, lastManuscriptPos));
+                                            corrections.get(corrections.size()-1).get(corrections.get(corrections.size()-1).size()-1).add(new mot(formatNominaSacra(node), numeroDuMot, scribe, lastManuscriptPos, isAMotCoupe((Element)liste_de_mot_dans_le_rdg.item(dernier_indice_du_mot_en_rdg))));
                                             dernier_indice_du_mot_en_rdg++;
                                             if (dernier_indice_du_mot_en_rdg >= liste_de_mot_dans_le_rdg.getLength()) { // S'il ne reste plus de <w> dans ce rdg. Càd que celui-ci fut le dernier de ce rdg.
                                                 dernier_indice_du_mot_en_rdg = 0;
@@ -388,6 +387,18 @@ public class get_data {
             }
         }
         return text.getTextContent();
+    }
+    
+    static boolean isAMotCoupe(Node word){
+    	if(word.hasChildNodes()) {
+            NodeList test = word.getChildNodes();
+            for (int i = 0; i < test.getLength(); i++){
+                if(test.item(i).getNodeName() == "lb"){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     static boolean isTheWordToIgnore(Node given, boolean finalMode) {

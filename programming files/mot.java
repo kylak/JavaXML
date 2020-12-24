@@ -18,6 +18,7 @@ class mot {
      */
     String scribe;
     int posManuscript = 0; // use for rectification
+    boolean coupe; // only use at the moment with the rectifications.
         
     public mot(String m) {
         valeur = m;
@@ -45,6 +46,14 @@ class mot {
     	numero = n;
     	scribe = s;
     	posManuscript = givenPos;
+    }
+    
+    public mot(String m, String n, String s, int givenPos, boolean mc) {
+    	valeur = m;
+    	numero = n;
+    	scribe = s;
+    	posManuscript = givenPos;
+    	coupe = mc;
     }
 }
 

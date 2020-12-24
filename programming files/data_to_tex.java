@@ -159,9 +159,11 @@ class data_to_tex {
                 int lastNumeroDeReference = 0;
                 int posManuscript = corrections.get(j).get(0).get(0).posManuscript;
                 int lastPosManuscript = 0;
+                boolean mot_coupe = false;
                 for (int k = 0; k < corrections.get(j).size(); k++) {
                     etape[k] = "";
                     for (int l = 0; l < corrections.get(j).get(k).size(); l++) {
+                    	mot_coupe = corrections.get(j).get(k).get(l).coupe;
                         if (corrections.get(j).get(k).get(l).valeur.equals("")) {
                             etape[k] += corrections.get(j).get(k).get(l).valeur;
                         }
@@ -181,6 +183,9 @@ class data_to_tex {
                 }
                 
                 int additionalWord = lastPosManuscript - posManuscript;
+                
+                // Si mot coupé on ajoute 1 à additionalWord.
+                if (mot_coupe) additionalWord++;
 
                 String reference_du_mot_precedent = "";
                 String reference_du_mot_suivant = "";
@@ -252,7 +257,7 @@ class data_to_tex {
                     }
                     boolean normalCase = true;
                     if (additionalWord > 0) normalCase = false;
-                    rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript), normalCase, getWordIndex2(lastPosManuscript), additionalWord);
+                    // rewriteTheLine(getPageIndex(posManuscript), getLineIndex(posManuscript), normalCase, getWordIndex2(lastPosManuscript), additionalWord);
                     System.out.println(texte.get(getPageIndex(posManuscript)).get(getLineIndex(posManuscript)).get(getWordIndex2(posManuscript)).valeur);	// On met à jour le mot dans le texte grec en lui-même.
                     a_correction = a_correction.replaceAll("(.)\u0305", "\\\\finalN{$1} ");
                     rectifications_scribales += a_correction;
