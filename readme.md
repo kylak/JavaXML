@@ -39,7 +39,7 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
  
 - Autres notes :
 // Si je veux colorer les rectifications scribales dans le texte, décommenter le code concerné dans data_to_tex.java et résoudre l'insertion des mots coupés corrigés, voir par exemple Mt 19:1.
- // J'ai remarqué une erreur dans le fichier XML (w n='25010706') en Luc 11:4.10 c'est apheiomen et non apeiolomen (le lo est en trop).
+ // J'ai remarqué une erreur dans le fichier XML (w n='25010706') en Luc 11:4.10 c'est apheiomen et non apeiolomen (le lo est en trop). Et aussi au numéro 25810801 il y a un espace de trop.
 
 Under licence : ![alt text](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) http://creativecommons.org/licenses/by-nc-sa/4.0/ 
 
