@@ -10,7 +10,6 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 
 - À faire pour la prochaine fois:
 
- 0. Corriger les erreurs (voir ci-dessous "Autres notes").
  0.1 Numéros de pages à afficher.
  1.1 Ajouter un signe (avec lien) à côté du texte quand il y a une rectification scribales afin que le lecteur soit au courant.
  1.2 Afficher dans les rectifications scribales quel scribe à fait la modification ?
