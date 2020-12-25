@@ -38,6 +38,9 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 // Si je veux colorer les rectifications scribales dans le texte, décommenter le code concerné dans data_to_tex.java et résoudre l'insertion des mots coupés corrigés, voir par exemple Mt 19:1.
  // J'ai remarqué une erreur dans le fichier XML (w n='25010706') en Luc 11:4.10 c'est apheiomen et non apeiolomen (le lo est en trop). Et aussi au numéro 25810801 il y a un espace de trop.
 
+Pour avoir un espace entre le titre du livre et le haut de la page : changer la valeur de top dans:
+```
+\newgeometry{margin=0.7in, hmargin = 0.0in, layouthoffset = -1.9pt, top = 1.0in}
+```
+
 Under licence : ![alt text](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) http://creativecommons.org/licenses/by-nc-sa/4.0/ 
-
-
