@@ -15,6 +15,7 @@
 \usepackage{pifont}
  \usepackage{fontspec}
  \usepackage{lmodern}
+ \usepackage{titlesec}
  \usepackage{array, longtable}
  \footnotesize
 \usepackage{verbatim}
@@ -42,12 +43,14 @@
 %\num{\result}}
 
 \pagestyle{plain}
+\newfontfamily{\fontZ}{Verdana}
+\titleformat{\part}[block]{\fontZ\Large\filcenter}{}{1em}{}
+\titlespacing*{\part}{0pt}{-30pt}{20pt}
 
 \newcommand{\newPart}[1]{
 \part*{#1}
 \markright{}
-\phantomsection
-\addcontentsline{toc}{part}{#1}}
+\phantomsection}
 
 
 \newcommand{\newSection}[1]{
@@ -14582,10 +14585,11 @@
 \cline{3-3}
 
 \newpage
-\restoregeometry
 \end{longtable}
+\restoregeometry
 \newpage
-\newPart{Rectifications scribales.} 
+\newPart{RECTIFICATIONS SCRIBALES}
+\addtolength{\hoffset}{-20pt} 
 
 \newSection{ευαγγελιον κατα μαθθαιον} 
 
