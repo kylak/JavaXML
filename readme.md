@@ -10,7 +10,6 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 
 - À faire pour la prochaine fois:
 
- 0.1 Numéros de pages à afficher.
  1.1 Ajouter un signe (avec lien) à côté du texte quand il y a une rectification scribales afin que le lecteur soit au courant.
  1.2 Afficher dans les rectifications scribales quel scribe à fait la modification ?
  2. Faire en sorte que lorsque l'on clique sur un "lien" du "toc", on arive sur la baseline de la ligne du dessus et non sur celle vers laquelle le lien pointe, ainsi, on devrait pouvoir voir intégralement le numéro du chapitre, il ne devrait plus être coupé.
@@ -18,11 +17,8 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
  4. Nettoyer le dossier, et rédiger le code en anglais? Le développer suivant un modèle MVC et rédiger des tests unitaires, envoyer des messages d'erreurs en cas de problème.?
  5. Ajouter une page informative, genre liste des versets non présents dans ce manuscrit et quels sont les corrections qui ont étés intégrés directement, et les concitoyens, etc…
  6. Ajouter une légende (en quelle lange ? anglais, koinè, français ?) pour la mise en page (que siginife les chiffres, en gras, plus grands, les overlines, etc… ) ?
- 
  7. Mettre le sommaire de chaque livre côte à côte sur la même page, et mettre en bas de cette page de sommaire la page de correction scribale et son numéro de page.
- 8. Fixer la taille du tableau selon les dimensions du codex ? (Cela pourrait peut-être permettre de mieux gérer Matthieu 28:15-20, Marc 16:17-20?).
- 9. Pouvoir ajuster le format des pages du manuscrits de telle sortes à ce qu'elles aient toute la même taille de police d'écriture ?
- 10. (Détails) Rendre la taille des numéros de page plus grand ?
+ 10. (Détails) Rendre la taille des numéros de page plus grand (j'ai essayé mais n'ai pas réussi! donc poster de l'aide à ce porpos sur latex, n'est-ce pas) ?
  11. Avoir un autre format que pdf pour pouvoir faire des annotations et copiers-collers sur les mots et aussi trouver la définition d'un mot.
  12. Les concitoyens.
  12. Créer un fichier de configuration pour personnaliser le rendu (avoir un toc sur plusieurs pages ou sur une page en multicolonne,
