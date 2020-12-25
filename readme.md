@@ -29,6 +29,7 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 16. Afficher "Rectifications scribales" dans le toc (par opposition à cela entièrement en majuscule) (j'ai essayé mais pas réussi
 17. écrire dans data_to_tex.java une fonction additionalWord, pour les cas où une correction concernerait plusieurs lignes (et pourquoi pas comme un fou: plusieurs pages))
 18. Fixer la hauteur des blocs à la plus grande hauteur trouvée d'un bloc
+19. Info : on peut modifier le format d'une page (on n'est pas obligé d'avoir du a4) pour l'adapter au contenu que nous avons
 
 - Ce que l'on pourrait améliorer sur la structure XML :
  - Mettre les dimensions du codex dans des balises spécifiques pour pouvoir les récupérer et les utiliser de façon plus sûr, cela permettrait d'avoir les dimensions de notre tableau tex selon celles dans les données XML.
