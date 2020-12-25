@@ -58,8 +58,6 @@ import java.util.regex.Pattern;
 class data_to_tex {
     
     boolean printedMode; //à modifier dans l'autre fichier.
-    String beginPM = "%\\resizebox{\\linewidth}{!}{\n";
-    String endPM = "%}";
     
     ArrayList<ArrayList<ArrayList<mot>>> texte = new ArrayList<ArrayList<ArrayList<mot>>>();
     String nom = "";
@@ -72,10 +70,7 @@ class data_to_tex {
         creerUneFont();
         corrections = given_corrections;
         
-        if(printedMode) {
-            beginPM = "\\resizebox{\\linewidth}{!}{\n";
-            endPM = "}";
-        }
+        if(printedMode) {}
     }
     
    void creerUneFont() throws DocumentException, IOException {
@@ -86,6 +81,8 @@ class data_to_tex {
 
     public void generer() throws IOException
     {
+    	int relativeSize = 1; // 1 is the max size, O.5 50% of the max size, etc…
+    		
         Document document = new Document();
         try
         {
@@ -110,6 +107,10 @@ class data_to_tex {
                 public float getWidth(PdfContentByte pcb, ArrayList<ArrayList<ArrayList<mot>>> texte) {
                     return pcb.getEffectiveStringWidth(getText(texte), true);
                 }
+                
+                public String takeOffTexTag(String words) {
+                	return (words.replaceAll("\\\\textoverline\\{", "")).replaceAll("}", "");
+                }
             }
             
             Longerline maxLine = new Longerline(1,1);
@@ -117,19 +118,22 @@ class data_to_tex {
             // Pour trouver la ligne la plus longue du manuscrit
                 for(int i=1; i < texte.size(); i++){
                     for(int j = 1; j < texte.get(i).size(); j++) {
-                        if(texte.get(i).get(j).get(0).valeur.length() > maxLine.getText(texte).length()){
+                        if(maxLine.takeOffTexTag(texte.get(i).get(j).get(0).valeur).length() > maxLine.takeOffTexTag(maxLine.getText(texte)).length()){
                             maxLine.page = i;
                             maxLine.line = j;
                         }
                     }
                 }
+             
+            // Le nombre de caractère maximum qui ait été trouvé sur une ligne du manuscrit.
+            int maxLength = maxLine.takeOffTexTag(maxLine.getText(texte)).length();
             
             // Ci-dessous : ne marche pas à cause des balises tex.
-            // System.out.println("La ligne la plus longue trouvée dans ce manuscrit est à la page " + maxLine.page + " et à la ligne " + maxLine.line + ".\nVoici ce qui est écrit:\n" + maxLine.getText(texte) + "\nCette ligne contient " + maxLine.getText(texte).length() + " caractères qui ont été comptés.");
+            System.out.println("La ligne la plus longue trouvée dans ce manuscrit est à la page " + maxLine.page + " et à la ligne " + maxLine.line + ".\nVoici ce qui est écrit:\n" + maxLine.takeOffTexTag(maxLine.getText(texte)) + "\nCette ligne contient " + maxLength + " caractères qui ont été comptés.");
             
             String titre = nom.substring(0, 2) + " " + nom.substring(4, 7);
             
-            String str = "% %Source :\n%Gustav Berloty (author of this file),\n%Alan Bunning (transcripted data and greek font, http://greekcntr.org/),\n%Charles Lang Freer (original manuscript),\n%and the One who created that manuscript …\n%This file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence :\n%https://creativecommons.org/licenses/by-nc-sa/4.0/\n%The greek font \"KoineGreek\" is copyright © 2019 by Alan Bunning released under the\n%Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License\n%(CC BY-NC-ND 4.0).\n\n% !TEX encoding = UTF-8 Unicode\n \\documentclass[a4paper, 11pt]{article}\n \\usepackage[utf8]{inputenc}\n \\usepackage[french]{babel}\n \\usepackage{pifont}\n \\usepackage[T1]{fontenc}\n \\usepackage{fontspec}\n \\usepackage{lmodern}\n \\usepackage{array}\n \\usepackage{verbatim}\n  \\font\\myfont=cmr12 at 21pt\n \\title{{\\myfont ``" + titre + "''}}\n \\author{Source : \\\\ \nGustav Berloty (author of this file), \\\\ \nAlan Bunning (transcripted data and greek font, http://greekcntr.org/), \\\\ \nCharles Lang Freer (original manuscript), \\\\ \nand the One who created that manuscript …\\\\ \nThis file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence : \\\\ \nhttps://creativecommons.org/licenses/by-nc-sa/4.0/ \\\\ \nThe greek font \"KoineGreek\" is copyright © 2019 by Alan Bunning released under the \\\\ \nCreative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License \\\\ \n(CC BY-NC-ND 4.0).}\n\\usepackage{layout}\n \\usepackage[nomarginpar, margin=0.7in]{geometry}\n \\usepackage{graphicx}\n%\\newcommand{\\tailleDeLaPolice}{14.5}\n%\\usepackage[fontsize=\\tailleDeLaPolice pt]{scrextend}%\n\n  %\\def\\longueurFinalN#1{\\FPdiv\\result{11}{0.7}\n%\\FPdiv\\result{#1}{\\result}\n%\\FPround\\result{\\result}{2}\n%\\num{\\result}}\n\n\\pagestyle{plain}\n\n\\newcommand{\\newPart}[1]{\n\\part*{#1}\n\\markright{}\n\\phantomsection\n\\addcontentsline{toc}{part}{#1}}\n\n\n\\newcommand{\\newSection}[1]{\n\\section*{\\foreignlanguage{greek}{#1}}\n\\markright{}\n\\phantomsection\n\\addcontentsline{toc}{section}{\\foreignlanguage{greek}{#1}}}\n\n % pour afficher dans le \"toc\", des lignes en pointillées entre les chapitres des livres et leur numéro de page.\n\\usepackage{tocloft}\n\\renewcommand{\\cftsecleader}{\\cftdotfill{\\cftdotsep}}\n\n % suppress page number in toc for parts\n\\cftpagenumbersoff{part}\n\\usepackage{sectsty}\\sectionfont{\\normalfont\\large\\underline}\n \\usepackage{polyglossia}\n \\usepackage{xcolor}\n \\definecolor{corrected}{rgb}{0.0, 0.62, 0.38}\n \\definecolor{error}{rgb}{0.8, 0.25, 0.33}\n \\definecolor{no_change}{rgb}{0, 0, 0}\n \\setmainlanguage{french}\n \\setotherlanguage{greek}\n \\newfontfamily\\greekfont{KoineGreek}\n\\newcommand\\Pheader{\\rule[-2ex]{0pt}{5ex}}\n\\newsavebox\\TBox\n\\def\\textoverline#1{\\savebox\\TBox{#1}%\n\\makebox[0pt][l]{#1}\\rule[1.1\\ht\\TBox]{\\wd\\TBox}{0.7pt}} % prendre la valeur de \\thelongueurFinalN{\\tailleDeLaPolice}\n % amélioration : ajouter un \"padding\" sur le tabular + agrandir le tabular et son contenu.\n\n\\usepackage{pageslts}\n \\usepackage{cancel}\n \\renewcommand{\\CancelColor}{\\color{red}}\n \\usepackage{fancyhdr}\n\\makeatletter\n\\newcommand{\\nospace}[1]{\\nofrench@punctuation\\texttt{#1}\\french@punctuation}\n\\makeatother\n\\let\\oldtabular\\tabular\\renewcommand{\\tabular}{\\large\\selectfont\\oldtabular} %fontsize{17pt}{20.5pt}\n\n\\usepackage[hidelinks]{hyperref}\n\n\\newcounter{gospelbook}\n\\setcounter{gospelbook}{1}\n\\newcommand{\\mygospelbook}[1]\n{\\setcounter{gospelchapter}{1}\\phantomsection\\addcontentsline{toc}{part}{#1}#1}\n\n\\newcommand{\\agospelbook}[1]{\\addtocontents{toc}{\\protect\\newpage}\\mygospelbook{#1}}\n\n\\newcounter{gospelchapter}\n\\newcommand{\\mygospelchapter}{\\phantomsection\\addcontentsline{toc}{section}{\\thegospelchapter}\\LARGE\\bfseries\\thegospelchapter\\refstepcounter{gospelchapter}}\n\n % for finals N\n\\newcommand{\\finalN}[1]{\\textoverline{#1~~}}\n \\newcommand{\\finalNedit}[3]{\\color{#3}{\\textoverline{\\color{#2}{#1}~~} }}  \n\n\n\\begin{document}\n\\renewcommand{\\contentsname}{Sommaire}\n %\\layout\n \\maketitle % affiche le nom du manuscrit.\n\\pagenumbering{roman}\n\\thispagestyle{empty}\\clearpage\\setcounter{page}{1}\n\\newpage\n\\foreignlanguage{greek}{\\tableofcontents}\n\\clearpage\\pagenumbering{arabic}\\setcounter{page}{1}\n\\newgeometry{margin=0.0in}\n";
+            String str = "% %Source :\n%Gustav Berloty (author of this file),\n%Alan Bunning (transcripted data and greek font, http://greekcntr.org/),\n%Charles Lang Freer (original manuscript),\n%and the One who created that manuscript …\n%This file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence :\n%https://creativecommons.org/licenses/by-nc-sa/4.0/\n%The greek font \"KoineGreek\" is copyright © 2019 by Alan Bunning released under the\n%Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License\n%(CC BY-NC-ND 4.0).\n\n% !TEX encoding = UTF-8 Unicode\n \\documentclass[a4paper, 12pt]{article}\n \\usepackage[french]{babel}\n\\usepackage{pifont}\n \\usepackage{fontspec}\n \\usepackage{lmodern}\n \\usepackage{array, longtable}\n \\footnotesize\n\\usepackage{verbatim}\n \\title{``" + titre + "''}\n \\font\\myfont=cmr11 at 11pt\n \\author{{\\myfont Source : }\\\\ \n{\\myfont Gustav Berloty (author of this file),} \\\\ \n{\\myfont Alan Bunning (transcripted data and greek font, http://greekcntr.org/), }\\\\ \n{\\myfont Charles Lang Freer (original manuscript), }\\\\ \n{\\myfont and the One who created that manuscript …}\\\\ \n{\\myfont This file is copyright © 2020 by Gustav Berloty released under the CC BY-NC-SA 4.0 licence : }\\\\ \n{\\myfont https://creativecommons.org/licenses/by-nc-sa/4.0/ }\\\\ \n{\\myfont The greek font \"KoineGreek\" is copyright © 2019 by Alan Bunning released under the }\\\\ \n{\\myfont Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License }\\\\ \n{\\myfont (CC BY-NC-ND 4.0).}}\n\\usepackage{layout}\n \\usepackage[nomarginpar, margin=0.7in]{geometry}\n \\usepackage{graphicx}\n%\\newcommand{\\tailleDeLaPolice}{14.5}\n%\\usepackage[fontsize=\\tailleDeLaPolice pt]{scrextend}%\n\n  %\\def\\longueurFinalN#1{\\FPdiv\\result{11}{0.7}\n%\\FPdiv\\result{#1}{\\result}\n%\\FPround\\result{\\result}{2}\n%\\num{\\result}}\n\n\\pagestyle{plain}\n\n\\newcommand{\\newPart}[1]{\n\\part*{#1}\n\\markright{}\n\\phantomsection\n\\addcontentsline{toc}{part}{#1}}\n\n\n\\newcommand{\\newSection}[1]{\n\\section*{\\foreignlanguage{greek}{#1}}\n\\markright{}\n\\phantomsection\n\\addcontentsline{toc}{section}{\\foreignlanguage{greek}{#1}}}\n\n % pour afficher dans le \"toc\", des lignes en pointillées entre les chapitres des livres et leur numéro de page.\n\\usepackage{tocloft}\n\\renewcommand{\\cftsecleader}{\\cftdotfill{\\cftdotsep}}\n\n % suppress page number in toc for parts\n\\cftpagenumbersoff{part}\n\\usepackage{sectsty}\\sectionfont{\\normalfont\\large\\underline}\n \\usepackage{polyglossia}\n \\usepackage{xcolor}\n \\definecolor{corrected}{rgb}{0.0, 0.62, 0.38}\n \\definecolor{error}{rgb}{0.8, 0.25, 0.33}\n \\definecolor{no_change}{rgb}{0, 0, 0}\n \\setmainlanguage{french}\n \\setotherlanguage{greek}\n \\newfontfamily\\greekfont{KoineGreek}\n\\newcommand\\Pheader{\\rule[-2ex]{0pt}{5ex}}\n\\newsavebox\\TBox\n\\def\\textoverline#1{\\savebox\\TBox{#1}%\n\\makebox[0pt][l]{#1}\\rule[1.1\\ht\\TBox]{\\wd\\TBox}{0.7pt}} % prendre la valeur de \\thelongueurFinalN{\\tailleDeLaPolice}\n % amélioration : ajouter un \"padding\" sur le tabular + agrandir le tabular et son contenu.\n\n\\usepackage{pageslts}\n \\usepackage{cancel}\n \\renewcommand{\\CancelColor}{\\color{red}}\n \\usepackage{fancyhdr}\n\\makeatletter\n\\newcommand{\\nospace}[1]{\\nofrench@punctuation\\texttt{#1}\\french@punctuation}\n\\makeatother\n\\let\\oldtabular\\tabular\\renewcommand{\\tabular}{\\large\\selectfont\\oldtabular} %fontsize{17pt}{20.5pt}\n\n\\usepackage[hidelinks]{hyperref}\n\n\\newcounter{gospelbook}\n\\setcounter{gospelbook}{1}\n\\newcommand{\\mygospelbook}[1]\n{\\setcounter{gospelchapter}{1}\\phantomsection\\addcontentsline{toc}{part}{#1}#1}\n\n\\newcommand{\\agospelbook}[1]{\\addtocontents{toc}{\\protect\\newpage}\\mygospelbook{#1}}\n\n\\newcounter{gospelchapter}\n\\newcommand{\\mygospelchapter}{\\phantomsection\\addcontentsline{toc}{section}{\\thegospelchapter}\\LARGE\\bfseries\\thegospelchapter\\refstepcounter{gospelchapter}}\n\n % for finals N\n\\newcommand{\\finalN}[1]{\\textoverline{#1~~}}\n \\newcommand{\\finalNedit}[3]{\\color{#3}{\\textoverline{\\color{#2}{#1}~~} }}  \n\n\n\\begin{document}\n\\renewcommand{\\contentsname}{Sommaire}\n %\\layout\n \\maketitle % affiche le nom du manuscrit.\n\\pagenumbering{roman}\n\\thispagestyle{empty}\\clearpage\\setcounter{page}{1}\n\\newpage\n\\foreignlanguage{greek}{\\tableofcontents}\n\\clearpage\\pagenumbering{arabic}\\setcounter{page}{1}\n\\newgeometry{margin=0.0in}\n\\clearpage\n\\setlength\\arrayrulewidth{1pt}\n\\Large\n\\renewcommand\\arraystretch{0.82}\n\\begin{longtable}{cc|l|cc}\n";
             BufferedWriter writer2 = new BufferedWriter(new FileWriter("/Users/gustavberloty/Documents/Github/JavaXML/generated files/tex files/" + nom + ".tex"));
             writer2.write(str);
             
@@ -152,7 +156,7 @@ class data_to_tex {
             String last_book = "";
             String last_chapter = "";
             String rectifications_scribales = "";
-            rectifications_scribales = "\\restoregeometry\n\\clearpage\n\\newpage\n\\newPart{Rectifications scribales.}"; // corrections.size() pour en avoir le nombre.
+            rectifications_scribales = "\\restoregeometry\n\\end{longtable}\n\\newpage\n\\newPart{Rectifications scribales.}"; // corrections.size() pour en avoir le nombre.
             for (int j = 0; j < corrections.size(); j++) {
                 String[] etape = new String[corrections.get(j).size()];
                 int numeroDeReference = Integer.parseInt(corrections.get(j).get(0).get(0).numero);
@@ -286,14 +290,14 @@ class data_to_tex {
                 else if ((texte.get(i).get(1).get(1).numero).substring(0, 2).equals("04")) livre_actuel = livre_04;
                 
                 if (first_book) {
-                    writer2.write("\\clearpage\n\\newpage\n {\n \\setlength\\arrayrulewidth{1pt}\n\\begin{table}\n\\begin{center}\n" + beginPM + "\\begin{tabular}{cc|l|cc}\n\\cline{3-3} \\\\ [-1em]\n\\multicolumn{5}{c}{\\mygospelbook{\\foreignlanguage{greek}{" +  livre_actuel + "}} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n&  & &  & \\\\ [-0.9em]\n");
+                    writer2.write("\\cline{3-3} \\\\ [-0.87em]\n\\multicolumn{5}{c}{\\mygospelbook{\\foreignlanguage{greek}{" +  livre_actuel + "}} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-0.97em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n&  & &  & \\\\ [-0.9em]\n");
                     first_book = false;
                 }
                 else if (!previous_livre.equals(livre_actuel)) {
-                    writer2.write("\\clearpage\n\\newpage\n {\n \\setlength\\arrayrulewidth{1pt}\n\\begin{table}\n\\begin{center}\n" + beginPM + "\\begin{tabular}{cc|l|cc}\n\\cline{3-3} \\\\ [-1em]\n\\multicolumn{5}{c}{\\agospelbook{\\foreignlanguage{greek}{" +  livre_actuel + "}} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n & &  &  & \\\\ [-0.9em]\n");
+                    writer2.write("\\cline{3-3} \\\\ [-0.87em]\n\\multicolumn{5}{c}{\\agospelbook{\\foreignlanguage{greek}{" +  livre_actuel + "}} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-0.97em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n & &  &  & \\\\ [-0.9em]\n");
                 }
                 else {
-                    writer2.write("\\clearpage\n\\newpage\n {\n \\setlength\\arrayrulewidth{1pt}\n\\begin{table}\n\\begin{center}\n" + beginPM + "\\begin{tabular}{cc|l|cc}\n\\cline{3-3} \\\\ [-1em]\n\\multicolumn{5}{c}{\\foreignlanguage{greek}{" +  livre_actuel + "} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-1em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n & &  &  & \\\\ [-0.9em]\n");
+                    writer2.write("\\cline{3-3} \\\\ [-0.87em]\n\\multicolumn{5}{c}{\\foreignlanguage{greek}{" +  livre_actuel + "} \\textbf{(\\nospace{" + chapitre_actuel +":" + verset_actuel + "})} } \\\\ \\\\ [-0.97em] % Si on veut ajouter les bordures latérales, remplacer {7}{c} par {7}{|c|}\n\\cline{3-3} \\\\\n\\cline{3-3}\n & &  &  & \\\\ [-0.9em]\n");
                 }
                 
                 previous_livre = livre_actuel;
@@ -367,7 +371,9 @@ class data_to_tex {
                     writer2.write("& " + numero_mot_a_gauche + " & \\foreignlanguage{greek}{" + words + "} & " + numero_mot_a_droite + " &  \\\\\n");
                 }
                 
-                writer2.write("[0.2em]\n\\cline{3-3}\n\\end{tabular}\n" + endPM + "\n\\end{center}\n\\end{table}\n}\n");
+                String rectScr = "";
+                
+                writer2.write("[0.2em]\n\\cline{3-3}\n\n" + rectScr + "\\newpage\n");
                 
                 /*PdfPCell corps = new PdfPCell(corpsCorps);
                 PdfPCell footer = new PdfPCell(new Phrase("p." + (i+1)));
@@ -403,6 +409,7 @@ class data_to_tex {
         }
         return -1;
     }
+    
     
    int getWordIndex2(int word_number) {
     	String w = Integer.toString(word_number);
