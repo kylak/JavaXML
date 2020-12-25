@@ -28,6 +28,7 @@ Le dossier "com" est le dossier où se trouve la librairie itextpdf.
 15. Résolu avec FreerFont mais pas avec KoineGreek : Faire en sorte que lorsque l'on copie du texte depuis le pdf, ce soit bien des caractères grecs que nous copions !
 16. Afficher "Rectifications scribales" dans le toc (par opposition à cela entièrement en majuscule) (j'ai essayé mais pas réussi
 17. écrire dans data_to_tex.java une fonction additionalWord, pour les cas où une correction concernerait plusieurs lignes (et pourquoi pas comme un fou: plusieurs pages))
+18. Fixer la hauteur des blocs à la plus grande hauteur trouvée d'un bloc
 
 - Ce que l'on pourrait améliorer sur la structure XML :
  - Mettre les dimensions du codex dans des balises spécifiques pour pouvoir les récupérer et les utiliser de façon plus sûr, cela permettrait d'avoir les dimensions de notre tableau tex selon celles dans les données XML.
